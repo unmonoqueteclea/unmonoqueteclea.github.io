@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+</style>
+<body>
+    <div>
+    <div id="classification" style="float:left;" ></div>
+    <div id="regression" style="float:left;" ></div>
+    </div>
+  
+    <!-- Load the d3.js library -->    	
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Main script for classification -->
+    <script>
+        /* Set dimensions and margin */
+         var margin = {top: 30, right: 30, bottom: 30, left: 30};
+         var width =window.innerWidth /2.1 - margin.left - margin.right;
+         var height = window.innerHeight- margin.top - margin.bottom;
+        
+        /* Set the ranges */
+        var x = d3.scaleLinear().range([0, width]);
+        var y = d3.scaleLinear().range([height, 0]);
+        /* Set the points of the adjust line */ 
+        classificationLine  = [
+            {x:0,y:70},
+            {x:90,y:0}
+        ];
+        /* Create the line object*/
+        var valueline = d3.line()
+            .x(function(d) { return x(d.x); })
+            .y(function(d) { return y(d.y); });
+        // append the svg obgect to the body of the page
+        // appends a 'group' element to 'svg'
+        // moves the 'group' element to the top left margin
+        var svg = d3.select("#classification").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+        // Get the data for class a
+        d3.csv("classification_a.csv", function(error, data) {
+            if (error) throw error;
+            // format the data
+            data.forEach(function(d) {
+                d.x = +d.x;
+                d.y = +d.y;
+            });
+            // Set domains
+            x.domain([0,100]);
+            y.domain([0, 100]);
+            // Add the scatterplot
+            svg.selectAll("dot")
+                .data(data)
+                .enter().append("circle")
+                .attr("r", 5)
+                .attr("cx", function(d) { return x(d.x); })
+                .attr("cy", function(d) { return y(d.y); })
+                .style("fill","red")
+                .style("stroke","black")
+                .style("stroke-width","2")
+                .on("mouseover", function(d) {	
+                    d3.select(this).attr("r",10);	
+                })					
+                .on("mouseout", function(d) {
+                    d3.select(this).attr("r",5);			
+                });;
+            // Add the adjustment line
+            svg.append("path")
+                .data([classificationLine])
+                .attr("class", "line")
+                .attr("d", valueline(classificationLine));
+            // Add the X Axis
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).ticks(5));;
+            // Add the Y Axis
+            svg.append("g")
+                .call(d3.axisLeft(y));
+        });
+        
+        // Get the data for class b
+        d3.csv("classification_b.csv", function(error, data) {
+            if (error) throw error;
+            // format the data
+            data.forEach(function(d) {
+                d.x = +d.x;
+                d.y = +d.y;
+            });
+            // Add the scatterplot
+            svg.selectAll("dot")
+                .data(data)
+                .enter().append("circle")
+                .attr("r", 5)
+                .attr("cx", function(d) { return x(d.x); })
+                .attr("cy", function(d) { return y(d.y); })
+                .style("fill","blue")
+                .style("stroke","black")
+                .style("stroke-width","2")
+                .on("mouseover", function(d) {	
+                    d3.select(this).attr("width",15);
+                    d3.select(this).attr("height",15);
+                })					
+                .on("mouseout", function(d) {
+                    d3.select(this).attr("width",9);
+                    d3.select(this).attr("height",9);			
+                });;
+        });
+
+        svg.append("text")
+            .attr("x", (width / 2))             
+            .attr("y",15)
+            .attr("text-anchor", "middle")  
+            .attr("font-weight","bold")
+            .attr("font-family","Verdana")
+            .attr("stroke","none")
+            .attr("fill","#666666")
+            .style("font-size", "1em") 
+            .text("Classification");
+    </script>
+
+    <!-- Main script for regression  -->
+    <script>
+        /* Set dimensions and margin */
+         var margin = {top: 30, right: 30, bottom: 30, left: 30};
+         var width =window.innerWidth / 2.1  - margin.left - margin.right;
+         var height = window.innerHeight  - margin.top - margin.bottom;
+
+        /* Set the ranges */
+        var x = d3.scaleLinear().range([0, width]);
+        var y = d3.scaleLinear().range([height, 0]);
+        /* Set the points of the adjust line */ 
+        adjustLine  = [
+            {x:0,y:4.64},
+            {x:90,y:26.59}
+        ];
+        /* Create the line object*/
+        var valueline = d3.line()
+            .x(function(d) { return x(d.x); })
+            .y(function(d) { return y(d.y); });
+        // append the svg obgect to the body of the page
+        // appends a 'group' element to 'svg'
+        // moves the 'group' element to the top left margin
+        var svg2 = d3.select("#regression").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+        // Get the data
+        d3.csv("regression.csv", function(error, data) {
+        if (error) throw error;
+        // format the data
+        data.forEach(function(d) {
+            d.x = +d.x;
+            d.y = +d.y;
+        });
+        // Set domains
+        x.domain([0, 100]);
+        y.domain([0, 45]);
+        // Add the adjustment line
+        svg2.append("path")
+            .data([adjustLine])
+            .attr("class", "line")
+            .attr("d", valueline(adjustLine));
+        // Add the scatterplot
+        svg2.selectAll("dot")
+            .data(data)
+            .enter().append("circle")
+            .attr("r", 5)
+            .attr("cx", function(d) { return x(d.x); })
+            .attr("cy", function(d) { return y(d.y); })
+            .style("fill","red")
+            .style("stroke","black")
+            .style("stroke-width","2")
+            .on("mouseover", function(d) {	
+                d3.select(this).attr("r",10);	
+            })					
+            .on("mouseout", function(d) {
+                d3.select(this).attr("r",5);			
+            });;
+        // Add the X Axis
+        svg2.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x)
+            .ticks(5));
+        // Add the Y Axis
+        svg2.append("g")
+            .call(d3.axisLeft(y));
+        svg2.append("text")
+            .attr("x", (width / 2))             
+            .attr("y",15)
+            .attr("text-anchor", "middle")  
+            .attr("font-weight","bold")
+            .attr("font-family","Verdana")
+            .attr("stroke","none")
+            .attr("fill","#666666")
+            .style("font-size", "1em") 
+            .text("Regression");
+        });
+        
+    </script>
+    
+</body>

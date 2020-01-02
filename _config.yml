@@ -1,7 +1,10 @@
 # Site settings
 title: unmonoqueteclea
 description: 'A monkey hitting keys at random on a typewriter keyboard
-for an infinite amount of time will almost surely type this blog'
+for an infinite amount of time will almost surely type this
+blog.'
+subdescription: 'Technology | Machine Learning | Music'
+subsubdescription: 'From Valencia (Spain)'
 url: 'https://unmonoqueteclea.github.io/'
 baseurl: ''
 google_analytics: 'UA-102906314-1'
