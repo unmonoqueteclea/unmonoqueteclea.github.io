@@ -1,19 +1,18 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+title: unmonoqueteclea
+description: 'A monkey hitting keys at random on a typewriter keyboard
+for an infinite amount of time will almost surely type this blog'
 url: 'https://unmonoqueteclea.github.io/'
 baseurl: ''
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
-# disable_landing_page: true
+google_analytics: 'UA-102906314-1'
+disqus_shortname: 'unmonoqueteclea'
 
 author:
   name: 'Pablo González Carrizo'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  email: pgonzalezcarrizo@gmail.com
+  twitter_username: unmonoqueteclea
+  github_username:  unmonoqueteclea
+  linkedin_username:  unmonoqueteclea
 
 defaults:
   -
