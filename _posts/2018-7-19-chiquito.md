@@ -4,12 +4,21 @@ date: 2018-07-18
 tags: [deep-learning]
 ---
 
+**Update 12/01/2020**. Este artículo es de 2018, y usa una de las
+primeras versiones de la librería [**Fast AI**](https://docs.fast.ai/)
+Como es inevitable, a los pocos meses de su creación el código de este
+tipo de artículos queda desactualizado. Sin embargo, las técnicas que
+se detallan para la realización del clasificador (extracción de datos,
+*fine-tunning*, *data augmentation*, etc) seguirán de actualidad
+durante mucho más tiempo.
+
+
 Hoy vamos a hacer nuestro primer proyecto basado en **Deep Learning**,
 y como la ocasión lo merece, el clasificador que realizaremos será
 capaz de detectar imágenes en las que aparezca **Chiquito de la
 Calzada**.
 
-![Animación Chiquito](../../assets/images/chiquitoAnimation.gif){:class="img-responsive center-image"}
+![Animación Chiquito](../../assets/images/posts/chiquitoAnimation.gif){:class="img-responsive center-image"}
 
  Para ello, vamos a usar la librería de [**Fast
  AI**](http://fast.ai). Esta librería, que funciona sobre
