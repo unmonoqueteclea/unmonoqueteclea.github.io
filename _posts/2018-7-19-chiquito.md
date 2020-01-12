@@ -30,10 +30,6 @@ Calzada**.
  dos primeras lecciones del curso [Practical Deep Learning for
  Coders](http://course.fast.ai/).
 
- **Info** Este artículo requiere unos ciertos conocimientos básicos
-previos de Machine Learning y de Deep Learning.
-
-
 Con este método conseguiremos un **porcentaje de acierto del 98%**.
 
  **Info** La libreta de Jupyter que acompaña a este artículo se puede
@@ -96,7 +92,7 @@ de color (8 bits). Además tendremos que fijarnos, porque puede que
 Google nos haya colado alguna imagen que en realidad no sea de
 chiquito.
 
-![Chiquito dataset](../../assets/images/chiquito_dataset.png){:class="img-responsive center-image"}
+![Chiquito dataset](../../assets/images/posts/chiquito_dataset.png){:class="img-responsive center-image"}
 
 Como siempre, para entrenar nuestro clasificador necesitaremos
 ejemplos positivos y ejemplos negativos. Por lo tanto, necesitamos
@@ -106,7 +102,7 @@ imágenes donde NO aparezca chiquito. Para ello, hemos usado el dataset
 fotos de las caras de 1680 famosos.
 
 
-![Labeled Faces in the Wild](/assets/images/labeledfaces.jpg){:class="img-responsive center-image"}
+![Labeled Faces in the Wild](/assets/images/posts/labeledfaces.jpg){:class="img-responsive center-image"}
 
 
 Al descargarlo, vemos que existe un nuevo problema, las imágenes están
@@ -174,8 +170,7 @@ dataset. Partimos de la arquitectura
 [resnet](https://arxiv.org/abs/1512.03385), que es utilizada en
 multitud de ocasiones en este tipo de tareas.
 
-![Resnet](../../assets/images/resnet.jpg){:class="img-responsive center-image"}
-
+![Resnet](../../assets/images/posts/resnet.jpg){:class="img-responsive center-image"}
 
 En las dos últimas línea estamos utilizando una característica de la
 librería **Fast AI** que nos permite ver cómo se comporta nuestro
@@ -253,9 +248,9 @@ información que nos puede ser de gran utilidad. Además, sabemos que
 las primeras capas de una red convolucional tienen información más
 general, que va siendo más específica según vamos avanzando a capas
 posteriores. Es por ello por lo que definiremos un array con 3
-learning rates distintos, siendo el más bajo, el de la primera
-capa. De esta forma, nos aseguramos realizar *pequeños retoques* sin
-perder el conocimiento general de la red.
+learning rates distintos, siendo el más bajo el de la primera capa. De
+esta forma, nos aseguramos realizar *pequeños retoques* sin perder el
+conocimiento general de la red.
 
 
 ```python
@@ -269,7 +264,7 @@ vemos en la matriz de confusión de abajo, nuestra red sólo falla con 2
 de las imágenes:
 
 
-![Matriz de confusion](../../assets/images/chiquito_confusion.png){:class="img-responsive center-image"}
+![Matriz de confusion](../../assets/images/posts/chiquito_confusion.png){:class="img-responsive center-image"}
 
 
 ¡No está nada mal para ser nuestra primera aproximación al Deep Learning!
