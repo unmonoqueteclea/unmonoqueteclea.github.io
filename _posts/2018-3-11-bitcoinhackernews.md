@@ -4,14 +4,6 @@ date: 2018-03-11
 tags: [data-visualization]
 ---
 
-
-**Update 12/01/2020**. Este artículo es de 2018. Como es
-inevitable, a los pocos meses de su creación el código de este tipo de
-artículos queda desactualizado. Sin embargo, los pasos que se detallan
-para la realización del análisis seguirán siendo de utilidad durante
-mucho más tiempo.
-
-
 En este artículo veremos dos herramientas de gran importancia para
 aficionados al anáisis de datos: **BigQuery** y **Kaggle** Para ello,
 nos centraremos en un ejemplo concreto: intentaremos ver la
