@@ -198,9 +198,8 @@ extremadamente sencillo. Mediante la combinación de las funciones
 **rolling()** y **mean()** podemos aplicar una ventana con un número
 determinado de valores (en nuestro caso 11) que se va desplazando por
 la gráfica calculando el valor medio de todos los valores que quedan
-dentro de ella. Con ello, conseguimos una señal suavizada, es decir,
-filtrada paso bajo.  (Lo siento, soy teleco, y al final la cabra tira
-al monte... 😀 )
+dentro de ella. Con ello, conseguimos una señal suavizada (filto paso
+bajo)
 
 ```python
 #Smooth averaging groups of 11 values
