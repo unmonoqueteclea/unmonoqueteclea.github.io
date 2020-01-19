@@ -5,9 +5,10 @@ tags: [machine-learning]
 ---
 
 En el [artículo
-anterior](https://unmonoqueteclea.github.io/machine-learning/regresion-lineal/)
-analizábamos en qué consiste la regresión lineal. Sin embargo, no se
-hacía mención a cómo podemos obtener los parámetros de la función de
+anterior](https://unmonoqueteclea.github.io/2017/regresion-lineal/)
+analizábamos en qué consiste la regresión lineal, uno de los modelos
+más simples de aprendizaje supervisado. Sin embargo, no se hacía
+mención a cómo podemos obtener los parámetros de la función de
 regresión. En este artículo veremos diferentes métodos para la
 obtención de los mismos.
 
@@ -85,8 +86,7 @@ hasta llegar a un mínimo de la función de coste.
 
 He preparado una [libreta interactiva de
 Jupyter](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Linear%20Regression.ipynb)
-donde se puede ver en acción este método. Podemos descargarla desde el
-enlace anterior y ejecutarla en nuestro ordenador. En el siguiente gif
+donde se puede ver en acción este método. En el siguiente gif
 (obtenido a partir de la libreta interactiva comentada anteriormente)
 vemos cómo se produce el ajuste mediante el descenso de gradiente. Se
 puede observar cómo, con cada iteración, disminuye el error hasta que
@@ -99,24 +99,29 @@ se realiza.
  ![Linear Regression example graphs](/assets/gifs/1.lineal_regression.gif)
 
 
-En la misma [libreta interactiva de Jupyter](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Linear%20Regression.ipynb) podemos encontrar una representación de la función de coste en función de $$ \theta_{0} $$ y $$\theta_{1}  $$
+En la misma [libreta interactiva de
+Jupyter](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Linear%20Regression.ipynb)
+podemos encontrar una representación de la función de coste en función
+de $$ \theta_{0} $$ y $$\theta_{1} $$
 
  ![Linear Regression error](/assets/gifs/3derror.gif)
 
  Para comprobar mejor cómo varía el coste en función de cada uno de los parámetros, hemos realizado las siguientes representaciones fijando uno de los parámetros y haciendo un barrido en el otro.
 
-  ![Linear Regression error](/assets/images/2dcost1.png)
+  ![Linear Regression error](/assets/images/posts/2dcost1.png)
 
-  ![Linear Regression error](/assets/images/2dcost2.png)
+  ![Linear Regression error](/assets/images/posts/2dcost2.png)
 
 
-Veamos ahora qué calculos se realizan en cada iteración. Utilizaremos la siguiente fórmula, que repetiremos hasta encontrar el mínimo:
+Veamos ahora qué calculos se realizan en cada iteración. Utilizaremos
+la siguiente fórmula, que repetiremos hasta encontrar el mínimo:
 
 $$
 { \theta_{j} :=  \theta_{j} - \alpha \frac{\partial}{\partial \theta_{j}} J(\theta_{0}, \theta_{1})  }
 $$
 
-Concretando para $$\theta_{0}$$ y $$\theta_{1}$$ y sustituyendo la expresión de $$J$$:
+Concretando para $$\theta_{0}$$ y $$\theta_{1}$$ y sustituyendo la
+expresión de $$J$$:
 
 $$
 {
@@ -147,13 +152,22 @@ $$
  }
 $$
 
-Al parámetro $$\alpha$$, lo llamamos **ratio de aprendizaje**. Veremos a continuación su utilidad.
+Al parámetro $$\alpha$$, lo llamamos **ratio de aprendizaje**. Veremos
+a continuación su utilidad.
+
 ### Ratio de aprendizaje
-El ratio de aprendizaje,**$$\alpha$$** controla la **velocidad** a la que se produce el descenso de gradiente. Cuanto más grande sea, mayores serán los pasos que daremos en cada iteración.
+El ratio de aprendizaje, **$$\alpha$$** controla la **velocidad** a la que se produce el descenso de gradiente. Cuanto más grande sea, mayores serán los pasos que daremos en cada iteración.
 
- Es muy importante elegir bien el valor del ratio de aprendizaje. Un valor demasiado pequeño supondrá que el algoritmo necesite muchas más iteraciones para llegar a converger. Por el contrario, un valor demasiado alto puede hacer que el sistema nunca llegue a converger.
+ Es muy importante elegir bien el valor del ratio de aprendizaje. Un
+ valor demasiado pequeño supondrá que el algoritmo necesite muchas más
+ iteraciones para llegar a converger. Por el contrario, un valor
+ demasiado alto puede hacer que el sistema nunca llegue a converger.
 
- A continuación veremos un claro ejemplo de este problema. En la [libreta comentada anteriormente](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Linear%20Regression.ipynb), hemos incrementado ligeramente el valor del ratio de aprendizaje (hemos dado un valor de 0.0008) y este ha sido el resultado obtenido:
+ A continuación veremos un claro ejemplo de este problema. En la
+ [libreta comentada
+ anteriormente](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Linear%20Regression.ipynb),
+ hemos incrementado ligeramente el valor del ratio de aprendizaje
+ (hemos dado un valor de 0.0008) y este ha sido el resultado obtenido:
 
   ![Linear Regression example with bad learning ratio](/assets/gifs/2.lineal_regression.gif)
 
@@ -247,12 +261,18 @@ X_{n}=X_{1}^{n}
 $$
 
 
-Vemos que el valor de Y no depende directamente del valor de la características $$ X_{1} $$ sino de las distintas potencias de esta. Por lo tanto ya no tenemos una recta de regresión sino que tendremos distintas formas dependiendo del la función de regresión utilizada.
+Vemos que el valor de Y no depende directamente del valor de la
+características $$ X_{1} $$ sino de las distintas potencias de
+esta. Por lo tanto ya no tenemos una recta de regresión sino que
+tendremos distintas formas dependiendo del la función de regresión
+utilizada.
 
 
-Terminamos, de nuevo, con un poco de humor, con esta viñeta de [xkcd](https://xkcd.com/605/)
+De todas formas, cuidado con aplicar las regresiones a todo:
 
-![linnear-regression](/assets/images/extrapolating.png){:class="img-responsive center-image"}
+[xkcd](https://xkcd.com/605/)
+
+![linnear-regression](/assets/images/posts/extrapolating.png){:class="img-responsive center-image"}
 <style>
 .center-image{
     margin: 0 auto;
