@@ -36,24 +36,7 @@ problema de regresión sería la estimación del precio de una casa en
 función de ciertas variables como su tamaño, su localización o su
 antigüedad.
 
-<style>
-@media (max-width: 1005px) {
-  /* VERSION MOVIL*/
-  #classreg{
-    width:98vw;
-    height:60vw;
-  }
-}
-@media (min-width: 1005px) {
-  /* VERSION WEB */
-  #classreg{
-    width:45vw;
-    height:25vw;
-  }
-}
-</style>
-<iframe id="classreg" src="../../assets/d3js/classification_regression/classification_regression.html" scrolling="no"  marginwidth="0"  marginheight="0" align="top" frameborder="0" hspace="0" vspace="0"></iframe>
-
+![linnear-regression](/assets/images/posts/classification_regression.png){:class="img-responsive center-image"}
 
 ## Relación vs Causalidad
 Hago un pequeño aparte para comentar algo que muchas veces nos cuesta
@@ -205,7 +188,7 @@ Y después de todo este tostón, un poquito de humor con esta viñeta de
 [xkcd](https://xkcd.com/1725/)
 
 
-![linnear-regression](/assets/images/linear_regression.png){:class="img-responsive center-image"}
+![linnear-regression](/assets/images/posts/linear_regression.png){:class="img-responsive center-image"}
 
 En el [siguiente
 artículo](https://unmonoqueteclea.github.io/2017/regresion-lineal-ii/)
