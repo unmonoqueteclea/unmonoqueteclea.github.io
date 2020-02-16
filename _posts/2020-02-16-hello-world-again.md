@@ -24,8 +24,9 @@ servers.
 
 Have you seen [**new notes page**]({{ site.baseurl }}/notes)?  This is
 something I am so excited about. I love this format and I admit
-**Twitter** does a good job at trying to be a (*more or less*)
-reliable source of information with [no political
+**Twitter** does a good job, as a a microblogging platform, trying to
+be a (*more or less*) reliable source of information with [no
+political
 ads](https://twitter.com/jack/status/1189634360472829952?lang=en), [no
 manipulated
 media](https://blog.twitter.com/en_us/topics/company/2020/new-approach-to-synthetic-and-manipulated-media.html)
