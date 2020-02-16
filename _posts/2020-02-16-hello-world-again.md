@@ -53,7 +53,7 @@ After re-reading some of my previous posts, I realized that some of
 them **became obsolete** only some months after writting
 them. Programming libraries were updated, new Deep Learning techniques
 appeared, etc. My focus, from now on, will be on **generating
-non-expiring content**. I know this sounds like hard word when you
+non-expiring content**. I know this sounds like hard work when you
 talk about **Machine Learning** or **programming** but I will try to
 focus more on creating that kind of content that analyzes
 **abstractions and not particular implementations**.
