@@ -3,7 +3,7 @@ title: unmonoqueteclea
 description: 'A monkey hitting keys at random on a typewriter keyboard
 for an infinite amount of time will almost surely type this
 blog.'
-subdescription: 'Technology | Machine Learning | Music'
+subdescription: 'Programming | Machine Learning | Music'
 subsubdescription: 'From Valencia (Spain)'
 url: 'https://unmonoqueteclea.github.io/'
 baseurl: ''
@@ -44,3 +44,9 @@ kramdown:
 
 plugins: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:year/:month/:title

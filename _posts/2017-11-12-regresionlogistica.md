@@ -21,7 +21,7 @@ lineal](https://unmonoqueteclea.github.io/machine-learning/regresion-lineal/)
 se profundizaba más en la diferencia entre estos dos tipos de
 problemas.
 
-**¡OJO¡** En
+**¡Por cierto¡** En
 [github](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Logistic%20Regression.ipynb)
 he subido una libreta de Jupyter donde se puede ver una implementación
 de todo lo que hablo en el artículo
@@ -30,7 +30,7 @@ A partir de los algoritmos y el método desarrollado para la regresión
 lineal, la regresión logística intenta resolver problemas de
 clasificación. Concretamente nos centraremos en problemas de
 **clasificación binaria**, es decir, sólo hay que decidir entre dos
-posibles clases. Por lo tanto **y** sólo puede ser 0 o 1. Sin embargo,
+posibles clases. Por lo tanto ``y`` sólo puede ser 0 o 1. Sin embargo,
 como veremos al final, esta clasificación se puede modificar para ser
 capaz de distinguir entre una mayor cantidad de clases.
 
@@ -116,7 +116,7 @@ $$
 $$
 
 Como podemos ver en la gráfica anterior, $$ g(z) $$ es mayor o igual
-que 0.5 cuando z es mayor o igual que 0. Por lo tanto podemos concluir
+que 0.5 cuando z es mayor o igual que 0. Por lo tanto, podemos concluir
 que:
 
 $$
@@ -316,8 +316,7 @@ Jupyter](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/Logistic%20Re
 ![linnear-regression](/assets/images/multiclase3.png){:class="img-responsive center-image"}
 ![linnear-regression](/assets/images/multiclase4.png){:class="img-responsive center-image"}
 
-Y después de este denso artículo, vamos a terminar otra vez con un
-poco de humor de [xkcd](https://xkcd.com/833/)
+Para terminar este denso artículo, otra viñeta de [xkcd](https://xkcd.com/833/)
 
 ![linnear-regression](/assets/images/convincing.png){:class="img-responsive center-image"}
 <style>
