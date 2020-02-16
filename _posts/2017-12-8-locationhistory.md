@@ -5,8 +5,8 @@ tags: [data-visualization]
 ---
 
 
-Es sabido por todos que **Google sabe en todo momento nuestra
-ubicación** a partir de nuestro smartphone.  De hecho, según conocimos
+Es sabido por todos que Google conoce en todo momento nuestra
+ubicación a partir de nuestro smartphone.  De hecho, según conocimos
 hace poco, ésta se obtiene [incluso cuando se ha desactivado los
 servicios de
 localización](https://www.theverge.com/2017/11/21/16684818/google-location-tracking-cell-tower-data-android-os-firebase-privacy).
@@ -15,7 +15,7 @@ localización](https://www.theverge.com/2017/11/21/16684818/google-location-trac
 location](../../assets/images/googlelocation.png){:class="img-responsive
 center-image"}
 
-**¡OJO¡** En
+**¡Por cierto¡** En
 [github](https://github.com/unmonoqueteclea/Jupyter-ML/blob/master/LocationHistory.ipynb)
 he subido una libreta de Jupyter donde se puede ver una implementación
 de todo lo que hablo en el artículo.
@@ -25,12 +25,12 @@ enviando la localización a los servidores de Google aproximadamente
 **una vez por minuto**.
 
 Sin embargo, Google no esconde este hecho. Independientemente de cómo
-comercialice estos datos (que lo hace), se ha dado cuenta de que tener
-esta información le permite mejorar de forma sustancial la
-**experiencia de usuario**. Entre otras muchas funcionalidades ha
-creado [Google Timeline](https://www.google.com/maps/timeline), que
-nos muestra una visualización con todos estos datos de nuestras
-ubicaciones que Google tiene guardados.
+comercialice estos datos, se ha dado cuenta de que tener esta
+información le permite mejorar de forma sustancial la **experiencia de
+usuario**. Entre otras muchas funcionalidades, ha creado [Google
+Timeline](https://www.google.com/maps/timeline), que nos muestra una
+visualización con todos estos datos de nuestras ubicaciones que Google
+tiene guardados.
 
 ![Google Timeline](../../assets/images/google_timeline.png)
 
