@@ -17,7 +17,7 @@ or [**Sacha Chua**](https://sachachua.com/blog/)).
 teclea**](https://en.wikipedia.org/wiki/Infinite_monkey_theorem)
 (*typing monkey* in English).
 
-Theose things I do include making **music**, **reading**,
+Those things I do include making **music**, **reading**,
 **writting**, **programming** and **[torturing data until they
 confess](https://en.wiktionary.org/wiki/if_you_torture_the_data_long_enough,_it_will_confess_to_anything)**
 📈. By the way, my **[CV](../assests/CV.pdf)** says I have a **[MSc Degree

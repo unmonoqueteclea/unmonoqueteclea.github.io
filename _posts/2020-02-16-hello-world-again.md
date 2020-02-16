@@ -58,3 +58,6 @@ focus more on creating that kind of content that analyzes
 **abstractions and not particular implementations**.
 
 Let's focus more on **ideas** and less on **things**.
+
+And maybe I could write some things about my other great passion,
+music.
