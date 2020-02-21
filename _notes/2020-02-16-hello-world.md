@@ -3,6 +3,7 @@ layout: microblog
 title: Hello World!
 headline: My first micropost
 tags: [blog]
+date: 2020-02-16 00:00:00
 ---
 
 **Hello World!** This is my first micropost. It has its own **URL**
