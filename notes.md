@@ -20,7 +20,7 @@ In this way, you can subscribe to my [**microblogging
 
 
 <ul>
-  {% for note in site.notes %}
+  {% for note in site.notes reversed%}
     <li>
       <a href="{{ note.url }}">
       {{note.date | date: "%-d %B %Y" }}
