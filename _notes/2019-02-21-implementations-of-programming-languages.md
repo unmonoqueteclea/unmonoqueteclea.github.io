@@ -1,3 +1,10 @@
+---
+layout: microblog
+title: Single-file implementations of programming languages
+headline: Single-file implementations of programming languages
+tags: [programming]
+---
+
 This [repository](https://github.com/marcpaq/b1fipl) contains many
 examples of single-file implementations of programming languages.  I
 love [this one from Peter Norvig](http://www.norvig.com/lispy.html).
