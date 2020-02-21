@@ -6,7 +6,7 @@ tags: [programming]
 date: 2020-02-21 00:00:00
 ---
 
-This [repository](https://github.com/marcpaq/b1fipl) contains many
+[This repository](https://github.com/marcpaq/b1fipl) contains many
 examples of single-file implementations of programming languages.  I
 love [this one from Peter Norvig](http://www.norvig.com/lispy.html).
 He builds a semi-practical **Scheme interpreter in Python 3**.
