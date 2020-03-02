@@ -12,7 +12,7 @@ ways to find work while homeless:
 
 Comments like:
 
-   - A startup founder advertising its employment company
+   - A startup founder advertising its own employment company
 
    - People criticizing the OP because he said that he is squatting
      someone else property
