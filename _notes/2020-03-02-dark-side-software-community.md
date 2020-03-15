@@ -18,7 +18,7 @@ Comments like:
      someone else property
 
    - People telling him that he should do more volunteer work and Open
-   Source projects.
+   Source projects
 
 Are we actually bad people or just stupid people living in a bubble of
 well paid ignorance?
