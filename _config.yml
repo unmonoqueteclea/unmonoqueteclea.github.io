@@ -50,3 +50,7 @@ collections:
   notes:
     output: true
     permalink: /notes/:year/:month/:title
+
+  snippets:
+    output: true
+    permalink: /notes/:year/:month/:title
