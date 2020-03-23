@@ -88,17 +88,17 @@ imagen.
 
 Cuando todo esto pase, ya nada será igual. Muchos países han
 descubierto la importancia de la correcta gestión de los datos, y
-tomarán medidas para no volver a tropezar dos veces en la misma
+tomarán medidas para no volver a tropezar dos veces con la misma
 piedra. En los últimos meses, muchos presumían de que sus países
 serían pioneros en **Inteligencia Artificial**, muchos pronunciaban
-orgullosos aquello de *Big Data*. **Nadie tenía ni dea de lo que
+orgullosos aquello de *Big Data*. **Nadie tenía ni idea de lo que
 hablaba**, pero había que formar parte de la ola. Hoy han visto que
 esto iba en serio.
 
 Y cuidado, porque cuando esto acabe, algunos **tendrán la excusa
 perfecta para invadir nuestra privacidad**, *por nuestro
 bien*. Pondrán la excusa de que, gracias a ello, China pudo controlar
-la pandemia antes que cualquiera, y querrán imitar aquí la distopía
+la pandemia antes que cualquiera y querrán imitar aquí la distopía
 del sistema chino.
 
 Una alarma como esta necesita que seamos **críticos** y
