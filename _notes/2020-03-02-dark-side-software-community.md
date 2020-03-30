@@ -6,7 +6,7 @@ tags: [programming]
 date: 2020-03-02 00:00:00
 ---
 
-A man [asked HN](https://news.ycombinator.com/item?id=22442454) for
+Someone [asked HN](https://news.ycombinator.com/item?id=22442454) for
 ways to find work while homeless.
 
 
