@@ -1,28 +1,70 @@
-/** https://zngguvnf.org/2017-07-13--blogging-with-org-static-blog.html */
-
-#preludeseparator {
-  text-align: center;
-}
+/** unmonoqueteclea's blog styles */
 
 .header{
-  font-size: 24px;
   line-height: 40px;
-  font-weight: 200;
-  /* box-shadow: 0px 2px 2px grey; */
-  /* background: #2E435E; */
-  /* background: linear-gradient(to top,#2E435E,#172E50); */
-  color: #777;
-  /* border: solid 3px transparent; */
-  /* border-bottom-color: #aaa; */
   text-align: center;
 }
+
+.header .page-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.header img {
+  text-align: center;
+  display: inline;
+  vertical-align:middle;
+  height: 25px;
+}
+
+.header .menu-links {
+  font-size: 15px;
+  margin-left: 80px;
+  font-weight: 400;
+  
+}
+
+.header .menu-icons {
+  height: 15px;
+}
+
+.preamble-sep {  
+  width:650px;
+  margin: 30px auto;
+  margin-bottom: 80px;
+  border: 1px dashed #999;
+  border-style: none none dashed; 
+  color: #fff; 
+  background-color: #fff;
+}
+
+.post-date {
+  font-weight: bold;
+}
+
+.post-date:before {
+  content: ' 🗓️ ';
+}
+
+.taglist:before {
+  content: ' 🏷️ ';
+}
+
+
+
+
+/** https://zngguvnf.org/2017-07-13--blogging-with-org-static-blog.html */
+
+
+
+
 
 #content {
   background: #fff;
-  padding-top: 3em;
+  padding-top: 0px;
   max-width: 800px;
   position: relative;
-  margin: 5px auto;
+  margin: 0px auto;
 }
 #header {
     float: right;
@@ -75,7 +117,7 @@ body {
     background-color: #fff;
 }
 p {
-    margin: 0 0 20px;
+    margin: 10px 0 20px;
 }
 
 .headline {
@@ -130,16 +172,6 @@ b:before, b:after, strong:before, strong:after {
 }
 i:before, i:after, em:before, em:after {
     content: "/";
-}
-hr {
-    margin: 0;
-    border: 0;
-}
-hr:after {
-    display: block;
-    margin: 20px 0;
-    content: "----------------------------------------------------------------";
-    color: #ccc;
 }
 ul, ol {
     padding: 0;
@@ -406,23 +438,23 @@ table th.right, table td.right {
 /* Responsive
    -------------------------------------------------- */
 
-@media (min-width: 768px) {
-    /* Increase body padding and font-sizes */
-    body {
-        padding: 40px;
-        font-size: 18px;
-        line-height: 1.75;
-    }
-    h1:before, h2:before, h3:before {
-        display: inline;
-    }
-}
+//@media (min-width: 768px) {
+ //   /* Increase body padding and font-sizes */
+ //   body {
+ //       padding: 40px;
+ //       font-size: 18px;
+ //       line-height: 1.75;
+ //   }
+ //   h1:before, h2:before, h3:before {
+ ///       display: inline;
+ //   }
+//}
 
-@media (min-width: 1024px) {
-    body {
-        padding: 40px;
-    }
-}
+//@media (min-width: 1024px) {
+///    body {
+//        padding: 40px;
+//    }
+//}
 
 
 /* Define org todo faces */
