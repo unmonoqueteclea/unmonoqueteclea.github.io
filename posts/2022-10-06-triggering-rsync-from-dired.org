@@ -1,0 +1,39 @@
+#+title: emacs: triggering rsync from dired
+#+date: <2022-10-06 19:27>
+#+description: 
+#+filetags: emacs
+
+If you are a heavy =Emacs= user as me, you will have tried to move files
+between different machines using =TRAMP=. But this approach is not nice
+for large files. =TRAMP= is very slow for large files and it will block
+=Emacs= during the file transfer.
+
+Although [[https://github.com/stsquad/dired-rsync][dired-rsync]] could help with that, I decided to write my own
+solution, as this is a great usecase for the [[https://github.com/xenodium/dwim-shell-command][dwim-shell-command]]
+package I am testing these days.
+
+And it turned out that the solution was as easy as this:
+
+#+begin_src emacs-lisp
+  (defun mono/dwim-rsync (output)
+  "Use rsync to move selected files to OUTPUT."
+  (interactive "D")
+  (dwim-shell-command-on-marked-files
+   (format "Moving selected files to %s" output)
+   ;; we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)
+   ;; to rsync syntax (e.g. myserver:/home). For the output file
+   ;; it's easy, but for input files we need to do it in the command,
+   ;; that is where '<<*>>' is expanded.
+   (let ((clean-output (replace-regexp-in-string "\/ssh:" "" output))
+	 (clean-files-cmd "echo <<*>> | sed 's/\\/ssh://g'"))
+     (format "%s | xargs -i rsync -aP {} %s" clean-files-cmd clean-output))
+   :utils "rsync"))
+#+end_src
+
+It could have been a one-liner but I had to add some additional logic
+to transform =TRAMP= paths into valid =rsync= ones.
+
+Now, I just need to select some files in =dired= and run
+=mono/dwim-rsync=. This will let me specify in the minibuffer any path I
+want (local or remote, using =ssh=), and =rsync= will be used to copy the
+files. Bye, =filezilla=!

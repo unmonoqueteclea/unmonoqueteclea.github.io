@@ -1,0 +1,35 @@
+#+title: towards minimalism
+#+date: <2022-10-06 08:32>
+#+description: 
+#+filetags: blog
+
+*tldr*: I moved the blog to an extremly simple static blog generator
+with no dependencies, no =Javascript= and no magic tricks. Just plain
+=HTML= and =CSS=.
+
+If you have been following this blog for some time you will have
+noticed that I am not very good at keeping a routine of writing new
+blog posts every week (or even every month). But there was something
+that created more friction in the writing process (even more than the
+white paper syndrome): every time I wanted to add new content, usually
+after some months with no content, the blog build process was
+broken. I spent more time fixing the blog that adding content to
+it. This made me move to lightweight blogging systems like [[https://jekyllrb.com/][Jekyll]]. But
+it wasn't enough so I decided to embrace minmimalism.
+
+What is the very minimal list of features that I need in a blogging
+framework?:
+
+- Convert from markup languages such as =markdown= or =org-mode= into
+  plain =html=
+- Keep an updated *index* page
+- Automatically create a =rss.xml= file
+- Automatically create an *archive* page and, ideally, another page for
+  each *tag*
+
+Just that. Those are the only things that I really need. And that is
+what [[https://github.com/bastibe/org-static-blog][org-static-blog]] gives me. One single dependency, integrated into
+Emacs, my +OS+ (well... my editor). No =Javascript=, just pure =HTML5= and
+=CSS3=.
+
+
