@@ -1,0 +1,45 @@
+#+title: my public dotfiles
+#+date: <2022-10-07 19:10>
+#+description: 
+#+filetags: linux
+
+Publishing one's *dotfiles* can feel like posting naked pictures. It may
+show things that people wouldn't like to see. But I was finally brave
+to do it (publishing dotfiles, not the other thing). I think it's fair
+to publish them, as I have read many public dotfiles before writing
+mine. Since a few weeks ago you can find my dotfiles [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]]. 🎉
+
+
+* GNU stow
+To keep a repository with all the dotfiles I am using =GNU Stow=. On its
+[[https://www.gnu.org/software/stow/][website]], =GNU Stow= is defined as a *symlink farm manager*. It helps me to
+manage automatically symlinks between =$HOME= (or any other place that
+can contain dotfiles) and my dotfiles repository. I included a
+[[https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/makefile][makefile]] in the repository to automatically create all the needed
+links using this /symlink farm manager/.
+
+* emacs config
+The biggest part in my dotfiles repository is my =Emacs= configuration
+in [[https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d][emacs/.emacs.d]]. I have a modularized =Emacs= configuration, keeping
+=.el= files for things like agenda, theming, keybindings, etc. I try to
+add explanations for everything I add there, so I hope they can be
+useful to you.
+
+* secrets
+There are always private things in your dotfiles that you don't want
+to show.
+
+For instance, in [[https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/ssh/.ssh][ssh configuration]], there are some entries that I want
+to keep secret. The solution was easy, I just need to add a new
+=config.secret= file with those entries. That file will be included in
+my =.gitignore= file and, to ensure I can access those entries, I added
+the following to my main [[https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/ssh/.ssh/config][config file]]:
+
+#+begin_src bash 
+Include config.secret
+#+end_src
+
+All your secret entries will be automatically imported!
+
+I also keep some /gitignored/ =*.secrets.sh*= files that include *APIs keys*
+and similar things.
