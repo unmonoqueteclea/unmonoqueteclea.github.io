@@ -39,12 +39,8 @@
   background-color: #fff;
 }
 
-.post-date {
-  font-weight: bold;
-}
-
 .post-date:before {
-  content: ' 🗓️ ';
+  content: '🗓️ ';
 }
 
 #postamble {
@@ -98,7 +94,7 @@ h1:before, h2:before, h3:before {
 
 .taglist {
   position: relative;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 60px;
   font-size: 15px;
   font-weight: 600;
@@ -188,8 +184,8 @@ p {
 }
 
 h1, h2, h3 {
+    margin: 0px;
     position: relative;
-    margin: 30px 0 0px;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.1;
@@ -197,9 +193,18 @@ h1, h2, h3 {
     text-rendering: optimizeLegibility;
 }
 
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+
 i, em, b, strong {
-    padding-left: .1em;
-    padding-right: .1em;
+  padding-left: .1em;
+  padding-right: .1em;
 }
 b, strong {
     font-weight: bold;
