@@ -103,15 +103,15 @@ h1:before, h2:before, h3:before {
   text-rendering: optimizeLegibility;
 }
 
+figure {
+  margin: 0px;
+}
+
 
 
 
 
 /** https://zngguvnf.org/2017-07-13--blogging-with-org-static-blog.html */
-
-
-
-
 
 #content {
   background: #fff;

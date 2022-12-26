@@ -60,36 +60,36 @@ mine. Since a few weeks ago you can find my dotfiles <a href="https://gitlab.com
 </p>
 
 
-<div id="outline-container-org3112106" class="outline-2">
-<h2 id="org3112106">GNU stow</h2>
-<div class="outline-text-2" id="text-org3112106">
+<div id="outline-container-orgade8c02" class="outline-2">
+<h2 id="orgade8c02">GNU stow</h2>
+<div class="outline-text-2" id="text-orgade8c02">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
-automatically manage symlinks between <code>~/</code> (or any other place that can
-contain dotfiles) and my dotfiles repository. I included a <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/makefile">makefile</a> in
-the repository to automatically create all the needed links using this
-<i>symlink farm manager</i>..
+manage automatically symlinks between <code>$HOME</code> (or any other place that
+can contain dotfiles) and my dotfiles repository. I included a
+<a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/makefile">makefile</a> in the repository to automatically create all the needed
+links using this <i>symlink farm manager</i>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0bc3191" class="outline-2">
-<h2 id="org0bc3191">emacs config</h2>
-<div class="outline-text-2" id="text-org0bc3191">
+<div id="outline-container-org7454318" class="outline-2">
+<h2 id="org7454318">emacs config</h2>
+<div class="outline-text-2" id="text-org7454318">
 <p>
-The bigger part of my dotfiles repository is my <code>Emacs</code> configuration in
-<a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping <code>.el</code>
-files for things like agenda, theming, keybindings, etc. I try to add
-explanations for everything I add there, so I hope they can be useful
-to you.
+The biggest part in my dotfiles repository is my <code>Emacs</code> configuration
+in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
+<code>.el</code> files for things like agenda, theming, keybindings, etc. I try to
+add explanations for everything I add there, so I hope they can be
+useful to you.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0bce8bc" class="outline-2">
-<h2 id="org0bce8bc">secrets</h2>
-<div class="outline-text-2" id="text-org0bce8bc">
+<div id="outline-container-org641d86c" class="outline-2">
+<h2 id="org641d86c">secrets</h2>
+<div class="outline-text-2" id="text-org641d86c">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.
@@ -97,10 +97,10 @@ to show.
 
 <p>
 For instance, in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/ssh/.ssh">ssh configuration</a>, there are some entries that I want
-to keep secret. The solution was easy, I just need to add a file
-called <code>config.secret</code> with those entries. That file will be included in
+to keep secret. The solution was easy, I just need to add a new
+<code>config.secret</code> file with those entries. That file will be included in
 my <code>.gitignore</code> file and, to ensure I can access those entries, I added
-the following to my main <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/ssh/.ssh/config/ssh/config">config file</a>:
+the following to my main <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/ssh/.ssh/config">config file</a>:
 </p>
 
 <div class="org-src-container">

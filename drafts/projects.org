@@ -3,4 +3,15 @@
 #+description: 
 #+filetags: me
 
-* example 1
+I am always building. 
+
+* voilib.com: the search engine for audio content
+[[https://voilib.com][voilib.com]] is the project I am most proud of.
+
+I launched it in December 2022 to allow people to do semantic search
+within podcast transcriptions. 
+
+
+#+CAPTION: Voilib screenshot
+#+ATTR_HTML: :width 700px
+[[file:~/vc/unmonoqueteclea.github.io/static/example-voilib.png]]
