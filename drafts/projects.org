@@ -14,4 +14,4 @@ within podcast transcriptions.
 
 #+CAPTION: Voilib screenshot
 #+ATTR_HTML: :width 700px
-[[file:~/vc/unmonoqueteclea.github.io/static/example-voilib.png]]
+[[https://unmonoqueteclea.github.io/static/example-voilib.png]]
