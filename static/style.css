@@ -105,10 +105,9 @@ h1:before, h2:before, h3:before {
 
 figure {
   margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
-
-
-
 
 
 /** https://zngguvnf.org/2017-07-13--blogging-with-org-static-blog.html */
@@ -199,6 +198,7 @@ h1 {
 
 h2 {
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 
