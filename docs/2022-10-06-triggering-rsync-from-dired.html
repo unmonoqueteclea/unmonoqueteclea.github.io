@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <link rel="alternate"
       type="application/rss+xml"
-      href="https://unmonoqueteclea.github.io/rss.xml"
+      href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
-<title>towards minimalism</title>
+<title>emacs: triggering rsync from dired</title>
 <meta name="author" content="unmonoqueteclea">
 <meta name="referrer" content="no-referrer">
 <link href="static/style.css" rel="stylesheet" type="text/css" />
@@ -42,7 +42,7 @@
     <a href="about.html">about</a> |
     <a href="projects.html">projects</a> |
     <a href="archive.html">archive</a> |
-    <a href="rss.xml">
+    <a href="feed.xml">
       <svg class="menu-icons"><use href="#rss-fill"/></svg>
     </a> |
   </span>
@@ -50,46 +50,53 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<div class="post-date">26 Dec 2022</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-towards-minimalism.html">towards minimalism</a></h1>
+<div class="post-date">06 Oct 2022</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-10-06-triggering-rsync-from-dired.html">emacs: triggering rsync from dired</a></h1>
 <p>
-<b>tldr</b> I moved the blog to an extremely simple static blog generator
-with no dependencies, no <code>Javascript</code> and no magic tricks. Just plain
-<code>HTML</code> and <code>CSS</code>.
+If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
+between different machines using <code>TRAMP</code>. But this approach is not nice
+for large files. <code>TRAMP</code> is very slow for large files and it will block
+<code>Emacs</code> during the file transfer.
 </p>
 
 <p>
-If you have been following this blog for some time you will have
-noticed that I am not very good at keeping a routine of writing new
-blog posts every week (or even every month). There was something that
-created a lot of friction in the writing process (even more than the
-white paper syndrome): every time I wanted to add new content, usually
-after some months with no content, the blog build process was
-broken. I spent more time fixing the blog than adding content to
-it. This made me move to lightweight blogging systems like <a href="https://jekyllrb.com/">Jekyll</a>. But
-it wasn't enough so I decided to embrace minimalism.
+Although <a href="https://github.com/stsquad/dired-rsync">dired-rsync</a> could help with that, I decided to write my own
+solution, as this is a great usecase for the <a href="https://github.com/xenodium/dwim-shell-command">dwim-shell-command</a>
+package I am testing these days.
 </p>
 
 <p>
-What is the very minimal list of features that I need in a blogging
-framework?:
+And it turned out that the solution was as easy as this:
 </p>
 
-<ul class="org-ul">
-<li>Convert from markup languages such as <code>markdown</code> or <code>org-mode</code> into
-plain <code>html</code></li>
-<li>Keep an updated <b>index</b> page</li>
-<li>Automatically create a <code>rss.xml</code> file</li>
-<li>Automatically create an <b>archive</b> page and, ideally, another page for
-each <b>tag</b></li>
-</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #5317ac;">defun</span> <span style="color: #721045;">mono/dwim-rsync</span> (output)
+<span style="color: #2a486a;">"Use rsync to move selected files to OUTPUT."</span>
+(<span style="color: #5317ac;">interactive</span> <span style="color: #2544bb;">"D"</span>)
+(dwim-shell-command-on-marked-files
+ (format <span style="color: #2544bb;">"Moving selected files to %s"</span> output)
+ <span style="color: #505050;">;; </span><span style="color: #505050;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
+ <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
+ <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
+ <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
+ (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #813e00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
+       (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
+   (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
+ <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
+</pre>
+</div>
 
 <p>
-Just that. Those are the only things that I need. And that is what
-<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a> gives me. One single dependency, integrated into
-<code>Emacs</code>, my OS (well&#x2026; my code editor). No <code>Javascript</code>, just pure <code>HTML</code>
-and <code>CSS</code>.
+It could have been a one-liner but I had to add some additional logic
+to transform <code>TRAMP</code> paths into valid <code>rsync</code> ones.
 </p>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-blogging.html">blogging</a> </div></div>
+
+<p>
+Now, I just need to select some files in <code>dired</code> and run
+<code>mono/dwim-rsync</code>. This will let me specify in the minibuffer any path I
+want (local or remote, using <code>ssh</code>), and <code>rsync</code> will be used to copy the
+files. Bye, <code>filezilla</code>!
+</p>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status"><center>
   <div class="footer-networks">
     <ul>
