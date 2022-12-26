@@ -6,7 +6,7 @@
       type="application/rss+xml"
       href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
-<title>@unmonoqueteclea</title>
+<title>my public dotfiles</title>
 <meta name="author" content="unmonoqueteclea">
 <meta name="referrer" content="no-referrer">
 <link href="static/style.css" rel="stylesheet" type="text/css" />
@@ -50,17 +50,79 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<h1>unmonoqueteclea's last posts</h1>
-<h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html">my public dotfiles</a></h2><div class="post-date">26 Dec 2022</div><p>
+<div class="post-date">26 Dec 2022</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html">my public dotfiles</a></h1>
+<p>
 <b>tldr</b> My dotfiles are now public <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a> 🎉
-</p>(...)<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-linux.html">linux</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div><h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-towards-minimalism.html">towards minimalism</a></h2><div class="post-date">26 Dec 2022</div><p>
-<b>tldr</b> I moved the blog to an extremely simple static blog generator
-with no dependencies, no <code>Javascript</code> and no magic tricks. Just plain
-<code>HTML</code> and <code>CSS</code>.
-</p>(...)<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-blogging.html">blogging</a> </div><div id="archive">
-<a href="https://unmonoqueteclea.github.io/archive.html">Other posts</a>
+</p>
+
+<p>
+Publishing one's <b>dotfiles</b> can feel like posting naked pictures. It may
+show things that people wouldn't like to see. But I was finally brave
+to do it (publishing dotfiles). I think it's fair to publish them, as
+I have read many public dotfile repositories before writing mine. You
+can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a>.
+</p>
+
+
+<div id="outline-container-orga3a7fd1" class="outline-2">
+<h2 id="orga3a7fd1">GNU stow</h2>
+<div class="outline-text-2" id="text-orga3a7fd1">
+<p>
+To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
+<a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
+manage automatically symlinks between <code>$HOME</code> (or any other place that
+can contain dotfiles) and my dotfiles repository. I included a
+<a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/makefile">makefile</a> in the repository to automatically create all the needed
+links using this tool.
+</p>
 </div>
 </div>
+
+<div id="outline-container-orga2429f2" class="outline-2">
+<h2 id="orga2429f2">emacs config</h2>
+<div class="outline-text-2" id="text-orga2429f2">
+<p>
+The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
+in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
+<code>.el</code> files for things like agenda, theming, keybindings, etc. I try to
+add explanations for everything I add there, so I hope they can be
+useful to you.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a1cf6e" class="outline-2">
+<h2 id="org0a1cf6e">secrets</h2>
+<div class="outline-text-2" id="text-org0a1cf6e">
+<p>
+There are always private things in your dotfiles that you don't want
+to show.
+</p>
+
+<p>
+For instance, in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/ssh/.ssh">ssh configuration</a>, there are some entries that I want
+to keep secret. The solution was easy, I just need to add a new
+<code>config.secret</code> file with those entries. That file will be included in
+my <code>.gitignore</code> file and, to ensure I can access those entries, I added
+the following to my main <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/ssh/.ssh/config">config file</a>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Include config.secret
+</pre>
+</div>
+
+<p>
+All your secret entries will be automatically imported!
+</p>
+
+<p>
+I also keep some <i>gitignored</i> <code>*.secrets.sh*</code> files that include <b>APIs keys</b>
+and similar things.
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-linux.html">linux</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status"><center>
   <div class="footer-networks">
     <ul>

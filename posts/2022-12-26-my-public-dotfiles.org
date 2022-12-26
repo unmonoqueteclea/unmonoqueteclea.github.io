@@ -1,13 +1,15 @@
 #+title: my public dotfiles
-#+date: <2022-10-07 19:10>
+#+date: <2022-12-26 20:20>
 #+description: 
-#+filetags: linux
+#+filetags: linux emacs
+
+*tldr* My dotfiles are now public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]] 🎉
 
 Publishing one's *dotfiles* can feel like posting naked pictures. It may
 show things that people wouldn't like to see. But I was finally brave
-to do it (publishing dotfiles, not the other thing). I think it's fair
-to publish them, as I have read many public dotfiles before writing
-mine. Since a few weeks ago you can find my dotfiles [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]]. 🎉
+to do it (publishing dotfiles). I think it's fair to publish them, as
+I have read many public dotfile repositories before writing mine. You
+can find my dotfiles [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].
 
 
 * GNU stow
@@ -16,10 +18,10 @@ To keep a repository with all the dotfiles I am using =GNU Stow=. On its
 manage automatically symlinks between =$HOME= (or any other place that
 can contain dotfiles) and my dotfiles repository. I included a
 [[https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/makefile][makefile]] in the repository to automatically create all the needed
-links using this /symlink farm manager/.
+links using this tool.
 
 * emacs config
-The biggest part in my dotfiles repository is my =Emacs= configuration
+The biggest part of my dotfiles repository is my =Emacs= configuration
 in [[https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d][emacs/.emacs.d]]. I have a modularized =Emacs= configuration, keeping
 =.el= files for things like agenda, theming, keybindings, etc. I try to
 add explanations for everything I add there, so I hope they can be
