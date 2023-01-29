@@ -52,7 +52,8 @@
     display:block;
   }
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+
+@media (max-width: 1200px) {
   .preamble-sep {
     width: 70%;
   }
