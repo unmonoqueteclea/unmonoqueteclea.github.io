@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>
-			<![CDATA[@unmonoqueteclea - emacs]]>
-		</title>
-		<description>
-			<![CDATA[@unmonoqueteclea - emacs]]>
-		</description>
-		<link>https://unmonoqueteclea.github.io/tag-emacs.html</link>
-		<lastBuildDate>Mon, 26 Dec 2022 21:00:50 +0100</lastBuildDate>
-		<item>
-			<title>
-				<![CDATA[my public dotfiles]]>
-			</title>
-			<description>
-				<![CDATA[
+<channel>
+<title><![CDATA[@unmonoqueteclea - emacs]]></title>
+<description><![CDATA[@unmonoqueteclea - emacs]]></description>
+<link>https://unmonoqueteclea.github.io/tag-emacs.html</link>
+<lastBuildDate>Sun, 29 Jan 2023 11:06:56 +0100</lastBuildDate>
+<item>
+  <title><![CDATA[my public dotfiles]]></title>
+  <description><![CDATA[
 <p>
 <b>tldr</b> My dotfiles are now public <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a> 🎉
 </p>
@@ -86,17 +79,12 @@ and similar things.
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-linux.html">linux</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div>]]>
-			</description>
-			<category>
-				<![CDATA[linux]]>
-			</category>
-			<category>
-				<![CDATA[emacs]]>
-			</category>
-			<link>https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html</link>
-			<guid>https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html</guid>
-			<pubDate>Mon, 26 Dec 2022 20:20:00 +0100</pubDate>
-		</item>
-	</channel>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-linux.html">linux</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div>]]></description>
+  <category><![CDATA[linux]]></category>
+  <category><![CDATA[emacs]]></category>
+  <link>https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html</link>
+  <guid>https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html</guid>
+  <pubDate>Mon, 26 Dec 2022 20:20:00 +0100</pubDate>
+</item>
+</channel>
 </rss>
