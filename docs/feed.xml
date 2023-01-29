@@ -4,7 +4,61 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Sun, 29 Jan 2023 13:14:10 +0100</lastBuildDate>
+<lastBuildDate>Sun, 29 Jan 2023 20:39:58 +0100</lastBuildDate>
+<item>
+  <title><![CDATA[emacs: triggering rsync from dired]]></title>
+  <description><![CDATA[
+<p>
+If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
+between different machines using <code>TRAMP</code>. But this approach is not nice
+for large files. <code>TRAMP</code> is very slow for large files and it will block
+<code>Emacs</code> during the file transfer.
+</p>
+
+<p>
+Although <a href="https://github.com/stsquad/dired-rsync">dired-rsync</a> could help with that, I decided to write my own
+solution, as this is a great usecase for the <a href="https://github.com/xenodium/dwim-shell-command">dwim-shell-command</a>
+package I am testing these days.
+</p>
+
+<p>
+And it turned out that the solution was as easy as this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #5317ac;">defun</span> <span style="color: #721045;">mono/dwim-rsync</span> (output)
+  <span style="color: #2a486a;">"Use rsync to move selected files to OUTPUT."</span>
+  (<span style="color: #5317ac;">interactive</span> <span style="color: #2544bb;">"D"</span>)
+  (dwim-shell-command-on-marked-files
+   (format <span style="color: #2544bb;">"Moving selected files to %s"</span> output)
+   <span style="color: #505050;">;; </span><span style="color: #505050;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
+   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #702f00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
+         (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
+     (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
+   <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
+</pre>
+</div>
+
+<p>
+It could have been a one-liner but I had to add some additional logic
+to transform <code>TRAMP</code> paths into valid <code>rsync</code> ones.
+</p>
+
+<p>
+Now, I just need to select some files in <code>dired</code> and run
+<code>mono/dwim-rsync</code>. This will let me specify in the minibuffer any path I
+want (local or remote, using <code>ssh</code>), and <code>rsync</code> will be used to copy the
+files. Bye, <code>filezilla</code>!
+</p>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div>]]></description>
+  <category><![CDATA[emacs]]></category>
+  <link>https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html</link>
+  <guid>https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html</guid>
+  <pubDate>Sun, 29 Jan 2023 19:27:00 +0100</pubDate>
+</item>
 <item>
   <title><![CDATA[my public dotfiles]]></title>
   <description><![CDATA[
@@ -21,9 +75,9 @@ can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gi
 </p>
 
 
-<div id="outline-container-orga3a7fd1" class="outline-2">
-<h2 id="orga3a7fd1">GNU stow</h2>
-<div class="outline-text-2" id="text-orga3a7fd1">
+<div id="outline-container-org3b6954e" class="outline-2">
+<h2 id="org3b6954e">GNU stow</h2>
+<div class="outline-text-2" id="text-org3b6954e">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
@@ -35,9 +89,9 @@ links using this tool.
 </div>
 </div>
 
-<div id="outline-container-orga2429f2" class="outline-2">
-<h2 id="orga2429f2">emacs config</h2>
-<div class="outline-text-2" id="text-orga2429f2">
+<div id="outline-container-orgaa8714b" class="outline-2">
+<h2 id="orgaa8714b">emacs config</h2>
+<div class="outline-text-2" id="text-orgaa8714b">
 <p>
 The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
 in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
@@ -48,9 +102,9 @@ useful to you.
 </div>
 </div>
 
-<div id="outline-container-org0a1cf6e" class="outline-2">
-<h2 id="org0a1cf6e">secrets</h2>
-<div class="outline-text-2" id="text-org0a1cf6e">
+<div id="outline-container-org27ed7bd" class="outline-2">
+<h2 id="org27ed7bd">secrets</h2>
+<div class="outline-text-2" id="text-org27ed7bd">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.

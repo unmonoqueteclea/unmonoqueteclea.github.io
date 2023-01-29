@@ -3,19 +3,16 @@
 #+description:
 #+filetags: projects
 
-I am always building.
-
-* 🔈 voilib.com: the search engine for audio content
-[[https://voilib.com][voilib.com]] is the project I am most proud of.
-
-I launched it in December 2022 to allow people to do semantic search
-within podcast transcriptions.
-
-
-#+CAPTION: Voilib screenshot
-#+ATTR_HTML: :width 700px
-[[https://unmonoqueteclea.github.io/static/example-voilib.png]]
 
 * ⚙ my public dotfiles and emacs configuration
 My =dotfiles= and my =emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
 try to keep them updated. Some information in this [[https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html][post]].
+
+
+* 🔈voilib.com: the search engine for audio content
+I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic search
+within podcast transcriptions.
+
+#+CAPTION: Voilib screenshot
+#+ATTR_HTML: :width 91%
+[[https://unmonoqueteclea.github.io/static/example-voilib.png]]

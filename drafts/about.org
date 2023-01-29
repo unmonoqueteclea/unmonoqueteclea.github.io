@@ -1,6 +1,6 @@
 #+title: about
 #+date: <2022-12-26 19:01>
-#+description: 
+#+description:
 #+filetags: me
 
 🐒 Why =unmonoqueteclea?= It means *typing monkey* (in Spanish).
@@ -15,8 +15,7 @@ and code public (some of my favorites are  [[https://stallman.org][RMS]], [[http
 My CV says I have a =MSc Degree in Telecommunications Engineering=. For
 the last few years, I have been working with data, trying to
 *democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]]. I consider myself an
-=end-to-end programmer=, the kind of programmer that (without being an
-expert in =front-end=, =back-end= or =dev ops=) can build a working
+=end-to-end programmer=, the kind of programmer that can build a working
 prototype of a product in a few nights.
 
 * contact

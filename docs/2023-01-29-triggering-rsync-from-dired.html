@@ -6,7 +6,7 @@
       type="application/rss+xml"
       href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
-<title>@unmonoqueteclea</title>
+<title>emacs: triggering rsync from dired</title>
 <meta name="author" content="unmonoqueteclea">
 <meta name="referrer" content="no-referrer">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -50,14 +50,53 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<h1 class="title">Posts tagged "blogging":</h1><h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-towards-minimalism.html">towards minimalism</a></h2><div class="post-date">26 Dec 2022</div><p>
-<b>tldr</b> I moved the blog to an extremely simple static blog generator
-with no dependencies, no <code>Javascript</code> and no magic tricks. Just plain
-<code>HTML</code> and <code>CSS</code>.
-</p>(...)<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-blogging.html">blogging</a> </div><div id="archive">
-<a href="https://unmonoqueteclea.github.io/archive.html">Other posts</a>
+<div class="post-date">29 Jan 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html">emacs: triggering rsync from dired</a></h1>
+<p>
+If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
+between different machines using <code>TRAMP</code>. But this approach is not nice
+for large files. <code>TRAMP</code> is very slow for large files and it will block
+<code>Emacs</code> during the file transfer.
+</p>
+
+<p>
+Although <a href="https://github.com/stsquad/dired-rsync">dired-rsync</a> could help with that, I decided to write my own
+solution, as this is a great usecase for the <a href="https://github.com/xenodium/dwim-shell-command">dwim-shell-command</a>
+package I am testing these days.
+</p>
+
+<p>
+And it turned out that the solution was as easy as this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #5317ac;">defun</span> <span style="color: #721045;">mono/dwim-rsync</span> (output)
+  <span style="color: #2a486a;">"Use rsync to move selected files to OUTPUT."</span>
+  (<span style="color: #5317ac;">interactive</span> <span style="color: #2544bb;">"D"</span>)
+  (dwim-shell-command-on-marked-files
+   (format <span style="color: #2544bb;">"Moving selected files to %s"</span> output)
+   <span style="color: #505050;">;; </span><span style="color: #505050;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
+   <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
+   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #702f00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
+         (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
+     (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
+   <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
+</pre>
 </div>
-</div>
+
+<p>
+It could have been a one-liner but I had to add some additional logic
+to transform <code>TRAMP</code> paths into valid <code>rsync</code> ones.
+</p>
+
+<p>
+Now, I just need to select some files in <code>dired</code> and run
+<code>mono/dwim-rsync</code>. This will let me specify in the minibuffer any path I
+want (local or remote, using <code>ssh</code>), and <code>rsync</code> will be used to copy the
+files. Bye, <code>filezilla</code>!
+</p>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status"><center>
   <div class="footer-networks">
     <ul>

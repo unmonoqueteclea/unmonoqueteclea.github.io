@@ -119,14 +119,22 @@ h1:before, h2:before, h3:before {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.1;
-  color: #888
+  color: #888;
   text-rendering: optimizeLegibility;
 }
 
-figure {
-  margin: 0px;
-  margin-top: 20px;
-  margin-bottom: 25px;
+
+/* footer small-medium screens */
+@media (max-width: 700px) {
+  .social-name {
+    display: none;
+  }
+  .copyright-name {
+    display: block;
+  }
+  .copyright-rights {
+    display: block;
+  }
 }
 
 
@@ -492,28 +500,6 @@ table th.right, table td.right {
     display: inline;
 }
 
-/* Responsive
-   -------------------------------------------------- */
-
-//@media (min-width: 768px) {
- //   /* Increase body padding and font-sizes */
- //   body {
- //       padding: 40px;
- //       font-size: 18px;
- //       line-height: 1.75;
- //   }
- //   h1:before, h2:before, h3:before {
- ///       display: inline;
- //   }
-//}
-
-//@media (min-width: 1024px) {
-///    body {
-//        padding: 40px;
-//    }
-//}
-
-
 /* Define org todo faces */
 .PROJECT {
    color: red;
@@ -630,4 +616,26 @@ ol.linenums {
 
 ol.linenums li {
   line-height: 18px;
-  padding-left: 12px; }
+  padding-left: 12px;
+}
+
+.outline-2 {
+  margin-bottom: 70px;
+
+}
+
+figure {
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+figcaption {
+  margin-top: 8px;
+  margin-left: 4px;
+  text-align: center;
+}
+
+.figure-number {
+  display: none;
+}
