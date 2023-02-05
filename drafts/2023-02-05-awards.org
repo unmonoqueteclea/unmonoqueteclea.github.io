@@ -1,0 +1,72 @@
+#+title: awards
+#+date: <2023-02-05 10:22>
+#+description:
+#+filetags: me
+
+* 👨‍🎓 Award for Excellence in Academic Performance
+Awarded by [[https://www.coit.es/][COIT]] to the person with the highest score in each promotion.
+
++  📅 2017-09-30
++  🏫 [[https://www.ua.es/][Universidad De Alicante]],  [[https://www.coit.es/][COIT]]
+
+* 🕊 Think Big Award - Hack4Good Alicante 2017 (💻 Hackathon)
+ We built *Free Human Project*, a social networks analysis tool to
+detect =hate speech=.
+
+-  📅 2017-03-31
+-  🏢 [[https://www.telefonica.com/es/][Telefónica]]
+
+
+- 📷 [[./static/fhp.png][Hard working!]]
+- 📹 [[https://youtu.be/lmXf2ZGreXA][Free Human Project presentation]]
+
+* 🐻 First Prize - Hack4Good Alicante 2016 (💻 Hackathon)
+We built *Internet of Bears* A cute teddy bear with some sensors that
+allowed parents to monitor many variables from their baby's bedroom.
+
+- 📅 2016-02-38
+- 🏢 [[https://eps.ua.es/catedratelefonica][Cátedra Telefónica Universidad de Alicante]]
+
+
+- 📹  [[https://www.youtube.com/watch?v=6ClnqdjFqRU][Internet Of Bears presentation]]
+- 📷 [[./static/iob.jpg][The team]]
+- 📷 [[./static/iob2.jpg][The main team member! 🐻]]
+
+* 📱 First Prize - First Apps Competition from Universidad de Alicante
+I built *gradUAte*, an app to help new students choosing the right
+degree with the help of =Open Data= from the University of Alicante.
+
++ 📅 2015-04-30
++ 🏫 [[https://www.ua.es/][Universidad De Alicante]]
+
+
++ 📱 [[./static/gradUAte.png][Some screenshots]]
++ 📰 [[http://www.diarioinformacion.com/alicante/2015/04/29/aplicacion-movil-carreras-imparte-ua/1626692.html][In the news]] | [[https://www.laverdad.es/alicante/ciudad-alicante/201504/30/sobre-gana-concurso-aplicaciones-20150430021358-v.html][more news]] | [[http://www.lasprovincias.es/ua-universidadaldia/201504/30/sobre-gana-concurso-aplicaciones-20150430021358.html][more news!]]
+
+* 🏦 Most Innovator Project - Instant Banking Hack Day (💻 Hackathon)
+We build *Social Pay,* an app to split payments in groups and send money
+to friends.
+
+
+- 📅 2015-02-28
+- 🏢 [[https://www.bancsabadell.com/][Banc Sabadell]]
+
+
+- 📹 [[http://www.youtube.com/watch?v=pEThS-P9Uls][Social Pay presentation]]
+
+* 🧠 Accessit - Open Data App Ideas Competition
+I designed *ComienzaUA*, an app to help new students choosing the right
+degree with the help of =Open Data= from the University of Alicante.
+
++ 📅 2014-11-30
++ 🏫 [[https://www.ua.es/][Universidad De Alicante]]
+
+* 🧺 Second Place -  Frist Mobile App Competition from Embarcadero
+
+- 📅 2014-04-30
+- 🏢 [[https://www.embarcadero.com][Embarcadero Technologies]]
+
+* 📱 Finalist - Firefox OS App Challenge
+
++ 📅 2013-10-31
++ 🏢 [[https://www.fundaciontelefonica.com/][Fundación telefónica]]
