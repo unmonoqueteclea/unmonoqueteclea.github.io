@@ -1,7 +1,7 @@
-#+title: Do you still ssh into remote machines just to check Docker logs?
-#+date: <2023-02-18 21:46>
+#+title: Learning about Docker Contexts
+#+date: <2023-02-18 21:54>
 #+description:
-#+filetags: docker
+#+filetags: Docker
 
 A single, local, *Docker CLI* is the only thing you need to manage
 multiple Docker nodes. Let me show you a little example.
@@ -16,7 +16,7 @@ I created a new context just by doing:
 =docker context create voilib --docker "host=ssh://voilib"=
 
 Now, every time I need to run any Docker command in the *voilib* machine
-I do:
+I just do:
 
 =docker context use voilib=.
 

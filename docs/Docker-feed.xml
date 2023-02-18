@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title><![CDATA[@unmonoqueteclea - docker]]></title>
-<description><![CDATA[@unmonoqueteclea - docker]]></description>
+<title><![CDATA[@unmonoqueteclea - Docker]]></title>
+<description><![CDATA[@unmonoqueteclea - Docker]]></description>
 <link>https://unmonoqueteclea.github.io/tag-docker.html</link>
-<lastBuildDate>Sat, 18 Feb 2023 21:52:08 +0100</lastBuildDate>
+<lastBuildDate>Sat, 18 Feb 2023 21:55:03 +0100</lastBuildDate>
 <item>
-  <title><![CDATA[Do you still ssh into remote machines just to check Docker logs?]]></title>
+  <title><![CDATA[Learning about Docker Contexts]]></title>
   <description><![CDATA[
 <p>
 A single, local, <b>Docker CLI</b> is the only thing you need to manage
@@ -30,7 +30,7 @@ I created a new context just by doing:
 
 <p>
 Now, every time I need to run any Docker command in the <b>voilib</b> machine
-I do:
+I just do:
 </p>
 
 <p>
@@ -53,11 +53,11 @@ I even opened a new <a href="https://github.com/Silex/docker.el/pull/213">PR</a>
 contexts and change the active one from <code>Emacs</code>. How I wish I had
 discovered it before!
 </p>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-docker.html">docker</a> </div>]]></description>
-  <category><![CDATA[docker]]></category>
-  <link>https://unmonoqueteclea.github.io/2023-02-18-do-you-still-ssh-into-remote-machines-just-to-check-docker-logs?.html</link>
-  <guid>https://unmonoqueteclea.github.io/2023-02-18-do-you-still-ssh-into-remote-machines-just-to-check-docker-logs?.html</guid>
-  <pubDate>Sat, 18 Feb 2023 21:46:00 +0100</pubDate>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-docker.html">Docker</a> </div>]]></description>
+  <category><![CDATA[Docker]]></category>
+  <link>https://unmonoqueteclea.github.io/2023-02-18-learning-about-docker-contexts.html</link>
+  <guid>https://unmonoqueteclea.github.io/2023-02-18-learning-about-docker-contexts.html</guid>
+  <pubDate>Sat, 18 Feb 2023 21:54:00 +0100</pubDate>
 </item>
 </channel>
 </rss>
