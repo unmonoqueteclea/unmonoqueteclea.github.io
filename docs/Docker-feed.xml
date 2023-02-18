@@ -4,13 +4,13 @@
 <title><![CDATA[@unmonoqueteclea - Docker]]></title>
 <description><![CDATA[@unmonoqueteclea - Docker]]></description>
 <link>https://unmonoqueteclea.github.io/tag-docker.html</link>
-<lastBuildDate>Sat, 18 Feb 2023 21:55:03 +0100</lastBuildDate>
+<lastBuildDate>Sat, 18 Feb 2023 21:59:57 +0100</lastBuildDate>
 <item>
   <title><![CDATA[Learning about Docker Contexts]]></title>
   <description><![CDATA[
 <p>
-A single, local, <b>Docker CLI</b> is the only thing you need to manage
-multiple Docker nodes. Let me show you a little example.
+A single <b>Docker CLI</b> to rule them all!  Let me show you a little
+example of how I manage different Docker nodes.
 </p>
 
 <p>
