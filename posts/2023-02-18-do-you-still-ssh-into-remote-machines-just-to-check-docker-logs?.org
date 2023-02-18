@@ -1,0 +1,32 @@
+#+title: Do you still ssh into remote machines just to check Docker logs?
+#+date: <2023-02-18 21:46>
+#+description:
+#+filetags: docker
+
+A single, local, *Docker CLI* is the only thing you need to manage
+multiple Docker nodes. Let me show you a little example.
+
+My audio search engine, [[https://voilib.com][voilib.com]], is running on a remote machine,
+configured in my =.ssh/config= file with the name *voilib*. I used to do
+=ssh voilib= to open a new *SSH session* to execute commands such as
+=docker stats= or =docker logs=. But then I discovered [[https://docs.docker.com/engine/context/working-with-contexts/][Docker Contexts]].
+
+I created a new context just by doing:
+
+=docker context create voilib --docker "host=ssh://voilib"=
+
+Now, every time I need to run any Docker command in the *voilib* machine
+I do:
+
+=docker context use voilib=.
+
+From that moment, all the Docker commands such as =docker exec=, =docker
+logs= or =docker stats= will be running inside the remote server!  When I
+want to return to my local environment I do:
+
+=docker context use default=
+
+
+I even opened a new [[https://github.com/Silex/docker.el/pull/213][PR]] in [[https://github.com/Silex/docker.el][docker.el]] so that I can check available
+contexts and change the active one from =Emacs=. How I wish I had
+discovered it before!
