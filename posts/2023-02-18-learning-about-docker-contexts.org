@@ -1,4 +1,4 @@
-#+title: Learning about Docker Contexts
+#+title: learning about Docker Contexts
 #+date: <2023-02-18 21:54>
 #+description:
 #+filetags: Docker
