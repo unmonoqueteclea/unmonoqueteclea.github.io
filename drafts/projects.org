@@ -20,5 +20,5 @@ episodes. Every day, [[https://voilib.com][Voilib]] automatically collects, tran
 index new episodes from a [[https://voilib.com/content][list of podcasts]].
 
 #+CAPTION: Searching content in voilib.com
-#+ATTR_HTML: :width 91%
+#+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
