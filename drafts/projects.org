@@ -1,5 +1,5 @@
 #+title: projects
-#+date: <2022-10-07 19:08>
+#+date: <2023-05-31 10:00>
 #+description:
 #+filetags: projects
 
@@ -13,6 +13,12 @@ try to keep them updated. Some information in this [[https://unmonoqueteclea.git
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic search
 within podcast transcriptions.
 
-#+CAPTION: Voilib screenshot
+[[https://voilib.com][Voilib]] offers semantic search in thousands of minutes of high-quality
+transcriptions of podcasts. Just type your query in English 🇺🇸 or
+Spanish 🇪🇸 and it will find related content in thousands of
+episodes. Every day, [[https://voilib.com][Voilib]] automatically collects, transcribe and
+index new episodes from a [[https://voilib.com/content][list of podcasts]].
+
+#+CAPTION: Searching content in voilib.com
 #+ATTR_HTML: :width 91%
-[[https://unmonoqueteclea.github.io/static/example-voilib.png]]
+[[https://unmonoqueteclea.github.io/static/voilib.gif]]
