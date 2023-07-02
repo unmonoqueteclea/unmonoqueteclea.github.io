@@ -6,7 +6,7 @@
 Today, I decided to *open-source* [[https://voilib.com][Voilib]] 🎉, the podcast search engine I
 launched in December 2022. You can now *run your own instance* of it and
 transcribe and index your favorite podcasts (or even your own
-content!).
+content!).You can find it on [[https://github.com/unmonoqueteclea/voilib][Github]] or [[https://gitlab.com/unmonoqueteclea/voilib][Gitlab]].
 
 Appearing in [[https://news.ycombinator.com/item?id=34115618][Show
 HN]] was a big boost for the project. That post was the main source of
