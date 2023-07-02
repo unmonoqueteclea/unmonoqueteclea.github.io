@@ -27,7 +27,7 @@ people maintaining their own instances.
 
 In the following weeks (well... maybe months), I will publish some
 blog posts explaining how the system works. I consider this is the
-kind of content I would have love to find some months ago where many
+kind of content I would have loved to find some months ago when many
 people suddenly became =prompt engineers=, but not so many people really
 understood how to build actual LLM-based products beyond the chat
 interface.
