@@ -18,7 +18,7 @@ the last few years, I have been working with data, trying to
 =end-to-end programmer=, the kind of programmer that can build a working
 prototype of a product in a few nights.
 
-You can also check my [[./static/cv.pdf][👨‍💻 CV]] and my [[./awards.html][🏆 awards]].
+You can also check my 👨‍💻 [[./static/cv.pdf][CV]] and my 🏆 [[./awards.html][awards]].
 
 * contact
 Feel free to contact me at =unmonoqueteclea@gmail.com= or at any of the

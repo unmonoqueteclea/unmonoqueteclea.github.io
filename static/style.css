@@ -84,20 +84,16 @@
   width: 15px;
 }
 
-h1:before {
-  content: "*";
-  margin-left: -1.25em;
-}
 h2:before {
-  content: "**";
+  content: "*";
   margin-left: 0em;
 }
 h3:before {
-  content: "***";
+  content: "**";
   margin-left: 0.75em;
 }
 h4:before {
-  content: "****";
+  content: "***";
   margin-left: 1.25em;
 }
 
@@ -108,8 +104,12 @@ h1:before, h2:before, h3:before {
   display: inline;
 }
 
+#archive {
+  font-size: 15px;
+}
+
 .taglist:before {
-  content: ' 🏷 ';
+  content: ' 🏷️ ';
 }
 
 .taglist {
@@ -243,11 +243,11 @@ ul, ol {
     margin: 0 0 20px;
 }
 code {
-    color: #d14;
+    color: #d66;
 }
 code:before, code:after {
-    content: "=";
-    color: #ccc;
+    content: "~";
+    color: #ddd;
 }
 
 pre {
@@ -290,7 +290,7 @@ sup a:before {
 sup a:after {
     content: "]";
 }
-a:hover {
+p > a {
     text-decoration: underline;
 }
 table {
@@ -308,7 +308,8 @@ table th.left, table td.left {
 table th.right, table td.right {
     text-align: right;
 }
-/******************************************************/
+
+
 /* body */
 .container {
     margin: 0 auto;

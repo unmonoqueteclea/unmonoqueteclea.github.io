@@ -1,0 +1,33 @@
+#+title: voilib is now open source
+#+date: <2023-07-02 12:32>
+#+description:
+#+filetags: projects
+
+Today, I decided to *open-source* [[https://voilib.com][Voilib]] 🎉, the podcast search engine I
+launched in December 2022. You can now *run your own instance* of it and
+transcribe and index your favorite podcasts (or even your own
+content!).
+
+Appearing in [[https://news.ycombinator.com/item?id=34115618][Show
+HN]] was a big boost for the project. That post was the main source of
+traffic during the first days of life of [[https://voilib.com][Voilib]]. I am thrilled to see
+that many of those initial users still use it today to discover
+relevant podcast episodes on topics they are interested in. Throughout
+these months, I have received valuable feedback and kind words from
+some of them.
+
+#+CAPTION: Feedback from a Voilib user
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/feedback-voilib.png]]
+
+Since I am not offering =Voilib PRO= any more (I may talk about this in
+the future) the only funding for this project, to at least cover
+server expenses, will come from [[https://ko-fi.com/unmonoqueteclea][donations]] and [[https://ko-fi.com/unmonoqueteclea/commissions][customized assistance]] to
+people maintaining their own instances.
+
+In the following weeks (well... maybe months), I will publish some
+blog posts explaining how the system works. I consider this is the
+kind of content I would have love to find some months ago where many
+people suddenly became =prompt engineers=, but not so many people really
+understood how to build actual LLM-based products beyond the chat
+interface.
