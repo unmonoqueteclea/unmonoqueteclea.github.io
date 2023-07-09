@@ -3,12 +3,6 @@
 #+description:
 #+filetags: projects
 
-
-* ⚙ my public dotfiles and emacs configuration
-My =dotfiles= and my =emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
-try to keep them updated. Some information in this [[https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html][post]].
-
-
 * 🔈voilib.com: the open source search engine for audio content
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
 search within podcast transcriptions. Some months later, in July 2023,
@@ -23,3 +17,26 @@ index new episodes from a [[https://voilib.com/content][list of podcasts]].
 #+CAPTION: Searching content in voilib.com
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
+
+
+
+* 👁️ retis: Diabetic Retinopathy and DMAE detection
+
+=retis= is a latin word and means *network*. This is because the retina is
+a big network of blood vessels.
+
+Retis is a tool to detect *Diabetic Retinopathy (DR)* and *Age-Related
+Macular Degeneration (DMAE)* in eye fundus images using *Convolutional
+Neural Networks* and *Activation Maps*. Try it [[https://unmonoqueteclea.github.io/retis/][here]]
+
+This project is my final *Master's Degree Thesis* in [[https://www.upv.es/en][Polytechnical
+University of Valencia]]. You can download the thesis (in Spanish)
+[[https://github.com/unmonoqueteclea/retis/raw/master/thesis.pdf][here]].
+
+#+CAPTION: Detecting DR and DMAE with Retis
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/retis.gif]]
+
+* ⚙ my public dotfiles and emacs configuration
+My =dotfiles= and my =emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
+try to keep them updated. Some information in this [[https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html][post]].
