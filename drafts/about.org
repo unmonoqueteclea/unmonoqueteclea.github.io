@@ -13,10 +13,11 @@ and code public (some of my favorites are  [[https://stallman.org][RMS]], [[http
 
 * work
 My CV says I have a =MSc Degree in Telecommunications Engineering=. For
-the last few years, I have been working with data, trying to
-*democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]]. I consider myself an
-=end-to-end programmer=, the kind of programmer that can build a working
-prototype of a product in a few nights.
+the last few years, I have been working as a =Full-Stack Engineer=, trying to
+*democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
+
+I consider myself an =end-to-end programmer=, the kind of programmer
+that can build a working prototype of a product in a few nights.
 
 You can also check my 👨‍💻 [[./static/cv.pdf][CV]] and my 🏆 [[./awards.html][awards]].
 
