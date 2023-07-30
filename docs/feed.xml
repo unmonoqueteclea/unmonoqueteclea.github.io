@@ -4,7 +4,161 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Thu, 20 Jul 2023 12:48:47 +0200</lastBuildDate>
+<lastBuildDate>Sun, 30 Jul 2023 21:25:07 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[Large Language Models (LLMs) as noise generators]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-orgcf342d4" class="outline-2">
+<h2 id="orgcf342d4">introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-orgcf342d4">
+<p>
+Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
+with 10 years of experience. Currently, Jane is exploring various job
+opportunities and has come across a few enticing offers that demand a
+cover letter as part of the application process.
+</p>
+
+<p>
+In light of this circumstance, Jane has turned to <a href="https://chat.openai.com/">ChatGPT</a>, <b>seeking
+assistance in crafting a compelling cover letter</b> tailored specifically
+for a <b>healthcare startup</b>. The following <b>prompt</b> outlines the necessary
+details for the task at hand.
+</p>
+
+<blockquote>
+<p>
+Imagine you are a Software Engineer with 10 years of experience that wants to apply for a Full-Stack Engineer position in a healthcare startup. Write a short cover letter with the following information:
+</p>
+
+<ul class="org-ul">
+<li>I have more than 10 years of experience as a Software Engineer in multiple companies.</li>
+<li>In one company, I led the migration from AWS to on-premises reducing infrastructure costs $400,000 a year.</li>
+<li>I have experience working with sensitive healthcare data. I led a team of 50 Software Engineers that built a Hospital Management System currently being used in 10+ hospitals in the US.</li>
+<li>I wrote a meditation app for iOS and Android with +5000 monthly  active users.</li>
+</ul>
+</blockquote>
+
+<p>
+You can find <a href="https://chat.openai.com/share/ee97f127-2a30-4613-8de2-8485cbb66135">here ChatGPT's response</a> (or just click <code>Details</code>
+below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, produces an awesome 300+ words
+cover letter including all the points asked by Jane.
+</p>
+
+<details id="orgf53b126">
+<blockquote>
+<p>
+Dear [Recipient's Name],
+</p>
+
+<p>
+I am writing to express my strong interest in the Full-Stack Engineer position at [Company Name]. As a highly skilled and motivated Software Engineer with over 10 years of industry experience, I am excited about the opportunity to contribute my expertise to a healthcare startup committed to making a positive impact on people's lives.
+</p>
+
+<p>
+Over the course of my career, I have worked in diverse roles and companies, honing my technical skills and leadership capabilities. In one particular role, I spearheaded a critical project where I led the successful migration from AWS to an on-premises infrastructure, resulting in an impressive annual cost reduction of $400,000. This experience demonstrated my ability to strategize, plan, and execute complex technical initiatives while optimizing resources efficiently.
+</p>
+
+<p>
+Additionally, I have had the privilege of working extensively with sensitive healthcare data, and I understand the importance of maintaining strict security and privacy standards. Leading a team of 50 Software Engineers in the development of a Hospital Management System deployed across 10+ hospitals in the US, I gained invaluable insights into the unique challenges and regulations surrounding healthcare technology. This project further solidified my commitment to building robust and reliable software solutions that enhance patient care and streamline healthcare operations.
+</p>
+
+<p>
+Beyond my professional achievements, I have also successfully developed and launched a meditation app for both iOS and Android platforms. The app has garnered over 5000 monthly active users, showcasing my proficiency in delivering user-centric and engaging mobile applications.
+</p>
+
+<p>
+Joining [Company Name] would be a tremendous opportunity for me to leverage my technical expertise, leadership experience, and passion for healthcare technology to contribute meaningfully to the company's mission. I am eager to collaborate with a dynamic team of like-minded individuals in driving innovation and positively impacting the healthcare industry.
+</p>
+
+<p>
+Thank you for considering my application. I look forward to the possibility of discussing how my skills and experiences align with [Company Name]'s vision in greater detail.
+</p>
+
+<p>
+Sincerely,
+</p>
+</blockquote>
+</details>
+</div>
+</div>
+
+
+<div id="outline-container-orgf1547df" class="outline-2">
+<h2 id="orgf1547df">introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-orgf1547df">
+<p>
+Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
+Jane's captivating cover letter. In the fast-paced world of talent
+acquisition, Joe faces the daunting task of sifting through an
+impressive volume of cover letters daily. His goal is to identify the
+standout applicants worthy of an interview. To accomplish this
+challenging feat efficiently, Joe relies on the cutting-edge
+capabilities of <b>ChatGPT to extract the key insights and main ideas</b>
+from each cover letter:
+</p>
+
+<blockquote>
+<p>
+Could you please extract the 3 o 4 main pieces of information from this cover letter as bullet points?
+</p>
+</blockquote>
+
+<p>
+And this is the answer he obtains from ChatGPT (find it <a href="https://chat.openai.com/share/9c6a80fc-1974-4cbf-a61a-6d0119377c76">here)</a>:
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>Highly skilled and motivated Software Engineer with over 10 years of industry experience</li>
+<li>Led a successful migration project from AWS to on-premises infrastructure, resulting in an annual cost reduction of $400,000</li>
+<li>Extensive experience in working with sensitive healthcare data and leading a team of 50 Software Engineers in the development of a Hospital Management System for 10+ hospitals in the US</li>
+<li>Successfully developed and launched a meditation app for iOS and Android platforms with over 5000 monthly active users.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgd9cb713" class="outline-2">
+<h2 id="orgd9cb713">is this the future?</h2>
+<div class="outline-text-2" id="text-orgd9cb713">
+<p>
+LLMs are beginning to change the process of <b>content generation</b> but
+also <b>content consumption</b>, giving rise to some rather paradoxical
+scenarios like the one I described.
+</p>
+
+<ul class="org-ul">
+<li>When it comes to <b>content generation</b>, humans contribute valuable
+information (<code>signal</code>), while LLMs decorate it with some irrelevant
+elements, effectively adding <code>noise</code>.</li>
+
+<li>During <b>content consumption</b>, humans trust LLMs to effectively
+distinguish and eliminate noise from the essential information.</li>
+</ul>
+
+<p>
+A fascinating <b>feedback loop</b> appears in this new paradigm, wherein
+efforts are made to enhance the intelligence of LLMs by using text
+sourced from the Internet, which in some cases might have been
+generated by other LLMs (making the signal to noise ratio lower on
+each iteration).
+</p>
+
+<p>
+I'm intrigued by the future of Language Models (LLMs) and the
+potential revolutionary applications they might enable but I wonder
+whether we'll see a resurgence of <b>encyclopedias</b> as the primary source
+of reliable information with a <b>high signal to noise ratio</b>.
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div>]]></description>
+  <category><![CDATA[ml]]></category>
+  <link>https://unmonoqueteclea.github.io/2023-07-30-large-language-models-(llms)-as-noise-generators.html</link>
+  <guid>https://unmonoqueteclea.github.io/2023-07-30-large-language-models-(llms)-as-noise-generators.html</guid>
+  <pubDate>Sun, 30 Jul 2023 17:48:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[voilib is now open source]]></title>
   <description><![CDATA[

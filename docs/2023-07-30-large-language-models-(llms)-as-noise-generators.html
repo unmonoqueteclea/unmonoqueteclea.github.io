@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://unmonoqueteclea.github.io/feed.xml"
+      title="RSS feed for https://unmonoqueteclea.github.io">
+<title>Large Language Models (LLMs) as noise generators</title>
+<meta name="author" content="unmonoqueteclea">
+<meta name="referrer" content="no-referrer">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="static/style.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="static/favicon.ico" type="image/x-icon"/>
+<link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+</head>
+<body>
+<div id="preamble" class="status"><!-- define useful svg icons -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="gitlab" viewBox="0 0 24 24">
+    <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path>
+  </symbol>
+  <symbol id="github" viewBox="0 0 16 16">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+  </symbol>
+  <symbol id="linkedin" viewBox="0 0 16 16">
+    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 16 16">
+    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+  </symbol>
+  <symbol id="rss-fill" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+  </symbol>
+</svg>
+
+<div class="header">
+  <img src="static/monkey.png"/>
+  <a class="page-title" href="https://unmonoqueteclea.github.io">@unmonoqueteclea</a>
+  <span class="menu-links">
+    <a href="about.html">about</a> |
+    <a href="projects.html">projects</a> |
+    <a href="archive.html">archive</a> |
+    <a href="feed.xml">
+      <svg class="menu-icons"><use href="#rss-fill"/></svg>
+    </a> |
+  </span>
+</div>
+<hr class="preamble-sep" />
+</div>
+<div id="content">
+<div class="post-date">30 Jul 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-07-30-large-language-models-(llms)-as-noise-generators.html">Large Language Models (LLMs) as noise generators</a></h1>
+
+<div id="outline-container-orgcf342d4" class="outline-2">
+<h2 id="orgcf342d4">introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-orgcf342d4">
+<p>
+Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
+with 10 years of experience. Currently, Jane is exploring various job
+opportunities and has come across a few enticing offers that demand a
+cover letter as part of the application process.
+</p>
+
+<p>
+In light of this circumstance, Jane has turned to <a href="https://chat.openai.com/">ChatGPT</a>, <b>seeking
+assistance in crafting a compelling cover letter</b> tailored specifically
+for a <b>healthcare startup</b>. The following <b>prompt</b> outlines the necessary
+details for the task at hand.
+</p>
+
+<blockquote>
+<p>
+Imagine you are a Software Engineer with 10 years of experience that wants to apply for a Full-Stack Engineer position in a healthcare startup. Write a short cover letter with the following information:
+</p>
+
+<ul class="org-ul">
+<li>I have more than 10 years of experience as a Software Engineer in multiple companies.</li>
+<li>In one company, I led the migration from AWS to on-premises reducing infrastructure costs $400,000 a year.</li>
+<li>I have experience working with sensitive healthcare data. I led a team of 50 Software Engineers that built a Hospital Management System currently being used in 10+ hospitals in the US.</li>
+<li>I wrote a meditation app for iOS and Android with +5000 monthly  active users.</li>
+</ul>
+</blockquote>
+
+<p>
+You can find <a href="https://chat.openai.com/share/ee97f127-2a30-4613-8de2-8485cbb66135">here ChatGPT's response</a> (or just click <code>Details</code>
+below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, produces an awesome 300+ words
+cover letter including all the points asked by Jane.
+</p>
+
+<details id="orgf53b126">
+<blockquote>
+<p>
+Dear [Recipient's Name],
+</p>
+
+<p>
+I am writing to express my strong interest in the Full-Stack Engineer position at [Company Name]. As a highly skilled and motivated Software Engineer with over 10 years of industry experience, I am excited about the opportunity to contribute my expertise to a healthcare startup committed to making a positive impact on people's lives.
+</p>
+
+<p>
+Over the course of my career, I have worked in diverse roles and companies, honing my technical skills and leadership capabilities. In one particular role, I spearheaded a critical project where I led the successful migration from AWS to an on-premises infrastructure, resulting in an impressive annual cost reduction of $400,000. This experience demonstrated my ability to strategize, plan, and execute complex technical initiatives while optimizing resources efficiently.
+</p>
+
+<p>
+Additionally, I have had the privilege of working extensively with sensitive healthcare data, and I understand the importance of maintaining strict security and privacy standards. Leading a team of 50 Software Engineers in the development of a Hospital Management System deployed across 10+ hospitals in the US, I gained invaluable insights into the unique challenges and regulations surrounding healthcare technology. This project further solidified my commitment to building robust and reliable software solutions that enhance patient care and streamline healthcare operations.
+</p>
+
+<p>
+Beyond my professional achievements, I have also successfully developed and launched a meditation app for both iOS and Android platforms. The app has garnered over 5000 monthly active users, showcasing my proficiency in delivering user-centric and engaging mobile applications.
+</p>
+
+<p>
+Joining [Company Name] would be a tremendous opportunity for me to leverage my technical expertise, leadership experience, and passion for healthcare technology to contribute meaningfully to the company's mission. I am eager to collaborate with a dynamic team of like-minded individuals in driving innovation and positively impacting the healthcare industry.
+</p>
+
+<p>
+Thank you for considering my application. I look forward to the possibility of discussing how my skills and experiences align with [Company Name]'s vision in greater detail.
+</p>
+
+<p>
+Sincerely,
+</p>
+</blockquote>
+</details>
+</div>
+</div>
+
+
+<div id="outline-container-orgf1547df" class="outline-2">
+<h2 id="orgf1547df">introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-orgf1547df">
+<p>
+Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
+Jane's captivating cover letter. In the fast-paced world of talent
+acquisition, Joe faces the daunting task of sifting through an
+impressive volume of cover letters daily. His goal is to identify the
+standout applicants worthy of an interview. To accomplish this
+challenging feat efficiently, Joe relies on the cutting-edge
+capabilities of <b>ChatGPT to extract the key insights and main ideas</b>
+from each cover letter:
+</p>
+
+<blockquote>
+<p>
+Could you please extract the 3 o 4 main pieces of information from this cover letter as bullet points?
+</p>
+</blockquote>
+
+<p>
+And this is the answer he obtains from ChatGPT (find it <a href="https://chat.openai.com/share/9c6a80fc-1974-4cbf-a61a-6d0119377c76">here)</a>:
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>Highly skilled and motivated Software Engineer with over 10 years of industry experience</li>
+<li>Led a successful migration project from AWS to on-premises infrastructure, resulting in an annual cost reduction of $400,000</li>
+<li>Extensive experience in working with sensitive healthcare data and leading a team of 50 Software Engineers in the development of a Hospital Management System for 10+ hospitals in the US</li>
+<li>Successfully developed and launched a meditation app for iOS and Android platforms with over 5000 monthly active users.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgd9cb713" class="outline-2">
+<h2 id="orgd9cb713">is this the future?</h2>
+<div class="outline-text-2" id="text-orgd9cb713">
+<p>
+LLMs are beginning to change the process of <b>content generation</b> but
+also <b>content consumption</b>, giving rise to some rather paradoxical
+scenarios like the one I described.
+</p>
+
+<ul class="org-ul">
+<li>When it comes to <b>content generation</b>, humans contribute valuable
+information (<code>signal</code>), while LLMs decorate it with some irrelevant
+elements, effectively adding <code>noise</code>.</li>
+
+<li>During <b>content consumption</b>, humans trust LLMs to effectively
+distinguish and eliminate noise from the essential information.</li>
+</ul>
+
+<p>
+A fascinating <b>feedback loop</b> appears in this new paradigm, wherein
+efforts are made to enhance the intelligence of LLMs by using text
+sourced from the Internet, which in some cases might have been
+generated by other LLMs (making the signal to noise ratio lower on
+each iteration).
+</p>
+
+<p>
+I'm intrigued by the future of Language Models (LLMs) and the
+potential revolutionary applications they might enable but I wonder
+whether we'll see a resurgence of <b>encyclopedias</b> as the primary source
+of reliable information with a <b>high signal to noise ratio</b>.
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div></div>
+<div id="postamble" class="status"><center>
+  <div class="footer-networks">
+    <ul>
+      <li>
+	<a class="d-flex align-items-center" href="https://twitter.com/unmonoquteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#twitter"/></svg>
+          <span class="social-name">Twitter</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://gitlab.com/unmonoqueteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#gitlab"></use></svg>
+          <span class="social-name">Gitlab</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://github.com/unmonoqueteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#github"></use></svg>
+          <span class="social-name">GitHub</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://www.linkedin.com/in/pgonzalezcarrizo/" rel="noreferrer">
+	  <svg class="footer-networks-icons"><use href="#linkedin"></use></svg>
+	  <span class="social-name">LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="copyright">
+    ©2023 unmonoqueteclea
+    <span class="copyright-name">(Pablo González Carrizo).</span>
+    <span class="copyright-rights">All rights reserved</span>
+  </div>
+</center>
+</div>
+</body>
+</html>

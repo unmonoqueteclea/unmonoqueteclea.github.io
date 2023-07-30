@@ -1,0 +1,95 @@
+#+title: Large Language Models (LLMs) as noise generators
+#+date: <2023-07-30 17:48>
+#+description:
+#+filetags: ml
+
+* introducing Jane: from bullet points to cover letter
+Allow me to introduce you to *Jane Doe*, a seasoned *Software Engineer*
+with 10 years of experience. Currently, Jane is exploring various job
+opportunities and has come across a few enticing offers that demand a
+cover letter as part of the application process.
+
+In light of this circumstance, Jane has turned to [[https://chat.openai.com/][ChatGPT]], *seeking
+assistance in crafting a compelling cover letter* tailored specifically
+for a *healthcare startup*. The following *prompt* outlines the necessary
+details for the task at hand.
+
+#+begin_quote
+Imagine you are a Software Engineer with 10 years of experience that wants to apply for a Full-Stack Engineer position in a healthcare startup. Write a short cover letter with the following information:
+
+- I have more than 10 years of experience as a Software Engineer in multiple companies.
+- In one company, I led the migration from AWS to on-premises reducing infrastructure costs $400,000 a year.
+- I have experience working with sensitive healthcare data. I led a team of 50 Software Engineers that built a Hospital Management System currently being used in 10+ hospitals in the US.
+- I wrote a meditation app for iOS and Android with +5000 monthly  active users.
+#+end_quote
+
+You can find [[https://chat.openai.com/share/ee97f127-2a30-4613-8de2-8485cbb66135][here ChatGPT's response]] (or just click =Details=
+below). [[https://chat.openai.com/][ChatGPT]], as it usually does, produces an awesome 300+ words
+cover letter including all the points asked by Jane.
+
+#+begin_details "Click here to read cover letter or find it"
+#+begin_quote
+Dear [Recipient's Name],
+
+I am writing to express my strong interest in the Full-Stack Engineer position at [Company Name]. As a highly skilled and motivated Software Engineer with over 10 years of industry experience, I am excited about the opportunity to contribute my expertise to a healthcare startup committed to making a positive impact on people's lives.
+
+Over the course of my career, I have worked in diverse roles and companies, honing my technical skills and leadership capabilities. In one particular role, I spearheaded a critical project where I led the successful migration from AWS to an on-premises infrastructure, resulting in an impressive annual cost reduction of $400,000. This experience demonstrated my ability to strategize, plan, and execute complex technical initiatives while optimizing resources efficiently.
+
+Additionally, I have had the privilege of working extensively with sensitive healthcare data, and I understand the importance of maintaining strict security and privacy standards. Leading a team of 50 Software Engineers in the development of a Hospital Management System deployed across 10+ hospitals in the US, I gained invaluable insights into the unique challenges and regulations surrounding healthcare technology. This project further solidified my commitment to building robust and reliable software solutions that enhance patient care and streamline healthcare operations.
+
+Beyond my professional achievements, I have also successfully developed and launched a meditation app for both iOS and Android platforms. The app has garnered over 5000 monthly active users, showcasing my proficiency in delivering user-centric and engaging mobile applications.
+
+Joining [Company Name] would be a tremendous opportunity for me to leverage my technical expertise, leadership experience, and passion for healthcare technology to contribute meaningfully to the company's mission. I am eager to collaborate with a dynamic team of like-minded individuals in driving innovation and positively impacting the healthcare industry.
+
+Thank you for considering my application. I look forward to the possibility of discussing how my skills and experiences align with [Company Name]'s vision in greater detail.
+
+Sincerely,
+#+end_quote
+#+end_details
+
+
+* introducing Joe: from cover letter to bullet points
+Introducing now *Joe Shmoe*, the *HR leader* responsible for reviewing
+Jane's captivating cover letter. In the fast-paced world of talent
+acquisition, Joe faces the daunting task of sifting through an
+impressive volume of cover letters daily. His goal is to identify the
+standout applicants worthy of an interview. To accomplish this
+challenging feat efficiently, Joe relies on the cutting-edge
+capabilities of *ChatGPT to extract the key insights and main ideas*
+from each cover letter:
+
+#+begin_quote
+Could you please extract the 3 o 4 main pieces of information from this cover letter as bullet points?
+#+end_quote
+
+And this is the answer he obtains from ChatGPT (find it [[https://chat.openai.com/share/9c6a80fc-1974-4cbf-a61a-6d0119377c76][here)]]:
+
+#+begin_quote
+- Highly skilled and motivated Software Engineer with over 10 years of industry experience
+- Led a successful migration project from AWS to on-premises infrastructure, resulting in an annual cost reduction of $400,000
+- Extensive experience in working with sensitive healthcare data and leading a team of 50 Software Engineers in the development of a Hospital Management System for 10+ hospitals in the US
+- Successfully developed and launched a meditation app for iOS and Android platforms with over 5000 monthly active users.
+#+end_quote
+
+* is this the future?
+LLMs are beginning to change the process of *content generation* but
+also *content consumption*, giving rise to some rather paradoxical
+scenarios like the one I described.
+
+- When it comes to *content generation*, humans contribute valuable
+  information (=signal=), while LLMs (usually) decorate it with some
+  irrelevant elements, effectively adding =noise=.
+
+- During *content consumption*, humans trust LLMs to effectively
+  distinguish and eliminate =noise= from the essential information.
+
+A fascinating *feedback loop* appears in this new paradigm, wherein
+efforts are made to enhance the intelligence of LLMs by using text
+sourced from the Internet, which in some cases might have been
+generated by other LLMs (making the signal to noise ratio lower on
+each iteration).
+
+I'm intrigued by the future of Language Models (LLMs) and the
+potential revolutionary applications they might enable but I wonder
+whether we'll see a resurgence of encyclopedias as the primary source
+of reliable information with a *high signal to noise ratio*.
