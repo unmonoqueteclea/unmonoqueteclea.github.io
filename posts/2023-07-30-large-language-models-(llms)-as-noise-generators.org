@@ -71,6 +71,8 @@ And this is the answer he obtains from ChatGPT (find it [[https://chat.openai.co
 - Successfully developed and launched a meditation app for iOS and Android platforms with over 5000 monthly active users.
 #+end_quote
 
+Does it sounds familiar to you too?
+
 * is this the future?
 LLMs are beginning to change the process of *content generation* but
 also *content consumption*, giving rise to some rather paradoxical
