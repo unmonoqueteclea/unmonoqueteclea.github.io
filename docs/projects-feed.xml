@@ -4,7 +4,109 @@
 <title><![CDATA[@unmonoqueteclea - projects]]></title>
 <description><![CDATA[@unmonoqueteclea - projects]]></description>
 <link>https://unmonoqueteclea.github.io/tag-projects.html</link>
-<lastBuildDate>Mon, 31 Jul 2023 09:06:19 +0200</lastBuildDate>
+<lastBuildDate>Fri, 04 Aug 2023 08:22:53 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[the technology behind Voilib]]></title>
+  <description><![CDATA[
+<p>
+In December 2022, I launched <a href="https://voilib.com">Voilib</a>, a podcast search engine. A few
+months ago, I made the decision to make it <a href="https://unmonoqueteclea.github.io/2023-07-02-voilib-is-now-open-source.html">Open Source</a>, allowing other
+people to host their own instances to transcribe and index their
+favorite podcasts. You can find it on <a href="https://github.com/unmonoqueteclea/voilib">Github</a> or <a href="https://gitlab.com/unmonoqueteclea/voilib">Gitlab</a> 🎉.
+</p>
+
+<p>
+Hundreds of podcast episodes are <b>collected</b> and <b>transcribed</b> by the
+system every week. This information is then <b>indexed</b> in a way that
+allows semantic search so that users are able to perform smart queries to
+find relevant fragments of podcast episodes.
+</p>
+
+
+<p>
+Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into four main tasks:
+<b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
+and <b>querying</b> the database to find relevant fragments.
+</p>
+
+<div id="outline-container-org8247575" class="outline-2">
+<h2 id="org8247575">🌐  collect (new episodes)</h2>
+<div class="outline-text-2" id="text-org8247575">
+<p>
+Almost all public podcasts have an associated <code>RSS feed</code> that contains
+metadata about every episode and even a link to the audio file. As an
+example, <a href="http://feeds.feedburner.com/TEDTalks_audio">this</a> is the <code>RSS feed</code> from the <a href="https://www.ted.com/about/programs-initiatives/ted-talks/ted-talks-daily">Ted Talks Daily</a> podcast.
+</p>
+
+<p>
+Voilib uses those feeds to collect and store <b>metadata</b> from the list of
+podcasts manually configured by the application admin. For each
+episode, we are storing things such as the title, the description, the
+language or the duration in a <code>SQLite</code> database.
+</p>
+
+<p>
+When I want to check if new episodes were published, I just need to
+run (I have a <b>cron job</b> configured to run it twice a day):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">voilib-episodes --update
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org00aa2e6" class="outline-2">
+<h2 id="org00aa2e6">🗨️ transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-org00aa2e6">
+<p>
+The collected episodes are then <b>transcribed</b> using <a href="https://openai.com/research/whisper">Whisper</a>: Open AI's
+Open Source Transcription Model. We are using it, from <code>Python</code>, with
+the library <a href="https://github.com/sanchit-gandhi/whisper-jax">whisper-jax</a>. This specific implementation of Whisper
+boasts being up to 70 times faster than similar libraries.
+</p>
+
+<p>
+In my opinions, those optimizations are very GPU focused and I cannot
+find huge improvements in CPU compared with the <a href="https://github.com/openai/whisper">official
+implementation</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgcc0a840" class="outline-2">
+<h2 id="orgcc0a840">📇 index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-orgcc0a840">
+<p>
+Episodes transcripts are divided into fragments of approximately 40
+words . Then, Voilib calculates the embedding of each fragment. In
+that way, every fragment is converted into a vector of 384 floating
+point numbers (check EMBEDDINGS<sub>SIZE</sub> constant to see the embedding size
+currently used). Those vectors are stored in a vector database:
+Qdrant.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56f5f69" class="outline-2">
+<h2 id="org56f5f69">🔍 query (transcription fragments)</h2>
+<div class="outline-text-2" id="text-org56f5f69">
+<p>
+For each new user prompt, Voilib just needs to calculate the embedding
+of it and find the closest ones in the vector database, returning the
+most relevant episodes fragments to the user.
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> </div>]]></description>
+  <category><![CDATA[projects]]></category>
+  <link>https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html</link>
+  <guid>https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html</guid>
+  <pubDate>Thu, 03 Aug 2023 20:26:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[voilib is now open source]]></title>
   <description><![CDATA[
