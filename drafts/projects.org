@@ -14,6 +14,8 @@ Spanish 🇪🇸 and it will find related content in thousands of
 episodes. Every day, [[https://voilib.com][Voilib]] automatically collects, transcribe and
 index new episodes from a [[https://voilib.com/content][list of podcasts]].
 
+You can read this [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html][post]] about the technology behind it.
+
 #+CAPTION: Searching content in voilib.com
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]

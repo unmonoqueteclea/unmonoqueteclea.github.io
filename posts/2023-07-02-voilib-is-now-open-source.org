@@ -31,3 +31,5 @@ kind of content I would have loved to find some months ago when many
 people suddenly became =prompt engineers=, but not so many people really
 understood how to build actual LLM-based products beyond the chat
 interface.
+
+*UPDATE* [2023-08-04] Read [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html][here]] about the technology behind *Voilib*.

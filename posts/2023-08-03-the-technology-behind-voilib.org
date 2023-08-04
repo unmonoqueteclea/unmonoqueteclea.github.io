@@ -1,0 +1,167 @@
+#+title: the technology behind Voilib
+#+date: <2023-08-03 20:26>
+#+description:
+#+filetags: projects
+
+Each week, [[https://voilib.com][Voilib]] diligently *collects and transcribes* hundreds of
+podcast episodes. These valuable transcripts undergo a meticulous
+indexing process, enabling a sophisticated *semantic search*
+capability. As a result, our users can effortlessly execute
+intelligent queries, pinpointing precisely the most relevant fragments
+of podcast episodes.
+
+I launched *Voilib* in December 2022 and, some months later, I decided
+to embrace openness by making Voilib [[https://unmonoqueteclea.github.io/2023-07-02-voilib-is-now-open-source.html][Open Source]]. This alowed everyone
+to create their own instances, transcribe, and index their cherished
+podcasts. You'll find it easily accessible on both [[https://github.com/unmonoqueteclea/voilib][Github]] and
+[[https://gitlab.com/unmonoqueteclea/voilib][Gitlab]]. As promised, let me take you on a fascinating journey into the
+captivating technology behind it.
+
+
+#+CAPTION: Searching content in voilib.com
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/voilib.gif]]
+
+
+
+
+Essentially, [[https://voilib.com][Voilib]]'s work can be divided into four main tasks:
+*collecting* new episodes, *transcribing* them, *indexing* all the content,
+and *querying* the vector database to find relevant fragments.
+
+* 🌐  collect (new episodes)
+Almost all public podcasts have an associated =RSS feed= that contains
+metadata about every episode, including a link to the audio file. As
+an example, [[http://feeds.feedburner.com/TEDTalks_audio][this]] is the feed from the [[https://www.ted.com/about/programs-initiatives/ted-talks/ted-talks-daily][Ted Talks Daily]] podcast.
+
+*Voilib* collects and stores *metadata* from the list of podcasts feeds
+manually configured by the application admin. For each episode, it
+stores in a =SQLite= database things such as the title, the description,
+the language or the duration.
+
+When I want to check if new episodes were published, I just need to
+run this in a command line (although I have a *cron job* configured to
+run it twice a day):
+
+#+begin_src bash
+  voilib-episodes --update
+#+end_src
+
+If you want to dig into the code, check [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/collection/feed.py][feed.py]] and [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/collection/crawler.py][crawler.py]]
+modules.
+
+
+* 🗨️ transcript (episodes audios)
+The podcast episodes are transcribed using [[https://openai.com/research/whisper][Whisper, an Open Source
+Speech Recognition Model developed by OpenAI]]. *Voilib* effectively
+leverages =Whisper=, utilizing the [[https://github.com/sanchit-gandhi/whisper-jax][whisper-jax]] library. This
+particular implementation of =Whisper= boasts exceptional efficiency,
+showcasing speeds up to 70 times faster than comparable alternatives.
+
+However, most [[https://github.com/sanchit-gandhi/whisper-jax][whisper-jax]] optimizations are predominantly GPU-focused
+(that *Voilib* is not using yet), I must admit that I have not observed
+significant improvements in CPU performance when compared to the
+[[https://github.com/openai/whisper][official implementation]]. Nevertheless, the accuracy of this model is
+nothing short of remarkable, even for the small version with "just"
+39M parameters. It is truly astonishing to think that a few years ago,
+having an Open Source Speech Recognition model as swift and accurate
+as this one would have been deemed nearly implausible.
+
+When I want to transcribe the new episodes from the last 3 days, I
+just need to run this (I also have a *cron job* configured to run it):
+
+#+begin_src bash
+  voilib-episodes --transcribe-days 3
+#+end_src
+
+For curious minds, you can check [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/transcription.py][transcription.py]] module.
+
+
+* 📇 index (episodes trancriptions)
+The process of generating episode transcripts involves breaking them
+down into fragments, each comprising approximately 40 words. *Voilib*
+employs the [[https://www.sbert.net/][sentence-transformers]] =Python= library to calculate the
+*embedding of each 40-words fragment*, effectively transforming it into
+a *384-dimensional vector of floating point numbers*.
+
+To shed light on the concept of *embeddings*, they can be defined as
+lower-dimensional spaces that allow for the translation of
+high-dimensional vectors.  The goal of embeddings is to capture
+semantic similarity, ensuring that inputs with similar meanings are
+placed closer together in the embedding space.
+
+The [[https://www.sbert.net/][sentence-transformers]] library stands out as the optimal choice for
+creating text embeddings. This is the description from their [[https://www.sbert.net/][website]]:
+
+#+begin_quote
+You can use this framework to compute sentence / text embeddings for
+more than 100 languages. These embeddings can then be compared
+e.g. with cosine-similarity to find sentences with a similar
+meaning. This can be useful for semantic textual similar, semantic
+search, or paraphrase mining.
+
+The framework is based on PyTorch and Transformers and offers a large
+collection of pre-trained models tuned for various tasks. Further, it
+is easy to fine-tune your own models.
+#+end_quote
+
+The model *Voilib* is using to calculate the embeddings is
+=multi-qa-MiniLM-L6-cos-v1=. This model have been specifically trained
+for Semantic Search with [[https://huggingface.co/sentence-transformers/multi-qa-MiniLM-L6-dot-v1#training][215M question-answer pairs]] from various
+sources and domains.
+
+You can find the code for Voilib's embedding calculation in the
+[[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/embedding.py][embedding.py]] module.
+
+Those calculated vectors are then stored in a *vector database*, one of
+the main components of the system. More on this in the next section.
+
+
+
+* 🔍 query (embeddings)
+
+Each episode's embeddings are meticulously preserved within a *vector
+database*. In recent months, we have witnessed a surge in new
+technologies specifically designed for storing embeddings. These
+innovative solutions empower us to efficiently store embeddings and
+seamlessly query them using cutting-edge *Approximate Nearest Neighbor
+search* algorithms.
+
+During the initial stages, *Voilib* relied on [[https://github.com/facebookresearch/faiss][Meta's FAISS]] library for
+embedding storage. However, to enhance the system and include
+additional metadata for each embedding (that can be also used to
+filter queries), I decided to migrate to [[https://qdrant.tech/][qdrant]], a higher-level
+solution. With [[https://qdrant.tech/][qdrant]], we achieve the ability to incorporate
+supplementary metadata while seamlessly managing embeddings. As part
+of this evolution, *Voilib* now operates its own instance of the [[https://hub.docker.com/r/qdrant/qdrant/][qdrant
+server]], further ensuring data autonomy and control.
+
+For every *user prompt*, Voilib performs a swift calculation of the
+corresponding embedding and efficiently queries the vector
+database. This process enables the system to swiftly identify and
+return the most relevant results, ensuring a seamless and satisfying
+user experience.
+
+Of course, there is another command to calculate and store embeddings
+from all pending episodes:
+
+#+begin_src bash
+  voilib-episodes --store
+#+end_src
+
+More, in the [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/vector.py][vector.py]] module.
+
+* happy to receive your feedback
+Please feel free to reach out to me at =unmonoqueteclea@gmail.com= with
+your thoughts, suggestions, or any inquiries.
+
+I am eager to know which podcasts you would like to see available on
+[[https://voilib.com/][Voilib]]. Additionally, if there are any specific features that you
+believe would enhance your user experience and make your life easier,
+please do not hesitate to share them with me. It's a fantastic
+opportunity to contribute to the open-source community.
+
+If you have been considering hosting your own instance, I would be
+thrilled to support and guide you through the process.
+
+ I look forward to hearing from you!
