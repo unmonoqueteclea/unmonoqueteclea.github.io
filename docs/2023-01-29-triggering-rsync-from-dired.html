@@ -14,6 +14,7 @@
 <link rel="icon" href="static/favicon.ico" type="image/x-icon"/>
 <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+<meta name="google-site-verification" content="QqTK1FrzDrj5G5sBwmaXRR73pldvKhjl3RME_H8Bmx8" />
 </head>
 <body>
 <div id="preamble" class="status"><!-- define useful svg icons -->
@@ -78,7 +79,7 @@ And it turned out that the solution was as easy as this:
    <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
    <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
    <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
-   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #702f00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
+   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #813e00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
          (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
      (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
    <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
@@ -101,7 +102,7 @@ files. Bye, <code>filezilla</code>!
   <div class="footer-networks">
     <ul>
       <li>
-	<a class="d-flex align-items-center" href="https://twitter.com/unmonoquteclea" rel="noreferrer">
+	<a class="d-flex align-items-center" href="https://twitter.com/unmonoqueteclea" rel="noreferrer">
           <svg class="footer-networks-icons"><use href="#twitter"/></svg>
           <span class="social-name">Twitter</span>
 	</a>
@@ -127,7 +128,7 @@ files. Bye, <code>filezilla</code>!
     </ul>
   </div>
   <div class="copyright">
-    ©2022 unmonoqueteclea
+    ©2023 unmonoqueteclea
     <span class="copyright-name">(Pablo González Carrizo).</span>
     <span class="copyright-rights">All rights reserved</span>
   </div>

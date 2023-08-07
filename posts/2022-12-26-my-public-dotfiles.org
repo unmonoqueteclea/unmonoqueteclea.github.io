@@ -1,6 +1,6 @@
 #+title: my public dotfiles
 #+date: <2022-12-26 20:20>
-#+description: 
+#+description:
 #+filetags: linux emacs
 
 *tldr* My dotfiles are now public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]] 🎉
@@ -37,7 +37,7 @@ to keep secret. The solution was easy, I just need to add a new
 my =.gitignore= file and, to ensure I can access those entries, I added
 the following to my main [[https://gitlab.com/unmonoqueteclea/dotfiles/-/blob/main/ssh/.ssh/config][config file]]:
 
-#+begin_src bash 
+#+begin_src bash
 Include config.secret
 #+end_src
 

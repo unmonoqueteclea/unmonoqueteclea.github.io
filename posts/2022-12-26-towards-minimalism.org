@@ -1,6 +1,6 @@
 #+title: towards minimalism
 #+date: <2022-12-26 12:00>
-#+description: 
+#+description:
 #+filetags: blogging
 
 *tldr* I moved the blog to an extremely simple static blog generator
@@ -31,5 +31,3 @@ Just that. Those are the only things that I need. And that is what
 [[https://github.com/bastibe/org-static-blog][org-static-blog]] gives me. One single dependency, integrated into
 =Emacs=, my OS (well... my code editor). No =Javascript=, just pure =HTML=
 and =CSS=.
-
-
