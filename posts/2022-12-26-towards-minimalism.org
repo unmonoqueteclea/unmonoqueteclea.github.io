@@ -5,7 +5,7 @@
 
 *tldr* I moved the blog to an extremely simple static blog generator
 with no dependencies, no =Javascript= and no magic tricks. Just plain
-=HTML= and =CSS=.
+=HTML= and =CSS=. You can find it [[https://github.com/unmonoqueteclea/unmonoqueteclea.github.io/][here]].
 
 If you have been following this blog for some time you will have
 noticed that I am not very good at keeping a routine of writing new

@@ -7,55 +7,15 @@
       href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
 <title>towards minimalism</title>
-<meta name="author" content="unmonoqueteclea">
-<meta name="referrer" content="no-referrer">
-<meta content="width=device-width, initial-scale=1" name="viewport" />
-<link href="static/style.css" rel="stylesheet" type="text/css" />
-<link rel="icon" href="static/favicon.ico" type="image/x-icon"/>
-<link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
-<meta name="google-site-verification" content="QqTK1FrzDrj5G5sBwmaXRR73pldvKhjl3RME_H8Bmx8" />
 </head>
 <body>
-<div id="preamble" class="status"><!-- define useful svg icons -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="gitlab" viewBox="0 0 24 24">
-    <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path>
-  </symbol>
-  <symbol id="github" viewBox="0 0 16 16">
-    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-  </symbol>
-  <symbol id="linkedin" viewBox="0 0 16 16">
-    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-  </symbol>
-  <symbol id="twitter" viewBox="0 0 16 16">
-    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-  </symbol>
-  <symbol id="rss-fill" viewBox="0 0 16 16">
-    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-  </symbol>
-</svg>
-
-<div class="header">
-  <img src="static/monkey.png"/>
-  <a class="page-title" href="https://unmonoqueteclea.github.io">@unmonoqueteclea</a>
-  <span class="menu-links">
-    <a href="about.html">about</a> |
-    <a href="projects.html">projects</a> |
-    <a href="archive.html">archive</a> |
-    <a href="feed.xml">
-      <svg class="menu-icons"><use href="#rss-fill"/></svg>
-    </a> |
-  </span>
-</div>
-<hr class="preamble-sep" />
-</div>
+<div id="preamble" class="status"></div>
 <div id="content">
 <div class="post-date">26 Dec 2022</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-towards-minimalism.html">towards minimalism</a></h1>
 <p>
 <b>tldr</b> I moved the blog to an extremely simple static blog generator
 with no dependencies, no <code>Javascript</code> and no magic tricks. Just plain
-<code>HTML</code> and <code>CSS</code>.
+<code>HTML</code> and <code>CSS</code>. You can find it <a href="https://github.com/unmonoqueteclea/unmonoqueteclea.github.io/">here</a>.
 </p>
 
 <p>
@@ -91,41 +51,6 @@ Just that. Those are the only things that I need. And that is what
 and <code>CSS</code>.
 </p>
 <div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-blogging.html">blogging</a> </div></div>
-<div id="postamble" class="status"><center>
-  <div class="footer-networks">
-    <ul>
-      <li>
-	<a class="d-flex align-items-center" href="https://twitter.com/unmonoqueteclea" rel="noreferrer">
-          <svg class="footer-networks-icons"><use href="#twitter"/></svg>
-          <span class="social-name">Twitter</span>
-	</a>
-      </li>
-      <li>
-	<a class="d-flex align-items-center" href="https://gitlab.com/unmonoqueteclea" rel="noreferrer">
-          <svg class="footer-networks-icons"><use href="#gitlab"></use></svg>
-          <span class="social-name">Gitlab</span>
-	</a>
-      </li>
-      <li>
-	<a class="d-flex align-items-center" href="https://github.com/unmonoqueteclea" rel="noreferrer">
-          <svg class="footer-networks-icons"><use href="#github"></use></svg>
-          <span class="social-name">GitHub</span>
-	</a>
-      </li>
-      <li>
-	<a class="d-flex align-items-center" href="https://www.linkedin.com/in/pgonzalezcarrizo/" rel="noreferrer">
-	  <svg class="footer-networks-icons"><use href="#linkedin"></use></svg>
-	  <span class="social-name">LinkedIn</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="copyright">
-    ©2023 unmonoqueteclea
-    <span class="copyright-name">(Pablo González Carrizo).</span>
-    <span class="copyright-rights">All rights reserved</span>
-  </div>
-</center>
-</div>
+<div id="postamble" class="status"></div>
 </body>
 </html>
