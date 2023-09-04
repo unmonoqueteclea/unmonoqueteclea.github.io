@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Mon, 07 Aug 2023 09:30:55 +0200</lastBuildDate>
+<lastBuildDate>Mon, 04 Sep 2023 08:36:34 +0200</lastBuildDate>
 <item>
   <title><![CDATA[the technology behind Voilib]]></title>
   <description><![CDATA[
@@ -662,7 +662,7 @@ and similar things.
 <p>
 <b>tldr</b> I moved the blog to an extremely simple static blog generator
 with no dependencies, no <code>Javascript</code> and no magic tricks. Just plain
-<code>HTML</code> and <code>CSS</code>.
+<code>HTML</code> and <code>CSS</code>. You can find the code <a href="https://github.com/unmonoqueteclea/unmonoqueteclea.github.io/">here</a>.
 </p>
 
 <p>
