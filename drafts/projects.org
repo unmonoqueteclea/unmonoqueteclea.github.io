@@ -12,7 +12,10 @@ I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
 transcriptions of podcasts. Just type your query in English 🇺🇸 or
 Spanish 🇪🇸 and it will find related content in thousands of
 episodes. Every day, [[https://voilib.com][Voilib]] automatically collects, transcribe and
-index new episodes from a [[https://voilib.com/content][list of podcasts]].
+index new episodes from a [[https://voilib.com/content][list of podcasts]]. [[https://github.com/unmonoqueteclea/voilib][Self-hosted version of
+Voilib]] is also able to index local audio files. For example, you can
+feed it with recordings of all your online meetings and be able to
+search for content within them.
 
 You can read this [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html][post]] about the technology behind it.
 
