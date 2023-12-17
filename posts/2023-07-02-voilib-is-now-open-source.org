@@ -1,6 +1,7 @@
 #+title: voilib is now open source
 #+date: <2023-07-02 12:32>
-#+description:
+#+description: I decided to open-source [[https://voilib.com][Voilib]], the podcast search engine I launched in 2022
+#+image: static/example-voilib.png
 #+filetags: projects
 
 Today, I decided to *open-source* [[https://voilib.com][Voilib]] 🎉, the podcast search engine I

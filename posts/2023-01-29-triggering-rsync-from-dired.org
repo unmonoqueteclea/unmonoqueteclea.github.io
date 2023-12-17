@@ -1,6 +1,6 @@
 #+title: emacs: triggering rsync from dired
 #+date: <2023-01-29 19:27>
-#+description:
+#+description: A little trick to use Rsync from Dired
 #+filetags: emacs
 
 If you are a heavy =Emacs= user as me, you will have tried to move files

@@ -1,6 +1,7 @@
 #+title: the technology behind Voilib
 #+date: <2023-08-03 20:26>
-#+description:
+#+description: how is Voilib able to process hundreds of podcast episodes
+#+image: static/example-voilib.png
 #+filetags: projects
 
 Each week, [[https://voilib.com][Voilib]] diligently *collects and transcribes* hundreds of
@@ -21,8 +22,6 @@ captivating technology behind it.
 #+CAPTION: Searching content in voilib.com
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
-
-
 
 
 Essentially, [[https://voilib.com][Voilib]]'s work can be divided into four main tasks:

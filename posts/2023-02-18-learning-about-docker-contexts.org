@@ -1,6 +1,6 @@
 #+title: learning about Docker Contexts
 #+date: <2023-02-18 21:54>
-#+description:
+#+description: Connect to Docker engine running on a remote machine
 #+filetags: Docker
 
 A single *Docker CLI* to rule them all!  Let me show you a little

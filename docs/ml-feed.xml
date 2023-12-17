@@ -4,13 +4,13 @@
 <title><![CDATA[@unmonoqueteclea - ml]]></title>
 <description><![CDATA[@unmonoqueteclea - ml]]></description>
 <link>https://unmonoqueteclea.github.io/tag-ml.html</link>
-<lastBuildDate>Sun, 17 Dec 2023 18:07:48 +0100</lastBuildDate>
+<lastBuildDate>Sun, 17 Dec 2023 18:19:38 +0100</lastBuildDate>
 <item>
   <title><![CDATA[Large Language Models (LLMs) as noise generators]]></title>
   <description><![CDATA[
-<div id="outline-container-orgd622c86" class="outline-2">
-<h2 id="orgd622c86">introducing Jane: from bullet points to cover letter</h2>
-<div class="outline-text-2" id="text-orgd622c86">
+<div id="outline-container-orgc6280e5" class="outline-2">
+<h2 id="orgc6280e5">introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-orgc6280e5">
 <p>
 Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
 with 10 years of experience. Currently, Jane is exploring various job
@@ -44,7 +44,7 @@ below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, prod
 cover letter including all the points asked by Jane.
 </p>
 
-<details id="org24e06dd">
+<details id="orgec35abd">
 <blockquote>
 <p>
 Dear [Recipient's Name],
@@ -81,9 +81,9 @@ Sincerely,
 </details>
 </div>
 </div>
-<div id="outline-container-org158c803" class="outline-2">
-<h2 id="org158c803">introducing Joe: from cover letter to bullet points</h2>
-<div class="outline-text-2" id="text-org158c803">
+<div id="outline-container-orgb1bd333" class="outline-2">
+<h2 id="orgb1bd333">introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-orgb1bd333">
 <p>
 Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
 Jane's captivating cover letter. In the fast-paced world of talent
@@ -119,9 +119,9 @@ Does it sounds familiar to you too?
 </p>
 </div>
 </div>
-<div id="outline-container-orgd55364f" class="outline-2">
-<h2 id="orgd55364f">is this the future?</h2>
-<div class="outline-text-2" id="text-orgd55364f">
+<div id="outline-container-org3376107" class="outline-2">
+<h2 id="org3376107">is this the future?</h2>
+<div class="outline-text-2" id="text-org3376107">
 <p>
 LLMs are beginning to change the process of <b>content generation</b> but
 also <b>content consumption</b>, giving rise to some rather paradoxical
