@@ -1,6 +1,6 @@
 #+title: Large Language Models (LLMs) as noise generators
 #+date: <2023-07-30 17:48>
-#+description: LLMs are beginning to change the process of content generation but also content consumption, giving rise to some rather paradoxical scenarios
+#+description: Some rather paradoxical scenarios with LLMs.
 #+filetags: ml
 
 * introducing Jane: from bullet points to cover letter

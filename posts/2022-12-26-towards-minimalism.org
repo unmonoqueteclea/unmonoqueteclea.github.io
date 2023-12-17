@@ -1,6 +1,6 @@
 #+title: towards minimalism
 #+date: <2022-12-26 12:00>
-#+description: I moved the blog to a simple static blog generator with no dependencies
+#+description: I moved the blog to a simple static blog generator with no dependencies.
 #+filetags: blogging
 
 *tldr* I moved the blog to an extremely simple static blog generator

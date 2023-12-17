@@ -1,6 +1,6 @@
 #+title: my public dotfiles
 #+date: <2022-12-26 20:20>
-#+description: My dotfiles are now public on Gitlab
+#+description: My dotfiles are now public on Gitlab.
 #+filetags: linux emacs
 
 *tldr* My dotfiles are now public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]] 🎉

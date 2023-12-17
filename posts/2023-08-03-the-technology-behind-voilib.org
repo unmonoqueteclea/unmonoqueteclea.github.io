@@ -1,6 +1,6 @@
 #+title: the technology behind Voilib
 #+date: <2023-08-03 20:26>
-#+description: how is Voilib able to process hundreds of podcast episodes
+#+description: How is Voilib able to process efficiently thousands of podcast episodes.
 #+image: static/example-voilib.png
 #+filetags: projects
 
