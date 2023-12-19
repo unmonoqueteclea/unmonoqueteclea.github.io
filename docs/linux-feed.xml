@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea - linux]]></title>
 <description><![CDATA[@unmonoqueteclea - linux]]></description>
 <link>https://unmonoqueteclea.github.io/tag-linux.html</link>
-<lastBuildDate>Tue, 19 Dec 2023 18:17:15 +0100</lastBuildDate>
+<lastBuildDate>Tue, 19 Dec 2023 18:20:58 +0100</lastBuildDate>
 <item>
   <title><![CDATA[my public dotfiles]]></title>
   <description><![CDATA[
@@ -19,9 +19,9 @@ to do it (publishing dotfiles). I think it's fair to publish them, as
 I have read many public dotfile repositories before writing mine. You
 can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a>.
 </p>
-<div id="outline-container-orgb892b0e" class="outline-2">
-<h2 id="orgb892b0e">GNU stow</h2>
-<div class="outline-text-2" id="text-orgb892b0e">
+<div id="outline-container-org0a891e6" class="outline-2">
+<h2 id="org0a891e6">GNU stow</h2>
+<div class="outline-text-2" id="text-org0a891e6">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
@@ -32,9 +32,9 @@ links using this tool.
 </p>
 </div>
 </div>
-<div id="outline-container-org68a9ce2" class="outline-2">
-<h2 id="org68a9ce2">emacs config</h2>
-<div class="outline-text-2" id="text-org68a9ce2">
+<div id="outline-container-orgd77151d" class="outline-2">
+<h2 id="orgd77151d">emacs config</h2>
+<div class="outline-text-2" id="text-orgd77151d">
 <p>
 The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
 in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
@@ -44,9 +44,9 @@ useful to you.
 </p>
 </div>
 </div>
-<div id="outline-container-org49d391f" class="outline-2">
-<h2 id="org49d391f">secrets</h2>
-<div class="outline-text-2" id="text-org49d391f">
+<div id="outline-container-org88ef96b" class="outline-2">
+<h2 id="org88ef96b">secrets</h2>
+<div class="outline-text-2" id="text-org88ef96b">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.
