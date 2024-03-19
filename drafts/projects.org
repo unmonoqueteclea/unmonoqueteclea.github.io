@@ -4,18 +4,19 @@
 #+filetags: projects
 
 * 🦇 valencia now: real-time traffic information about Valencia
-[[https://valencianow.streamlit.app/][valencianow]] provides *real-time* information about *car/bike traffic* in
+[[https://valencianow.streamlit.app/][valencianow]] provides *real-time* information about *car and bike traffic* in
 the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
 
-There are induction loops in different parts of the city of Valencia
-that are able to measure the number of *cars* and *bikes* passing through
-them. However, the City Council *only offers [[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/][the last measurement]]*. The
-same thing happens with [[https://valencia.opendatasoft.com/explore/dataset/estacions-contaminacio-atmosferiques-estaciones-contaminacion-atmosfericas/table/][air quality data]].
+Induction loops installed in different parts of Valencia can measure
+the number of *cars* and *bikes* passing through them. However, the City
+Council only offers [[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/][the latest measurement]], not the historical
+data. This limiation also applies to [[https://valencia.opendatasoft.com/explore/dataset/estacions-contaminacio-atmosferiques-estaciones-contaminacion-atmosfericas/table/][air quality data]].
 
-With the help of [[https://www.tinybird.co/][Tynibird]], I am able to collect that data every hour
-and build this dashboard. Users can check real-time information in the
-*map* or check *historical* and *aggregated* data from specific sensors.
+With the help of [[https://www.tinybird.co/][Tynibird]], I am able to collect this data every hour
+and present it through this dashboard. Users can view real-time
+information on the *map* or access *historical* and *aggregated* data from
+specific sensors.
 
 #+CAPTION: valencianow: real-time traffic information
 #+ATTR_HTML: :width 100%
