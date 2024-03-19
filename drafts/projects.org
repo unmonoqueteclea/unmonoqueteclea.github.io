@@ -3,8 +3,8 @@
 #+description:
 #+filetags: projects
 
-* 🦇 valencia now: real-time traffic information about Valencia
-[[https://valencianow.streamlit.app/][valencianow]] provides *real-time* information about *car and bike traffic* in
+* 🦇 valencia-now: real-time traffic information about Valencia
+[[https://valencianow.streamlit.app/][valencia-now]] provides *real-time* information about *car and bike traffic* in
 the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
 
@@ -18,7 +18,7 @@ and present it through this dashboard. Users can view real-time
 information on the *map* or access *historical* and *aggregated* data from
 specific sensors.
 
-#+CAPTION: valencianow: real-time traffic information
+#+CAPTION: valencia-now: real-time traffic information
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/valencianow.gif]]
 
