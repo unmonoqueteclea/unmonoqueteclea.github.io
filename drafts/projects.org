@@ -1,7 +1,26 @@
 #+title: projects
-#+date: <2023-05-31 10:00>
+#+date: <2024-03-19 18:00>
 #+description:
 #+filetags: projects
+
+* 🦇 valencia now: real-time traffic information about Valencia
+[[https://valencianow.streamlit.app/][valencianow]] provides *real-time* information about *car/bike traffic* in
+the city of *Valencia* (Spain). Additionally, it also provides *air
+quality data*.
+
+There are induction loops in different parts of the city of Valencia
+that are able to measure the number of *cars* and *bikes* passing through
+them. However, the City Council *only offers [[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/][the last measurement]]*. The
+same thing happens with [[https://valencia.opendatasoft.com/explore/dataset/estacions-contaminacio-atmosferiques-estaciones-contaminacion-atmosfericas/table/][air quality data]].
+
+With the help of [[https://www.tinybird.co/][Tynibird]], I am able to collect that data every hour
+and build this dashboard. Users can check real-time information in the
+*map* or check *historical* and *aggregated* data from specific sensors.
+
+#+CAPTION: valencianow: real-time traffic information
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow.gif]]
+
 
 * 🔈voilib.com: the open source search engine for audio content
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
@@ -22,7 +41,6 @@ You can read this [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-
 #+CAPTION: Searching content in voilib.com
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
-
 
 
 * 👁️ retis: Diabetic Retinopathy and DMAE detection
