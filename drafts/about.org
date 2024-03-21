@@ -11,6 +11,7 @@ Most of my knowledge comes from other people that made her thoughts
 and code public (some of my favorites are  [[https://stallman.org][RMS]], [[http://www.paulgraham.com/][PG]], [[https://sachachua.com/blog/][Sacha Chua]] or
 [[https://protesilaos.com/][Prot]]). I am morally obliged to do my bit.
 
+-----
 * work
 My CV says I have a =MSc Degree in Telecommunications Engineering=. For
 the last few years, I have been working as a =Full-Stack Engineer=, trying to
