@@ -16,8 +16,9 @@ My CV says I have a =MSc Degree in Telecommunications Engineering=. For
 the last few years, I have been working as a =Full-Stack Engineer=, trying to
 *democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
 
-I consider myself an =end-to-end programmer=, the kind of programmer
-that can build a working prototype of a product in a few nights.
+I consider myself an *end-to-end engineer*, the kind of person that can
+transform ideas into working prototypes in a few nights fueled with
+some cups of tea.
 
 You can also check my 👨‍💻 CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv.txt][text]]) and my 🏆 [[./awards.html][awards]].
 
