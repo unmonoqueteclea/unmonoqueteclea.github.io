@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea - projects]]></title>
 <description><![CDATA[@unmonoqueteclea - projects]]></description>
 <link>https://unmonoqueteclea.github.io/tag-projects.html</link>
-<lastBuildDate>Thu, 21 Mar 2024 14:43:12 +0100</lastBuildDate>
+<lastBuildDate>Thu, 21 Mar 2024 14:46:35 +0100</lastBuildDate>
 <item>
   <title><![CDATA[the technology behind Voilib]]></title>
   <description><![CDATA[
@@ -28,7 +28,7 @@ captivating technology behind it.
 
 
 
-<figure id="org23932f3">
+<figure id="org6f421ec">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -40,9 +40,9 @@ Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into 
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-orgb000896" class="outline-2">
-<h2 id="orgb000896">🌐  collect (new episodes)</h2>
-<div class="outline-text-2" id="text-orgb000896">
+<div id="outline-container-org017e294" class="outline-2">
+<h2 id="org017e294">🌐  collect (new episodes)</h2>
+<div class="outline-text-2" id="text-org017e294">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -73,9 +73,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-org6242e54" class="outline-2">
-<h2 id="org6242e54">🗨️ transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-org6242e54">
+<div id="outline-container-orgc4ff7ce" class="outline-2">
+<h2 id="orgc4ff7ce">🗨️ transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-orgc4ff7ce">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -110,9 +110,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-orgd17281d" class="outline-2">
-<h2 id="orgd17281d">📇 index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-orgd17281d">
+<div id="outline-container-orge5ad660" class="outline-2">
+<h2 id="orge5ad660">📇 index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-orge5ad660">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -168,9 +168,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-org2eeaecc" class="outline-2">
-<h2 id="org2eeaecc">🔍 query (embeddings)</h2>
-<div class="outline-text-2" id="text-org2eeaecc">
+<div id="outline-container-orgbd8779f" class="outline-2">
+<h2 id="orgbd8779f">🔍 query (embeddings)</h2>
+<div class="outline-text-2" id="text-orgbd8779f">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -214,9 +214,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6f4f71" class="outline-2">
-<h2 id="orgf6f4f71">happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-orgf6f4f71">
+<div id="outline-container-orge34e69d" class="outline-2">
+<h2 id="orge34e69d">happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-orge34e69d">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
@@ -267,7 +267,7 @@ some of them.
 </p>
 
 
-<figure id="org94f3aaa">
+<figure id="org3182d1c">
 <img src="https://unmonoqueteclea.github.io/static/feedback-voilib.png" alt="feedback-voilib.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Feedback from a Voilib user</figcaption>

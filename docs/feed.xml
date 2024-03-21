@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Thu, 21 Mar 2024 14:43:12 +0100</lastBuildDate>
+<lastBuildDate>Thu, 21 Mar 2024 14:46:35 +0100</lastBuildDate>
 <item>
   <title><![CDATA[the technology behind Voilib]]></title>
   <description><![CDATA[
@@ -28,7 +28,7 @@ captivating technology behind it.
 
 
 
-<figure id="org23932f3">
+<figure id="org6f421ec">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -40,9 +40,9 @@ Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into 
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-orgb000896" class="outline-2">
-<h2 id="orgb000896">🌐  collect (new episodes)</h2>
-<div class="outline-text-2" id="text-orgb000896">
+<div id="outline-container-org017e294" class="outline-2">
+<h2 id="org017e294">🌐  collect (new episodes)</h2>
+<div class="outline-text-2" id="text-org017e294">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -73,9 +73,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-org6242e54" class="outline-2">
-<h2 id="org6242e54">🗨️ transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-org6242e54">
+<div id="outline-container-orgc4ff7ce" class="outline-2">
+<h2 id="orgc4ff7ce">🗨️ transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-orgc4ff7ce">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -110,9 +110,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-orgd17281d" class="outline-2">
-<h2 id="orgd17281d">📇 index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-orgd17281d">
+<div id="outline-container-orge5ad660" class="outline-2">
+<h2 id="orge5ad660">📇 index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-orge5ad660">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -168,9 +168,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-org2eeaecc" class="outline-2">
-<h2 id="org2eeaecc">🔍 query (embeddings)</h2>
-<div class="outline-text-2" id="text-org2eeaecc">
+<div id="outline-container-orgbd8779f" class="outline-2">
+<h2 id="orgbd8779f">🔍 query (embeddings)</h2>
+<div class="outline-text-2" id="text-orgbd8779f">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -214,9 +214,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6f4f71" class="outline-2">
-<h2 id="orgf6f4f71">happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-orgf6f4f71">
+<div id="outline-container-orge34e69d" class="outline-2">
+<h2 id="orge34e69d">happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-orge34e69d">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
@@ -249,9 +249,9 @@ I look forward to hearing from you!
 <item>
   <title><![CDATA[Large Language Models (LLMs) as noise generators]]></title>
   <description><![CDATA[
-<div id="outline-container-orga9df0bc" class="outline-2">
-<h2 id="orga9df0bc">introducing Jane: from bullet points to cover letter</h2>
-<div class="outline-text-2" id="text-orga9df0bc">
+<div id="outline-container-org5ceb3f0" class="outline-2">
+<h2 id="org5ceb3f0">introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-org5ceb3f0">
 <p>
 Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
 with 10 years of experience. Currently, Jane is exploring various job
@@ -285,7 +285,7 @@ below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, prod
 cover letter including all the points asked by Jane.
 </p>
 
-<details id="org5532f0c">
+<details id="org2470dcc">
 <blockquote>
 <p>
 Dear [Recipient's Name],
@@ -322,9 +322,9 @@ Sincerely,
 </details>
 </div>
 </div>
-<div id="outline-container-org3681e10" class="outline-2">
-<h2 id="org3681e10">introducing Joe: from cover letter to bullet points</h2>
-<div class="outline-text-2" id="text-org3681e10">
+<div id="outline-container-org5709c63" class="outline-2">
+<h2 id="org5709c63">introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-org5709c63">
 <p>
 Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
 Jane's captivating cover letter. In the fast-paced world of talent
@@ -360,9 +360,9 @@ Does it sounds familiar to you too?
 </p>
 </div>
 </div>
-<div id="outline-container-org705007b" class="outline-2">
-<h2 id="org705007b">is this the future?</h2>
-<div class="outline-text-2" id="text-org705007b">
+<div id="outline-container-org42fa905" class="outline-2">
+<h2 id="org42fa905">is this the future?</h2>
+<div class="outline-text-2" id="text-org42fa905">
 <p>
 LLMs are beginning to change the process of <b>content generation</b> but
 also <b>content consumption</b>, giving rise to some rather paradoxical
@@ -421,7 +421,7 @@ some of them.
 </p>
 
 
-<figure id="org94f3aaa">
+<figure id="org3182d1c">
 <img src="https://unmonoqueteclea.github.io/static/feedback-voilib.png" alt="feedback-voilib.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Feedback from a Voilib user</figcaption>
@@ -574,9 +574,9 @@ to do it (publishing dotfiles). I think it's fair to publish them, as
 I have read many public dotfile repositories before writing mine. You
 can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a>.
 </p>
-<div id="outline-container-orgc2b231d" class="outline-2">
-<h2 id="orgc2b231d">GNU stow</h2>
-<div class="outline-text-2" id="text-orgc2b231d">
+<div id="outline-container-orgd8543de" class="outline-2">
+<h2 id="orgd8543de">GNU stow</h2>
+<div class="outline-text-2" id="text-orgd8543de">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
@@ -587,9 +587,9 @@ links using this tool.
 </p>
 </div>
 </div>
-<div id="outline-container-org03b130b" class="outline-2">
-<h2 id="org03b130b">emacs config</h2>
-<div class="outline-text-2" id="text-org03b130b">
+<div id="outline-container-orgd390411" class="outline-2">
+<h2 id="orgd390411">emacs config</h2>
+<div class="outline-text-2" id="text-orgd390411">
 <p>
 The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
 in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
@@ -599,9 +599,9 @@ useful to you.
 </p>
 </div>
 </div>
-<div id="outline-container-org41c1741" class="outline-2">
-<h2 id="org41c1741">secrets</h2>
-<div class="outline-text-2" id="text-org41c1741">
+<div id="outline-container-org37517e7" class="outline-2">
+<h2 id="org37517e7">secrets</h2>
+<div class="outline-text-2" id="text-org37517e7">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.
