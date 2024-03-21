@@ -19,7 +19,7 @@ the last few years, I have been working as a =Full-Stack Engineer=, trying to
 I consider myself an =end-to-end programmer=, the kind of programmer
 that can build a working prototype of a product in a few nights.
 
-You can also check my 👨‍💻 CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv-text.html][text]]) and my 🏆 [[./awards.html][awards]].
+You can also check my 👨‍💻 CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv.txt][text]]) and my 🏆 [[./awards.html][awards]].
 
 * contact
 Feel free to contact me at =unmonoqueteclea@gmail.com= or at any of the
