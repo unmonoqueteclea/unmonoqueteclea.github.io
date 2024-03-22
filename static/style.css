@@ -82,6 +82,7 @@
 .footer-networks-icons {
   height: 15px;
   width: 15px;
+  padding-top: 3px;
 }
 
 h2:before {

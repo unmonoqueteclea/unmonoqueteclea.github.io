@@ -4,7 +4,133 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Thu, 21 Mar 2024 14:46:35 +0100</lastBuildDate>
+<lastBuildDate>Fri, 22 Mar 2024 10:08:19 +0100</lastBuildDate>
+<item>
+  <title><![CDATA[introducing valencia-now: real-time traffic information about Valencia]]></title>
+  <description><![CDATA[
+<p>
+<a href="https://valencianow.streamlit.app/">valencia-now</a>, a project that I announced a few days ago with great
+reception on <a href="https://twitter.com/unmonoqueteclea/status/1769407185505644638">X</a>, is now public as of today 🎉.
+</p>
+
+<p>
+This simple dashboard allows visualization of <b>real-time</b>, <b>historical</b>,
+and <b>aggregated</b> data on <b>traffic</b> and <b>air quality</b> in Valencia.
+</p>
+
+
+
+<figure id="orga6b0a34">
+<img src="https://unmonoqueteclea.github.io/static/valencianow.gif" alt="valencianow.gif" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>valencia-now: real-time traffic information</figcaption>
+</figure>
+<div id="outline-container-orgc25ade4" class="outline-2">
+<h2 id="orgc25ade4">real-time information</h2>
+<div class="outline-text-2" id="text-orgc25ade4">
+<p>
+The <a href="https://valencia.opendatasoft.com">open data portal</a> of the Spanish city of Valencia provides
+<b>real-time traffic data</b> for both <a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/">cars (and other motor vehicles)</a> and
+<a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-bicis-espires-electromagnetiques-puntos-medida-bicis-espiras-electr/table/">bicycles</a>. A series of electromagnetic loops distributed throughout the
+city are capable of measuring the <b>intensity of vehicles</b> passing through
+them. This information is published on an <code>hourly basis</code> for motor
+vehicles and approximately every <code>30 minutes</code> for bicycles. With that
+information, <a href="https://valencianow.streamlit.app/">valencia-now</a> is able to build these two maps representing
+current traffic intensity:
+</p>
+
+
+<figure id="orga16dd94">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-map.webp" alt="valencianow-map.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 2: </span>Traffic maps in valencia-now</figcaption>
+</figure>
+
+
+<p>
+The <b>bicycle traffic</b> is also represented in the same way, as well as
+the <b>air quality</b> data obtained from various measurement stations
+located in different parts of the city. In this case, we are
+representing the air quality index, a value that can range from <code>1</code>
+(<code>hazardous</code>) in color <b>purple</b> to <code>6</code> (<code>good</code>) in color <b>blue</b>.
+</p>
+
+
+
+
+<figure id="org66f76f4">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-ica.webp" alt="valencianow-ica.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 3: </span>Air quality map in valencia-now</figcaption>
+</figure>
+</div>
+</div>
+<div id="outline-container-orgd580430" class="outline-2">
+<h2 id="orgd580430">historical and aggregated data</h2>
+<div class="outline-text-2" id="text-orgd580430">
+<p>
+If I were to stop at that point, I wouldn't be adding much additional
+value to this data, since the open data portal itself already provides
+some simple visualizations of the current state of traffic and air
+quality.
+</p>
+
+<p>
+However, <a href="https://valencianow.streamlit.app/">valencia-now</a> is also <b>collecting and storing this information</b>
+which allows me not only to see the current status but also the
+<b>evolution</b>.
+</p>
+
+
+<figure id="orgf63defe">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-historical.webp" alt="valencianow-historical.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 4: </span>Traffic data from a sensor on a bridge crossing the City Of Arts</figcaption>
+</figure>
+
+<p>
+With that historical data, I am also able to provide aggregations such
+as the following one that shows how the <b>air quality in the city centre
+improved just a day after the <a href="https://en.wikipedia.org/wiki/Valencia_Fallas">Fallas</a> finished</b>.
+</p>
+
+
+<figure id="org55b2f83">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-agg.webp" alt="valencianow-agg.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 5: </span>Air quality data by day from a sesnor located in the city centre</figcaption>
+</figure>
+</div>
+</div>
+<div id="outline-container-org37f6f2a" class="outline-2">
+<h2 id="org37f6f2a">next steps</h2>
+<div class="outline-text-2" id="text-org37f6f2a">
+<p>
+In the following days, I would like to create some additional
+blogposts.  I want to explain technical details about the <b>data
+ingestion</b> and the <b>data transformation</b> processes (<code>spoiler</code>, <a href="https://www.tinybird.co/">tinybird</a>
+made this extremly simple) and also about <b>public open data
+iniciatives</b>.
+</p>
+
+<p>
+At some point in time I would like to make the collected data
+available for everyone, but this will require some work.
+</p>
+
+<p>
+🗨️ As always, feel free to contact me (<code>unmonoqueteclea@gmail.com</code>) for
+whatever doubt, suggestion or idea you may have. Happy to receive your
+feedback!
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> </div>]]></description>
+  <category><![CDATA[projects]]></category>
+  <link>https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-now:-real-time-traffic-information-about-valencia.html</link>
+  <guid>https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-now:-real-time-traffic-information-about-valencia.html</guid>
+  <pubDate>Fri, 22 Mar 2024 09:00:00 +0100</pubDate>
+</item>
 <item>
   <title><![CDATA[the technology behind Voilib]]></title>
   <description><![CDATA[

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I  built valencia-now, an application that shows real-time traffic information about Valencia">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://unmonoqueteclea.github.io/feed.xml"
+      title="RSS feed for https://unmonoqueteclea.github.io">
+<title>introducing valencia-now: real-time traffic information about Valencia</title>
+<meta property="og:title" content="introducing valencia-now: real-time traffic information about Valencia">
+<meta property="og:type" content="article" />
+<meta property="og:description" content="I  built valencia-now, an application that shows real-time traffic information about Valencia">
+<meta property="og:url" content="https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-now:-real-time-traffic-information-about-valencia.html">
+<meta property="og:image" content="https://unmonoqueteclea.github.io/static/valencianow-map.webp">
+<meta name="author" content="unmonoqueteclea">
+<meta name="referrer" content="no-referrer">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="static/style.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="static/favicon.ico" type="image/x-icon"/>
+<link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+<meta name="google-site-verification" content="QqTK1FrzDrj5G5sBwmaXRR73pldvKhjl3RME_H8Bmx8" />
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div id="preamble" class="status"><!-- define useful svg icons -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="gitlab" viewBox="0 0 24 24">
+    <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path>
+  </symbol>
+  <symbol id="github" viewBox="0 0 16 16">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+  </symbol>
+  <symbol id="linkedin" viewBox="0 0 16 16">
+    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 300 271">
+    <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
+  </symbol>
+  <symbol id="rss-fill" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+  </symbol>
+</svg>
+
+<div class="header">
+  <img src="static/monkey.png"/>
+  <a class="page-title" href="https://unmonoqueteclea.github.io">@unmonoqueteclea</a>
+  <span class="menu-links">
+    <a href="about.html">about</a> |
+    <a href="projects.html">projects</a> |
+    <a href="archive.html">archive</a> |
+    <a href="feed.xml">
+      <svg class="menu-icons"><use href="#rss-fill"/></svg>
+    </a> |
+  </span>
+</div>
+<hr class="preamble-sep" />
+</div>
+<div id="content">
+<div class="post-date">22 Mar 2024</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-now:-real-time-traffic-information-about-valencia.html">introducing valencia-now: real-time traffic information about Valencia</a></h1>
+<p>
+<a href="https://valencianow.streamlit.app/">valencia-now</a>, a project that I announced a few days ago with great
+reception on <a href="https://twitter.com/unmonoqueteclea/status/1769407185505644638">X</a>, is now public as of today 🎉.
+</p>
+
+<p>
+This simple dashboard allows visualization of <b>real-time</b>, <b>historical</b>,
+and <b>aggregated</b> data on <b>traffic</b> and <b>air quality</b> in Valencia.
+</p>
+
+
+
+<figure id="orga6b0a34">
+<img src="https://unmonoqueteclea.github.io/static/valencianow.gif" alt="valencianow.gif" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>valencia-now: real-time traffic information</figcaption>
+</figure>
+<div id="outline-container-orgc25ade4" class="outline-2">
+<h2 id="orgc25ade4">real-time information</h2>
+<div class="outline-text-2" id="text-orgc25ade4">
+<p>
+The <a href="https://valencia.opendatasoft.com">open data portal</a> of the Spanish city of Valencia provides
+<b>real-time traffic data</b> for both <a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/">cars (and other motor vehicles)</a> and
+<a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-bicis-espires-electromagnetiques-puntos-medida-bicis-espiras-electr/table/">bicycles</a>. A series of electromagnetic loops distributed throughout the
+city are capable of measuring the <b>intensity of vehicles</b> passing through
+them. This information is published on an <code>hourly basis</code> for motor
+vehicles and approximately every <code>30 minutes</code> for bicycles. With that
+information, <a href="https://valencianow.streamlit.app/">valencia-now</a> is able to build these two maps representing
+current traffic intensity:
+</p>
+
+
+<figure id="orga16dd94">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-map.webp" alt="valencianow-map.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 2: </span>Traffic maps in valencia-now</figcaption>
+</figure>
+
+
+<p>
+The <b>bicycle traffic</b> is also represented in the same way, as well as
+the <b>air quality</b> data obtained from various measurement stations
+located in different parts of the city. In this case, we are
+representing the air quality index, a value that can range from <code>1</code>
+(<code>hazardous</code>) in color <b>purple</b> to <code>6</code> (<code>good</code>) in color <b>blue</b>.
+</p>
+
+
+
+
+<figure id="org66f76f4">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-ica.webp" alt="valencianow-ica.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 3: </span>Air quality map in valencia-now</figcaption>
+</figure>
+</div>
+</div>
+<div id="outline-container-orgd580430" class="outline-2">
+<h2 id="orgd580430">historical and aggregated data</h2>
+<div class="outline-text-2" id="text-orgd580430">
+<p>
+If I were to stop at that point, I wouldn't be adding much additional
+value to this data, since the open data portal itself already provides
+some simple visualizations of the current state of traffic and air
+quality.
+</p>
+
+<p>
+However, <a href="https://valencianow.streamlit.app/">valencia-now</a> is also <b>collecting and storing this information</b>
+which allows me not only to see the current status but also the
+<b>evolution</b>.
+</p>
+
+
+<figure id="orgf63defe">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-historical.webp" alt="valencianow-historical.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 4: </span>Traffic data from a sensor on a bridge crossing the City Of Arts</figcaption>
+</figure>
+
+<p>
+With that historical data, I am also able to provide aggregations such
+as the following one that shows how the <b>air quality in the city centre
+improved just a day after the <a href="https://en.wikipedia.org/wiki/Valencia_Fallas">Fallas</a> finished</b>.
+</p>
+
+
+<figure id="org55b2f83">
+<img src="https://unmonoqueteclea.github.io/static/valencianow-agg.webp" alt="valencianow-agg.webp" width="100%">
+
+<figcaption><span class="figure-number">Figure 5: </span>Air quality data by day from a sesnor located in the city centre</figcaption>
+</figure>
+</div>
+</div>
+<div id="outline-container-org37f6f2a" class="outline-2">
+<h2 id="org37f6f2a">next steps</h2>
+<div class="outline-text-2" id="text-org37f6f2a">
+<p>
+In the following days, I would like to create some additional
+blogposts.  I want to explain technical details about the <b>data
+ingestion</b> and the <b>data transformation</b> processes (<code>spoiler</code>, <a href="https://www.tinybird.co/">tinybird</a>
+made this extremly simple) and also about <b>public open data
+iniciatives</b>.
+</p>
+
+<p>
+At some point in time I would like to make the collected data
+available for everyone, but this will require some work.
+</p>
+
+<p>
+🗨️ As always, feel free to contact me (<code>unmonoqueteclea@gmail.com</code>) for
+whatever doubt, suggestion or idea you may have. Happy to receive your
+feedback!
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> </div></div>
+<div id="postamble" class="status"><center>
+  <div class="footer-networks">
+    <ul>
+      <li>
+	<a class="d-flex align-items-center" href="https://x.com/unmonoqueteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#twitter"/></svg>
+          <span class="social-name">X</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://gitlab.com/unmonoqueteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#gitlab"></use></svg>
+          <span class="social-name">Gitlab</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://github.com/unmonoqueteclea" rel="noreferrer">
+          <svg class="footer-networks-icons"><use href="#github"></use></svg>
+          <span class="social-name">GitHub</span>
+	</a>
+      </li>
+      <li>
+	<a class="d-flex align-items-center" href="https://www.linkedin.com/in/pgonzalezcarrizo/" rel="noreferrer">
+	  <svg class="footer-networks-icons"><use href="#linkedin"></use></svg>
+	  <span class="social-name">LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="copyright">
+    ©2024 unmonoqueteclea
+    <span class="copyright-name">(Pablo González Carrizo).</span>
+    <span class="copyright-rights">All rights reserved</span>
+  </div>
+</center>
+</div>
+</body>
+</html>

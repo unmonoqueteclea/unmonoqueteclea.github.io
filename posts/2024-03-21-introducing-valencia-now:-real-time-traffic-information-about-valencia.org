@@ -1,0 +1,83 @@
+#+title: introducing valencia-now: real-time traffic information about Valencia
+#+date: <2024-03-22 09:00>
+#+description: I  built valencia-now, an application that shows real-time traffic information about Valencia
+#+image: static/valencianow-map.webp
+#+filetags: projects
+
+[[https://valencianow.streamlit.app/][valencia-now]], a project that I announced a few days ago with great
+reception on [[https://twitter.com/unmonoqueteclea/status/1769407185505644638][X]], is now public as of today 🎉.
+
+This simple dashboard allows visualization of *real-time*, *historical*,
+and *aggregated* data on *traffic* and *air quality* in Valencia.
+
+
+#+CAPTION: valencia-now: real-time traffic information
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow.gif]]
+
+
+* real-time information
+
+The [[https://valencia.opendatasoft.com][open data portal]] of the Spanish city of Valencia provides
+*real-time traffic data* for both [[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/][cars (and other motor vehicles)]] and
+[[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-bicis-espires-electromagnetiques-puntos-medida-bicis-espiras-electr/table/][bicycles]]. A series of electromagnetic loops distributed throughout the
+city are capable of measuring the *intensity of vehicles* passing through
+them. This information is published on an =hourly basis= for motor
+vehicles and approximately every =30 minutes= for bicycles. With that
+information, [[https://valencianow.streamlit.app/][valencia-now]] is able to build these two maps representing
+current traffic intensity:
+
+#+CAPTION: Traffic maps in valencia-now
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow-map.webp]]
+
+
+The *bicycle traffic* is also represented in the same way, as well as
+the *air quality* data obtained from various measurement stations
+located in different parts of the city. In this case, we are
+representing the air quality index, a value that can range from =1=
+(=hazardous=) in color *purple* to =6= (=good=) in color *blue*.
+
+
+
+#+CAPTION: Air quality map in valencia-now
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow-ica.webp]]
+
+* historical and aggregated data
+
+If I were to stop at that point, I wouldn't be adding much additional
+value to this data, since the open data portal itself already provides
+some simple visualizations of the current state of traffic and air
+quality.
+
+However, [[https://valencianow.streamlit.app/][valencia-now]] is also *collecting and storing this information*
+which allows me not only to see the current status but also the
+*evolution*.
+
+#+CAPTION: Traffic data from a sensor on a bridge crossing the City Of Arts
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow-historical.webp]]
+
+With that historical data, I am also able to provide aggregations such
+as the following one that shows how the *air quality in the city centre
+improved just a day after the [[https://en.wikipedia.org/wiki/Valencia_Fallas][Fallas]] finished*.
+
+#+CAPTION: Air quality data by day from a sesnor located in the city centre
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/valencianow-agg.webp]]
+
+* next steps
+
+In the following days, I would like to create some additional
+blogposts.  I want to explain technical details about the *data
+ingestion* and the *data transformation* processes (=spoiler=, [[https://www.tinybird.co/][tinybird]]
+made this extremly simple) and also about *public open data
+iniciatives*.
+
+At some point in time I would like to make the collected data
+available for everyone, but this will require some work.
+
+🗨️ As always, feel free to contact me (=unmonoqueteclea@gmail.com=) for
+whatever doubt, suggestion or idea you may have. Happy to receive your
+feedback!

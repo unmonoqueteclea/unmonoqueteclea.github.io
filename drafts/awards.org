@@ -41,7 +41,7 @@ degree with the help of =Open Data= from the University of Alicante.
 
 
 + 📱 [[./static/gradUAte.png][Some screenshots]]
-+ 📰 [[http://www.diarioinformacion.com/alicante/2015/04/29/aplicacion-movil-carreras-imparte-ua/1626692.html][In the news]] | [[https://www.laverdad.es/alicante/ciudad-alicante/201504/30/sobre-gana-concurso-aplicaciones-20150430021358-v.html][more news]] | [[http://www.lasprovincias.es/ua-universidadaldia/201504/30/sobre-gana-concurso-aplicaciones-20150430021358.html][more news!]]
++ 📰 [[http://www.diarioinformacion.com/alicante/2015/04/29/aplicacion-movil-carreras-imparte-ua/1626692.html][In the news]] | [[http://www.lasprovincias.es/ua-universidadaldia/201504/30/sobre-gana-concurso-aplicaciones-20150430021358.html][more news!]]
 
 * 🏦 Most Innovator Project - Instant Banking Hack Day (💻 Hackathon)
 We build *Social Pay,* an app to split payments in groups and send money
