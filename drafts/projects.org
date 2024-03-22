@@ -23,6 +23,10 @@ specific sensors.
 [[https://unmonoqueteclea.github.io/static/valencianow.gif]]
 
 
+More info: [[https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-now:-real-time-traffic-information-about-valencia.html][introducing valencia-now: real-time traffic information
+about Valencia]]
+
+
 * 🔈voilib.com: the open source search engine for audio content
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
 search within podcast transcriptions. Some months later, in July 2023,
