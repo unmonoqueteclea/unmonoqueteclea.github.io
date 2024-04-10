@@ -247,9 +247,8 @@ code {
     color: #d66;
 }
 code:before, code:after {
-  content: "~";
-  color: #ddd;
-  font-size: 5px;
+    content: "~";
+    color: #ddd;
 }
 
 pre {
