@@ -32,8 +32,8 @@ deployment.
 2017-2018
     Data Platform Specialist; SolidQ (acquired by Grupo Verne)
 
-Database work and automation of ETL tasks using SQL Server and SQL
-Server Integration Services.
+Database work and automation of ETL tasks using SQL Server and
+SQL Server Integration Services (SSIS).
 
 2015-2016
     Internship Trainee; Mobile Vision Research Lab (Universitat
@@ -100,7 +100,7 @@ extra
 
 -   Human languages
 
-    -   Spanish native speaker
+    -   Spanish: native speaker
     -   English: I work, daily, with non-spanish speakers
 
 ------------------------------------------------------------------------
