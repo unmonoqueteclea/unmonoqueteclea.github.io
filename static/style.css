@@ -244,13 +244,11 @@ ul, ol {
     margin: 0 0 20px;
 }
 code {
-    color: #d66;
+  font-family: "Source Code Pro", "Liberation Mono", "Courier New", Courier, monospace;
+  color: IndianRed;
+  background: #f7f7f7;
+  font-weight: 600;
 }
-code:before, code:after {
-    content: "~";
-    color: #ddd;
-}
-
 pre {
   background: #f8f8f8;
   font-family: monospace;
