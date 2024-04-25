@@ -22,7 +22,7 @@ I consider myself an *end-to-end engineer*, the kind of person that can
 transform ideas into working prototypes in a few nights fueled with
 some cups of tea.
 
-You can also check my 👨‍💻 CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv.txt][plain text FTW!]]) and my 🏆 [[./awards.html][awards]].
+You can also check my CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv.txt][plain text FTW!]]) and my [[./awards.html][awards]]  🏆.
 
 * contact
 Feel free to contact me at =unmonoqueteclea@gmail.com= or at any of the
