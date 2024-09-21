@@ -4,7 +4,7 @@
 #+image: static/valencianow-map.webp
 #+filetags: projects
 
-[[https://valencianow.streamlit.app/][valencia-now]], a project that I announced a few days ago with great
+[[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]], a project that I announced a few days ago with great
 reception on [[https://twitter.com/unmonoqueteclea/status/1769407185505644638][X]], is now public as of today 🎉.
 
 This simple dashboard allows visualization of *real-time*, *historical*,
@@ -24,7 +24,7 @@ The [[https://valencia.opendatasoft.com][open data portal]] of the Spanish city 
 city are capable of measuring the *intensity of vehicles* passing through
 them. This information is published on an =hourly basis= for motor
 vehicles and approximately every =30 minutes= for bicycles. With that
-information, [[https://valencianow.streamlit.app/][valencia-now]] is able to build these two maps representing
+information, [[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] is able to build these two maps representing
 current traffic intensity:
 
 #+CAPTION: Traffic maps in valencia-now
@@ -51,7 +51,7 @@ value to this data, since the open data portal itself already provides
 some simple visualizations of the current state of traffic and air
 quality.
 
-However, [[https://valencianow.streamlit.app/][valencia-now]] is also *collecting and storing this information*
+However, [[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] is also *collecting and storing this information*
 which allows me not only to see the current status but also the
 *evolution*.
 

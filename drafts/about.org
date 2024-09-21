@@ -4,25 +4,24 @@
 #+filetags: me
 
 * unmonoqueteclea
-🐒 Why =unmonoqueteclea?= It means *typing monkey* (in Spanish).
+🐒 =unmonoqueteclea= means *typing monkey* (in Spanish).
 And [[https://en.wikipedia.org/wiki/Infinite_monkey_theorem][this Wikipedia entry]] will help you understand it. Although you will find
 me everywhere as =unmonoqueteclea=, my name is *Pablo González Carrizo*.
 
 Most of my knowledge comes from other people that made her thoughts or
-code public (some of my favorites are [[https://stallman.org][RMS]], [[http://www.paulgraham.com/][PG]], or [[https://protesilaos.com/][Prot]]). I am morally
-obliged to do my bit.
+code public, I am morally obliged to do my bit.
 
 
 * work
 My CV says I have a =MSc Degree in Telecommunications Engineering=. For
-the last few years, I have been working as a =Full-Stack Engineer=, trying to
-*democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
+the last few years, I have been working as a =Lead Software Engineer=,
+trying to *democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
 
 I consider myself an *end-to-end engineer*, the kind of person that can
 transform ideas into working prototypes in a few nights fueled with
 some cups of tea.
 
-You can also check my CV ([[./static/cv.pdf][PDF]], [[./static/cv.html][HTML]], [[./static/cv.txt][plain text FTW!]]) and my [[./awards.html][awards]]  🏆.
+You can also check my [[./static/cv.pdf][CV]] and my [[./awards.html][awards]]  🏆.
 
 * contact
 Feel free to contact me at =unmonoqueteclea@gmail.com= or at any of the

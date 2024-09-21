@@ -4,8 +4,8 @@
 #+filetags: projects
 
 * 🦇 valencia-now: real-time traffic information about Valencia
-[[https://valencianow.streamlit.app/][valencia-now]] provides *real-time* information about *car and bike traffic* in
-the city of *Valencia* (Spain). Additionally, it also provides *air
+[[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] provides *real-time* information about *car and bike traffic*
+in the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
 
 Induction loops installed in different parts of Valencia can measure
