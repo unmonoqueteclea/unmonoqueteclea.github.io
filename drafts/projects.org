@@ -1,4 +1,4 @@
-#+title: projects
+#+title: Projects
 #+date: <2024-03-19 18:00>
 #+description:
 #+filetags: projects
@@ -48,7 +48,7 @@ You can read this [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
 
 
-* 👁️ retis: Diabetic Retinopathy and DMAE detection
+* 👁️ Retis: Diabetic Retinopathy and DMAE detection
 
 =retis= is a latin word and means *network*. This is because the retina is
 a big network of blood vessels.
@@ -65,6 +65,6 @@ University of Valencia]]. You can download the thesis (in Spanish)
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/retis.gif]]
 
-* ⚙ my public dotfiles and emacs configuration
+* ⚙ My public dotfiles and emacs configuration
 My =dotfiles= and my =emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
 try to keep them updated. Some information in this [[https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html][post]].

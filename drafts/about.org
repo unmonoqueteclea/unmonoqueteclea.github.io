@@ -1,4 +1,4 @@
-#+title: about
+#+title: About
 #+date: <2024-03-21 19:01>
 #+description:
 #+filetags: me
@@ -12,7 +12,7 @@ Most of my knowledge comes from other people that made her thoughts or
 code public, I am morally obliged to do my bit.
 
 
-* work
+* Work
 My CV says I have a =MSc Degree in Telecommunications Engineering=. For
 the last few years, I have been working as a =Lead Software Engineer=,
 trying to *democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
@@ -23,6 +23,6 @@ some cups of tea.
 
 You can also check my [[./static/cv.pdf][CV]] and my [[./awards.html][awards]]  🏆.
 
-* contact
+* Contact
 Feel free to contact me at =unmonoqueteclea@gmail.com= or at any of the
 social networks listed in the page footer.

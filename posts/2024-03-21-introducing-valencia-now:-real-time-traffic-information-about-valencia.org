@@ -1,4 +1,4 @@
-#+title: introducing valencia-now: real-time traffic information about Valencia
+#+title: Introducing valencia-now: real-time traffic information about Valencia
 #+date: <2024-03-22 09:00>
 #+description: I  built valencia-now, an application that shows real-time traffic information about Valencia
 #+image: static/valencianow-map.webp
@@ -16,7 +16,7 @@ and *aggregated* data on *traffic* and *air quality* in Valencia.
 [[https://unmonoqueteclea.github.io/static/valencianow.gif]]
 
 
-* real-time information
+* Real-time information
 
 The [[https://valencia.opendatasoft.com][open data portal]] of the Spanish city of Valencia provides
 *real-time traffic data* for both [[https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/][cars (and other motor vehicles)]] and
@@ -44,7 +44,7 @@ representing the air quality index, a value that can range from =1=
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/valencianow-ica.webp]]
 
-* historical and aggregated data
+* Historical and aggregated data
 
 If I were to stop at that point, I wouldn't be adding much additional
 value to this data, since the open data portal itself already provides
@@ -67,7 +67,7 @@ improved just a day after the [[https://en.wikipedia.org/wiki/Valencia_Fallas][F
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/valencianow-agg.webp]]
 
-* next steps
+* Next steps
 
 In the following days, I would like to create some additional
 blogposts.  I want to explain technical details about the *data

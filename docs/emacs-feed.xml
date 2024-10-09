@@ -4,9 +4,9 @@
 <title><![CDATA[@unmonoqueteclea - emacs]]></title>
 <description><![CDATA[@unmonoqueteclea - emacs]]></description>
 <link>https://unmonoqueteclea.github.io/tag-emacs.html</link>
-<lastBuildDate>Sat, 21 Sep 2024 20:32:55 +0200</lastBuildDate>
+<lastBuildDate>Wed, 09 Oct 2024 20:39:39 +0200</lastBuildDate>
 <item>
-  <title><![CDATA[emacs: triggering rsync from dired]]></title>
+  <title><![CDATA[Emacs: Triggering rsync from dired]]></title>
   <description><![CDATA[
 <p>
 If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
@@ -26,19 +26,19 @@ And it turned out that the solution was as easy as this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #5317ac;">defun</span> <span style="color: #721045;">mono/dwim-rsync</span> (output)
-  <span style="color: #2a486a;">"Use rsync to move selected files to OUTPUT."</span>
-  (<span style="color: #5317ac;">interactive</span> <span style="color: #2544bb;">"D"</span>)
+<pre class="src src-emacs-lisp">(<span style="color: #eba8a8; font-weight: bold;">defun</span> <span style="color: #7fca5a;">mono/dwim-rsync</span> (output)
+  <span style="color: #99bfcf; font-style: italic;">"Use rsync to move selected files to OUTPUT."</span>
+  (<span style="color: #eba8a8; font-weight: bold;">interactive</span> <span style="color: #50cf89;">"D"</span>)
   (dwim-shell-command-on-marked-files
-   (format <span style="color: #2544bb;">"Moving selected files to %s"</span> output)
-   <span style="color: #505050;">;; </span><span style="color: #505050;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
-   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #813e00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
-         (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
-     (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
-   <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
+   (format <span style="color: #50cf89;">"Moving selected files to %s"</span> output)
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">to rsync syntax (e.g. myserver:/home). For the output file</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">it's easy, but for input files we need to do it in the command,</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">that is where '</span><span style="color: #cfaaff; font-style: italic;">&lt;&lt;*&gt;&gt;</span><span style="color: #cac89f; font-style: italic;">' is expanded.</span>
+   (<span style="color: #eba8a8; font-weight: bold;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #50cf89;">"</span><span style="color: #e0b02f;">\</span><span style="color: #50cf89;">/ssh:"</span> <span style="color: #50cf89;">""</span> output))
+         (clean-files-cmd <span style="color: #50cf89;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #cfaaff;">s/\\/ssh://g</span><span style="color: #50cf89;">'"</span>))
+     (format <span style="color: #50cf89;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
+   <span style="color: #d0b9f0; font-weight: bold;">:utils</span> <span style="color: #50cf89;">"rsync"</span>))
 </pre>
 </div>
 
@@ -51,7 +51,7 @@ to transform <code>TRAMP</code> paths into valid <code>rsync</code> ones.
 Now, I just need to select some files in <code>dired</code> and run
 <code>mono/dwim-rsync</code>. This will let me specify in the minibuffer any path I
 want (local or remote, using <code>ssh</code>), and <code>rsync</code> will be used to copy the
-files. Bye, <code>filezilla</code>!
+files. Bye, <code>Filezilla</code>!
 </p>
 <div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div>]]></description>
   <category><![CDATA[emacs]]></category>
@@ -60,7 +60,7 @@ files. Bye, <code>filezilla</code>!
   <pubDate>Sun, 29 Jan 2023 19:27:00 +0100</pubDate>
 </item>
 <item>
-  <title><![CDATA[my public dotfiles]]></title>
+  <title><![CDATA[My public dotfiles]]></title>
   <description><![CDATA[
 <p>
 <b>tldr</b> My dotfiles are now public <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a> 🎉
@@ -73,9 +73,9 @@ to do it (publishing dotfiles). I think it's fair to publish them, as
 I have read many public dotfile repositories before writing mine. You
 can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a>.
 </p>
-<div id="outline-container-orgd8543de" class="outline-2">
-<h2 id="orgd8543de">GNU stow</h2>
-<div class="outline-text-2" id="text-orgd8543de">
+<div id="outline-container-orga16df76" class="outline-2">
+<h2 id="orga16df76">GNU stow</h2>
+<div class="outline-text-2" id="text-orga16df76">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
@@ -86,9 +86,9 @@ links using this tool.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd390411" class="outline-2">
-<h2 id="orgd390411">emacs config</h2>
-<div class="outline-text-2" id="text-orgd390411">
+<div id="outline-container-org503c596" class="outline-2">
+<h2 id="org503c596">Emacs config</h2>
+<div class="outline-text-2" id="text-org503c596">
 <p>
 The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
 in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
@@ -98,9 +98,9 @@ useful to you.
 </p>
 </div>
 </div>
-<div id="outline-container-org37517e7" class="outline-2">
-<h2 id="org37517e7">secrets</h2>
-<div class="outline-text-2" id="text-org37517e7">
+<div id="outline-container-orgaff3d55" class="outline-2">
+<h2 id="orgaff3d55">Secrets</h2>
+<div class="outline-text-2" id="text-orgaff3d55">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.

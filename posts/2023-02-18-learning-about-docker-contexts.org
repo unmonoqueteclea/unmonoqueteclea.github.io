@@ -1,4 +1,4 @@
-#+title: learning about Docker Contexts
+#+title: Learning about Docker Contexts
 #+date: <2023-02-18 21:54>
 #+description: Connect to Docker engine running on a remote machine.
 #+filetags: Docker

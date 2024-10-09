@@ -1,4 +1,4 @@
-#+title: emacs: triggering rsync from dired
+#+title: Emacs: Triggering rsync from dired
 #+date: <2023-01-29 19:27>
 #+description: A little trick to use Rsync from Dired.
 #+filetags: emacs
@@ -36,4 +36,4 @@ to transform =TRAMP= paths into valid =rsync= ones.
 Now, I just need to select some files in =dired= and run
 =mono/dwim-rsync=. This will let me specify in the minibuffer any path I
 want (local or remote, using =ssh=), and =rsync= will be used to copy the
-files. Bye, =filezilla=!
+files. Bye, =Filezilla=!

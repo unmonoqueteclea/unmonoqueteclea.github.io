@@ -3,7 +3,7 @@
 #+description: Some rather paradoxical scenarios with LLMs.
 #+filetags: ml
 
-* introducing Jane: from bullet points to cover letter
+* Introducing Jane: from bullet points to cover letter
 Allow me to introduce you to *Jane Doe*, a seasoned *Software Engineer*
 with 10 years of experience. Currently, Jane is exploring various job
 opportunities and has come across a few enticing offers that demand a
@@ -48,7 +48,7 @@ Sincerely,
 #+end_details
 
 
-* introducing Joe: from cover letter to bullet points
+* Introducing Joe: from cover letter to bullet points
 Introducing now *Joe Shmoe*, the *HR leader* responsible for reviewing
 Jane's captivating cover letter. In the fast-paced world of talent
 acquisition, Joe faces the daunting task of sifting through an
@@ -73,7 +73,7 @@ And this is the answer he obtains from ChatGPT (find it [[https://chat.openai.co
 
 Does it sounds familiar to you too?
 
-* is this the future?
+* Is this the future?
 LLMs are beginning to change the process of *content generation* but
 also *content consumption*, giving rise to some rather paradoxical
 scenarios like the one I described.

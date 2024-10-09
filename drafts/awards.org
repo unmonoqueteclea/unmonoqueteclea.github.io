@@ -1,4 +1,4 @@
-#+title: awards
+#+title: Awards
 #+date: <2023-02-05 10:22>
 #+description:
 #+filetags: me

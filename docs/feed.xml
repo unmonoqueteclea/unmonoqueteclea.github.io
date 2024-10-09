@@ -4,9 +4,9 @@
 <title><![CDATA[@unmonoqueteclea]]></title>
 <description><![CDATA[@unmonoqueteclea]]></description>
 <link>https://unmonoqueteclea.github.io</link>
-<lastBuildDate>Sat, 21 Sep 2024 20:32:54 +0200</lastBuildDate>
+<lastBuildDate>Wed, 09 Oct 2024 20:39:39 +0200</lastBuildDate>
 <item>
-  <title><![CDATA[introducing valencia-now: real-time traffic information about Valencia]]></title>
+  <title><![CDATA[Introducing valencia-now: real-time traffic information about Valencia]]></title>
   <description><![CDATA[
 <p>
 <a href="https://valencianow.unmonoqueteclea.freemyip.com/">valencia-now</a>, a project that I announced a few days ago with great
@@ -20,14 +20,14 @@ and <b>aggregated</b> data on <b>traffic</b> and <b>air quality</b> in Valencia.
 
 
 
-<figure id="orgb8f6e94">
+<figure id="orgc2f4785">
 <img src="https://unmonoqueteclea.github.io/static/valencianow.gif" alt="valencianow.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>valencia-now: real-time traffic information</figcaption>
 </figure>
-<div id="outline-container-org21b16f9" class="outline-2">
-<h2 id="org21b16f9">real-time information</h2>
-<div class="outline-text-2" id="text-org21b16f9">
+<div id="outline-container-org431fa70" class="outline-2">
+<h2 id="org431fa70">Real-time information</h2>
+<div class="outline-text-2" id="text-org431fa70">
 <p>
 The <a href="https://valencia.opendatasoft.com">open data portal</a> of the Spanish city of Valencia provides
 <b>real-time traffic data</b> for both <a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/">cars (and other motor vehicles)</a> and
@@ -40,7 +40,7 @@ current traffic intensity:
 </p>
 
 
-<figure id="orgdcf09ef">
+<figure id="orgc8478f1">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-map.webp" alt="valencianow-map.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 2: </span>Traffic maps in valencia-now</figcaption>
@@ -58,16 +58,16 @@ representing the air quality index, a value that can range from <code>1</code>
 
 
 
-<figure id="orga308b43">
+<figure id="org586341b">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-ica.webp" alt="valencianow-ica.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 3: </span>Air quality map in valencia-now</figcaption>
 </figure>
 </div>
 </div>
-<div id="outline-container-orgb7e1c04" class="outline-2">
-<h2 id="orgb7e1c04">historical and aggregated data</h2>
-<div class="outline-text-2" id="text-orgb7e1c04">
+<div id="outline-container-org37a4086" class="outline-2">
+<h2 id="org37a4086">Historical and aggregated data</h2>
+<div class="outline-text-2" id="text-org37a4086">
 <p>
 If I were to stop at that point, I wouldn't be adding much additional
 value to this data, since the open data portal itself already provides
@@ -82,7 +82,7 @@ which allows me not only to see the current status but also the
 </p>
 
 
-<figure id="org66fe8b3">
+<figure id="org3f4b9b7">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-historical.webp" alt="valencianow-historical.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 4: </span>Traffic data from a sensor on a bridge crossing the City Of Arts</figcaption>
@@ -95,16 +95,16 @@ improved just a day after the <a href="https://en.wikipedia.org/wiki/Valencia_Fa
 </p>
 
 
-<figure id="org9057284">
+<figure id="orga0821f6">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-agg.webp" alt="valencianow-agg.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 5: </span>Air quality data by day from a sesnor located in the city centre</figcaption>
 </figure>
 </div>
 </div>
-<div id="outline-container-orge6f3e61" class="outline-2">
-<h2 id="orge6f3e61">next steps</h2>
-<div class="outline-text-2" id="text-orge6f3e61">
+<div id="outline-container-orgd8a3569" class="outline-2">
+<h2 id="orgd8a3569">Next steps</h2>
+<div class="outline-text-2" id="text-orgd8a3569">
 <p>
 In the following days, I would like to create some additional
 blogposts.  I want to explain technical details about the <b>data
@@ -132,7 +132,7 @@ feedback!
   <pubDate>Fri, 22 Mar 2024 09:00:00 +0100</pubDate>
 </item>
 <item>
-  <title><![CDATA[the technology behind Voilib]]></title>
+  <title><![CDATA[The technology behind Voilib]]></title>
   <description><![CDATA[
 <p>
 Each week, <a href="https://voilib.com">Voilib</a> diligently <b>collects and transcribes</b> hundreds of
@@ -154,7 +154,7 @@ captivating technology behind it.
 
 
 
-<figure id="org6f421ec">
+<figure id="orged0e7d2">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -166,9 +166,9 @@ Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into 
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-org017e294" class="outline-2">
-<h2 id="org017e294">🌐  collect (new episodes)</h2>
-<div class="outline-text-2" id="text-org017e294">
+<div id="outline-container-orgd2fbe25" class="outline-2">
+<h2 id="orgd2fbe25">🌐  Collect (new episodes)</h2>
+<div class="outline-text-2" id="text-orgd2fbe25">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -199,9 +199,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc4ff7ce" class="outline-2">
-<h2 id="orgc4ff7ce">🗨️ transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-orgc4ff7ce">
+<div id="outline-container-org3a67dae" class="outline-2">
+<h2 id="org3a67dae">🗨️ Transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-org3a67dae">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -236,9 +236,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-orge5ad660" class="outline-2">
-<h2 id="orge5ad660">📇 index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-orge5ad660">
+<div id="outline-container-orgb1e4efc" class="outline-2">
+<h2 id="orgb1e4efc">📇 Index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-orgb1e4efc">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -294,9 +294,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbd8779f" class="outline-2">
-<h2 id="orgbd8779f">🔍 query (embeddings)</h2>
-<div class="outline-text-2" id="text-orgbd8779f">
+<div id="outline-container-orgd456773" class="outline-2">
+<h2 id="orgd456773">🔍 Query (embeddings)</h2>
+<div class="outline-text-2" id="text-orgd456773">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -340,9 +340,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-orge34e69d" class="outline-2">
-<h2 id="orge34e69d">happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-orge34e69d">
+<div id="outline-container-org6b48a3c" class="outline-2">
+<h2 id="org6b48a3c">Happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-org6b48a3c">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
@@ -375,9 +375,9 @@ I look forward to hearing from you!
 <item>
   <title><![CDATA[Large Language Models (LLMs) as noise generators]]></title>
   <description><![CDATA[
-<div id="outline-container-org5ceb3f0" class="outline-2">
-<h2 id="org5ceb3f0">introducing Jane: from bullet points to cover letter</h2>
-<div class="outline-text-2" id="text-org5ceb3f0">
+<div id="outline-container-org14304e0" class="outline-2">
+<h2 id="org14304e0">Introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-org14304e0">
 <p>
 Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
 with 10 years of experience. Currently, Jane is exploring various job
@@ -411,7 +411,7 @@ below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, prod
 cover letter including all the points asked by Jane.
 </p>
 
-<details id="org2470dcc">
+<details id="org41c4648">
 <blockquote>
 <p>
 Dear [Recipient's Name],
@@ -448,9 +448,9 @@ Sincerely,
 </details>
 </div>
 </div>
-<div id="outline-container-org5709c63" class="outline-2">
-<h2 id="org5709c63">introducing Joe: from cover letter to bullet points</h2>
-<div class="outline-text-2" id="text-org5709c63">
+<div id="outline-container-orge81cdc8" class="outline-2">
+<h2 id="orge81cdc8">Introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-orge81cdc8">
 <p>
 Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
 Jane's captivating cover letter. In the fast-paced world of talent
@@ -486,9 +486,9 @@ Does it sounds familiar to you too?
 </p>
 </div>
 </div>
-<div id="outline-container-org42fa905" class="outline-2">
-<h2 id="org42fa905">is this the future?</h2>
-<div class="outline-text-2" id="text-org42fa905">
+<div id="outline-container-org3632235" class="outline-2">
+<h2 id="org3632235">Is this the future?</h2>
+<div class="outline-text-2" id="text-org3632235">
 <p>
 LLMs are beginning to change the process of <b>content generation</b> but
 also <b>content consumption</b>, giving rise to some rather paradoxical
@@ -527,7 +527,7 @@ reliable information with a <b>high signal to noise ratio</b>.
   <pubDate>Sun, 30 Jul 2023 17:48:00 +0200</pubDate>
 </item>
 <item>
-  <title><![CDATA[voilib is now open source]]></title>
+  <title><![CDATA[Voilib is now Open Source]]></title>
   <description><![CDATA[
 <p>
 Today, I decided to <b>open-source</b> <a href="https://voilib.com">Voilib</a> 🎉, the podcast search engine I
@@ -547,7 +547,7 @@ some of them.
 </p>
 
 
-<figure id="org3182d1c">
+<figure id="org33710ff">
 <img src="https://unmonoqueteclea.github.io/static/feedback-voilib.png" alt="feedback-voilib.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Feedback from a Voilib user</figcaption>
@@ -579,7 +579,7 @@ interface.
   <pubDate>Sun, 02 Jul 2023 12:32:00 +0200</pubDate>
 </item>
 <item>
-  <title><![CDATA[learning about Docker Contexts]]></title>
+  <title><![CDATA[Learning about Docker Contexts]]></title>
   <description><![CDATA[
 <p>
 A single <b>Docker CLI</b> to rule them all!  Let me show you a little
@@ -633,7 +633,7 @@ discovered it before!
   <pubDate>Sat, 18 Feb 2023 21:54:00 +0100</pubDate>
 </item>
 <item>
-  <title><![CDATA[emacs: triggering rsync from dired]]></title>
+  <title><![CDATA[Emacs: Triggering rsync from dired]]></title>
   <description><![CDATA[
 <p>
 If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
@@ -653,19 +653,19 @@ And it turned out that the solution was as easy as this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #5317ac;">defun</span> <span style="color: #721045;">mono/dwim-rsync</span> (output)
-  <span style="color: #2a486a;">"Use rsync to move selected files to OUTPUT."</span>
-  (<span style="color: #5317ac;">interactive</span> <span style="color: #2544bb;">"D"</span>)
+<pre class="src src-emacs-lisp">(<span style="color: #eba8a8; font-weight: bold;">defun</span> <span style="color: #7fca5a;">mono/dwim-rsync</span> (output)
+  <span style="color: #99bfcf; font-style: italic;">"Use rsync to move selected files to OUTPUT."</span>
+  (<span style="color: #eba8a8; font-weight: bold;">interactive</span> <span style="color: #50cf89;">"D"</span>)
   (dwim-shell-command-on-marked-files
-   (format <span style="color: #2544bb;">"Moving selected files to %s"</span> output)
-   <span style="color: #505050;">;; </span><span style="color: #505050;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">to rsync syntax (e.g. myserver:/home). For the output file</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">it's easy, but for input files we need to do it in the command,</span>
-   <span style="color: #505050;">;; </span><span style="color: #505050;">that is where '</span><span style="color: #0000c0;">&lt;&lt;*&gt;&gt;</span><span style="color: #505050;">' is expanded.</span>
-   (<span style="color: #5317ac;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #2544bb;">"</span><span style="color: #813e00;">\</span><span style="color: #2544bb;">/ssh:"</span> <span style="color: #2544bb;">""</span> output))
-         (clean-files-cmd <span style="color: #2544bb;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #0000c0;">s/\\/ssh://g</span><span style="color: #2544bb;">'"</span>))
-     (format <span style="color: #2544bb;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
-   <span style="color: #8f0075;">:utils</span> <span style="color: #2544bb;">"rsync"</span>))
+   (format <span style="color: #50cf89;">"Moving selected files to %s"</span> output)
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">to rsync syntax (e.g. myserver:/home). For the output file</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">it's easy, but for input files we need to do it in the command,</span>
+   <span style="color: #cac89f; font-style: italic;">;; </span><span style="color: #cac89f; font-style: italic;">that is where '</span><span style="color: #cfaaff; font-style: italic;">&lt;&lt;*&gt;&gt;</span><span style="color: #cac89f; font-style: italic;">' is expanded.</span>
+   (<span style="color: #eba8a8; font-weight: bold;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #50cf89;">"</span><span style="color: #e0b02f;">\</span><span style="color: #50cf89;">/ssh:"</span> <span style="color: #50cf89;">""</span> output))
+         (clean-files-cmd <span style="color: #50cf89;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #cfaaff;">s/\\/ssh://g</span><span style="color: #50cf89;">'"</span>))
+     (format <span style="color: #50cf89;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
+   <span style="color: #d0b9f0; font-weight: bold;">:utils</span> <span style="color: #50cf89;">"rsync"</span>))
 </pre>
 </div>
 
@@ -678,7 +678,7 @@ to transform <code>TRAMP</code> paths into valid <code>rsync</code> ones.
 Now, I just need to select some files in <code>dired</code> and run
 <code>mono/dwim-rsync</code>. This will let me specify in the minibuffer any path I
 want (local or remote, using <code>ssh</code>), and <code>rsync</code> will be used to copy the
-files. Bye, <code>filezilla</code>!
+files. Bye, <code>Filezilla</code>!
 </p>
 <div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div>]]></description>
   <category><![CDATA[emacs]]></category>
@@ -687,7 +687,7 @@ files. Bye, <code>filezilla</code>!
   <pubDate>Sun, 29 Jan 2023 19:27:00 +0100</pubDate>
 </item>
 <item>
-  <title><![CDATA[my public dotfiles]]></title>
+  <title><![CDATA[My public dotfiles]]></title>
   <description><![CDATA[
 <p>
 <b>tldr</b> My dotfiles are now public <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a> 🎉
@@ -700,9 +700,9 @@ to do it (publishing dotfiles). I think it's fair to publish them, as
 I have read many public dotfile repositories before writing mine. You
 can find my dotfiles <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a>.
 </p>
-<div id="outline-container-orgd8543de" class="outline-2">
-<h2 id="orgd8543de">GNU stow</h2>
-<div class="outline-text-2" id="text-orgd8543de">
+<div id="outline-container-orga16df76" class="outline-2">
+<h2 id="orga16df76">GNU stow</h2>
+<div class="outline-text-2" id="text-orga16df76">
 <p>
 To keep a repository with all the dotfiles I am using <code>GNU Stow</code>. On its
 <a href="https://www.gnu.org/software/stow/">website</a>, <code>GNU Stow</code> is defined as a <b>symlink farm manager</b>. It helps me to
@@ -713,9 +713,9 @@ links using this tool.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd390411" class="outline-2">
-<h2 id="orgd390411">emacs config</h2>
-<div class="outline-text-2" id="text-orgd390411">
+<div id="outline-container-org503c596" class="outline-2">
+<h2 id="org503c596">Emacs config</h2>
+<div class="outline-text-2" id="text-org503c596">
 <p>
 The biggest part of my dotfiles repository is my <code>Emacs</code> configuration
 in <a href="https://gitlab.com/unmonoqueteclea/dotfiles/-/tree/main/emacs/.emacs.d">emacs/.emacs.d</a>. I have a modularized <code>Emacs</code> configuration, keeping
@@ -725,9 +725,9 @@ useful to you.
 </p>
 </div>
 </div>
-<div id="outline-container-org37517e7" class="outline-2">
-<h2 id="org37517e7">secrets</h2>
-<div class="outline-text-2" id="text-org37517e7">
+<div id="outline-container-orgaff3d55" class="outline-2">
+<h2 id="orgaff3d55">Secrets</h2>
+<div class="outline-text-2" id="text-orgaff3d55">
 <p>
 There are always private things in your dotfiles that you don't want
 to show.
@@ -764,7 +764,7 @@ and similar things.
   <pubDate>Mon, 26 Dec 2022 20:20:00 +0100</pubDate>
 </item>
 <item>
-  <title><![CDATA[towards minimalism]]></title>
+  <title><![CDATA[Towards minimalism]]></title>
   <description><![CDATA[
 <p>
 <b>tldr</b> I moved the blog to an extremely simple static blog generator

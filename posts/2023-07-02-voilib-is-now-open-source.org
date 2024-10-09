@@ -1,4 +1,4 @@
-#+title: voilib is now open source
+#+title: Voilib is now Open Source
 #+date: <2023-07-02 12:32>
 #+description: I decided to open-source Voilib, my podcast search engine.
 #+image: static/example-voilib.png

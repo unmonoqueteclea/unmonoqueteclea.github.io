@@ -1,4 +1,4 @@
-#+title: the technology behind Voilib
+#+title: The technology behind Voilib
 #+date: <2023-08-03 20:26>
 #+description: How is Voilib able to process efficiently thousands of podcast episodes.
 #+image: static/example-voilib.png
@@ -28,7 +28,7 @@ Essentially, [[https://voilib.com][Voilib]]'s work can be divided into four main
 *collecting* new episodes, *transcribing* them, *indexing* all the content,
 and *querying* the vector database to find relevant fragments.
 
-* 🌐  collect (new episodes)
+* 🌐  Collect (new episodes)
 Almost all public podcasts have an associated =RSS feed= that contains
 metadata about every episode, including a link to the audio file. As
 an example, [[http://feeds.feedburner.com/TEDTalks_audio][this]] is the feed from the [[https://www.ted.com/about/programs-initiatives/ted-talks/ted-talks-daily][Ted Talks Daily]] podcast.
@@ -50,7 +50,7 @@ If you want to dig into the code, check [[https://github.com/unmonoqueteclea/voi
 modules.
 
 
-* 🗨️ transcript (episodes audios)
+* 🗨️ Transcript (episodes audios)
 The podcast episodes are transcribed using [[https://openai.com/research/whisper][Whisper, an Open Source
 Speech Recognition Model developed by OpenAI]]. *Voilib* effectively
 leverages =Whisper=, utilizing the [[https://github.com/sanchit-gandhi/whisper-jax][whisper-jax]] library. This
@@ -76,7 +76,7 @@ just need to run this (I also have a *cron job* configured to run it):
 For curious minds, you can check [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/transcription.py][transcription.py]] module.
 
 
-* 📇 index (episodes trancriptions)
+* 📇 Index (episodes trancriptions)
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. *Voilib*
 employs the [[https://www.sbert.net/][sentence-transformers]] =Python= library to calculate the
@@ -117,7 +117,7 @@ the main components of the system. More on this in the next section.
 
 
 
-* 🔍 query (embeddings)
+* 🔍 Query (embeddings)
 
 Each episode's embeddings are meticulously preserved within a *vector
 database*. In recent months, we have witnessed a surge in new
@@ -150,7 +150,7 @@ from all pending episodes:
 
 More, in the [[https://github.com/unmonoqueteclea/voilib/blob/main/backend/src/voilib/vector.py][vector.py]] module.
 
-* happy to receive your feedback
+* Happy to receive your feedback
 Please feel free to reach out to me at =unmonoqueteclea@gmail.com= with
 your thoughts, suggestions, or any inquiries.
 
