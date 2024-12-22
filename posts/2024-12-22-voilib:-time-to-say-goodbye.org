@@ -1,0 +1,23 @@
+#+title: Voilib: Time to say goodbye
+#+date: <2024-12-22 13:31>
+#+description: Voilib permanently shut down on December 14th, 2024.
+#+image: static/voilib-end.jpeg
+#+filetags: projects
+
+Voilib permanently shut down on December 14th, 2024.
+
+#+CAPTION: End of Voilib
+#+ATTR_HTML: :width 80%
+[[https://unmonoqueteclea.github.io/static/voilib-end.jpeg]]
+
+The decision wasn’t easy, but maintaining a project like this without
+funding is challenging. While models like Whisper have revolutionized
+transcription, processing countless hours of audio remains a complex
+task. Additionally, managing large collections of embeddings requires
+fine-tuning the retrieval system—something I currently don’t have the
+time to tackle.
+
+That said, [[https://github.com/unmonoqueteclea/voilib][Voilib is Open Source]], so anyone can set up their own
+instance with ease. I plan to release updates soon to simplify
+installation and enhance its robustness. And, of course, the project
+is open for external contributions.

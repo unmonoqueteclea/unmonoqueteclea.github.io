@@ -58,7 +58,7 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<div class="post-date">03 Aug 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">The technology behind Voilib</a></h1>
+<div class="post-date">03 ago 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">The technology behind Voilib</a></h1>
 <p>
 Each week, <a href="https://voilib.com">Voilib</a> diligently <b>collects and transcribes</b> hundreds of
 podcast episodes. These valuable transcripts undergo a meticulous
@@ -79,7 +79,7 @@ captivating technology behind it.
 
 
 
-<figure id="orged0e7d2">
+<figure id="orgbe72c56">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -91,9 +91,9 @@ Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into 
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-orgd2fbe25" class="outline-2">
-<h2 id="orgd2fbe25">🌐  Collect (new episodes)</h2>
-<div class="outline-text-2" id="text-orgd2fbe25">
+<div id="outline-container-org23c07c5" class="outline-2">
+<h2 id="org23c07c5">🌐  Collect (new episodes)</h2>
+<div class="outline-text-2" id="text-org23c07c5">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -124,9 +124,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-org3a67dae" class="outline-2">
-<h2 id="org3a67dae">🗨️ Transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-org3a67dae">
+<div id="outline-container-orgfc7e68d" class="outline-2">
+<h2 id="orgfc7e68d">🗨️ Transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-orgfc7e68d">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -161,9 +161,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-orgb1e4efc" class="outline-2">
-<h2 id="orgb1e4efc">📇 Index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-orgb1e4efc">
+<div id="outline-container-org563acbc" class="outline-2">
+<h2 id="org563acbc">📇 Index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-org563acbc">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -219,9 +219,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd456773" class="outline-2">
-<h2 id="orgd456773">🔍 Query (embeddings)</h2>
-<div class="outline-text-2" id="text-orgd456773">
+<div id="outline-container-org0f2f14b" class="outline-2">
+<h2 id="org0f2f14b">🔍 Query (embeddings)</h2>
+<div class="outline-text-2" id="text-org0f2f14b">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -265,9 +265,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-org6b48a3c" class="outline-2">
-<h2 id="org6b48a3c">Happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-org6b48a3c">
+<div id="outline-container-org3fde60d" class="outline-2">
+<h2 id="org3fde60d">Happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-org3fde60d">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
