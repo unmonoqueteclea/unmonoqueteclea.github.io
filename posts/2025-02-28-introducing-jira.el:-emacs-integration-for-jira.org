@@ -1,0 +1,44 @@
+#+title: Introducing jira.el: Emacs integration for Jira
+#+date: <2025-02-28 19:20>
+#+description: If you have no choice but to use Jira, at least do it without leaving Emacs.
+#+filetags:projects emacs
+
+#+begin_quote
+If you have no choice but to use Jira, at least do it without leaving Emacs.
+#+end_quote
+
+[[https://github.com/unmonoqueteclea/jira.el][jira.el]] is an =Emacs= package that brings the "power" of Atlassian's
+=Jira= right into your editor. It lets you list, filter, and inspect
+issues, modify properties, and even add worklogs—all without leaving
+Emacs.
+
+#+begin_example
+ℹ️ Status <2025-02-28 Fri>: Jira will join soon MELPA, one of the main Emacs repositories 🎉
+#+end_example
+
+Key Features:
+
+ - *List & Filter Issues*: Quickly view the issues assigned to you (or
+   your team) and apply custom JQL filters.
+ - *Issue Details*: Open and inspect detailed information about any Jira
+   issue.
+ - *Modify Issues*: Update properties and add worklogs directly from
+   your Emacs session.
+ - *Tempo Integration*: Seamlessly display [[https://www.tempo.io/][Tempo]] worklogs to keep track
+   of time spent on tasks.
+
+
+#+CAPTION: List issues in jira.el
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/jirael-list-issues.png]]
+
+#+CAPTION: List worklogs in jira.el
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png]]
+
+
+=jira.el= combines a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List Mode]]-based UI, with [[https://magit.vc/][Magit]]-like
+keyboard-driven menus, a combination loved by =Emacs= users.
+
+Check out the =jira.el= documentation on =Github= for further details and
+usage tips!

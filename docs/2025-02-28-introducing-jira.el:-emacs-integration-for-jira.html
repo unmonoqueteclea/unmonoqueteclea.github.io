@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="If you have no choice but to use Jira, at least do it without leaving Emacs.">
 <link rel="alternate"
       type="application/rss+xml"
       href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
-<title>@unmonoqueteclea</title>
-<meta property="og:title" content="@unmonoqueteclea">
+<title>Introducing jira.el: Emacs integration for Jira</title>
+<meta property="og:title" content="Introducing jira.el: Emacs integration for Jira">
 <meta property="og:type" content="article" />
+<meta property="og:description" content="If you have no choice but to use Jira, at least do it without leaving Emacs.">
+<meta property="og:url" content="https://unmonoqueteclea.github.io/2025-02-28-introducing-jira.el:-emacs-integration-for-jira.html">
 <meta property="og:image" content="https://unmonoqueteclea.github.io/static/profile.png">
 <meta name="author" content="unmonoqueteclea">
 <meta name="referrer" content="no-referrer">
@@ -55,22 +58,65 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<h1 class="title">Posts tagged "emacs":</h1><h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2025-02-28-introducing-jira.el:-emacs-integration-for-jira.html">Introducing jira.el: Emacs integration for Jira</a></h2><div class="post-date">28 Feb 2025</div><p>
+<div class="post-date">28 Feb 2025</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2025-02-28-introducing-jira.el:-emacs-integration-for-jira.html">Introducing jira.el: Emacs integration for Jira</a></h1>
+<blockquote>
+<p>
 If you have no choice but to use Jira, at least do it without leaving Emacs.
-</p><a href="https://unmonoqueteclea.github.io/2025-02-28-introducing-jira.el:-emacs-integration-for-jira.html">Read more...</a>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div><h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html">Emacs: Triggering rsync from dired</a></h2><div class="post-date">29 Jan 2023</div><p>
-If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
-between different machines using <code>TRAMP</code>. But this approach is not nice
-for large files. <code>TRAMP</code> is very slow for large files and it will block
-<code>Emacs</code> during the file transfer.
-</p><a href="https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html">Read more...</a>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div><h2 class="post-title"><a href="https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html">My public dotfiles</a></h2><div class="post-date">26 Dec 2022</div><p>
-<b>tldr</b> My dotfiles are now public <a href="https://gitlab.com/unmonoqueteclea/dotfiles">on Gitlab</a> 🎉
-</p><a href="https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html">Read more...</a>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-linux.html">linux</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div><div id="archive">
-<a href="https://unmonoqueteclea.github.io/archive.html">Other posts</a>
-</div>
-</div>
+</p>
+</blockquote>
+
+<p>
+<a href="https://github.com/unmonoqueteclea/jira.el">jira.el</a> is an <code>Emacs</code> package that brings the "power" of Atlassian's
+<code>Jira</code> right into your editor. It lets you list, filter, and inspect
+issues, modify properties, and even add worklogs—all without leaving
+Emacs.
+</p>
+
+<pre class="example" id="org4ccf42a">
+ℹ️ Status &lt;2025-02-28 Fri&gt;: Jira will join soon MELPA, one of the main Emacs repositories 🎉
+</pre>
+
+<p>
+Key Features:
+</p>
+
+<ul class="org-ul">
+<li><b>List &amp; Filter Issues</b>: Quickly view the issues assigned to you (or
+your team) and apply custom JQL filters.</li>
+<li><b>Issue Details</b>: Open and inspect detailed information about any Jira
+issue.</li>
+<li><b>Modify Issues</b>: Update properties and add worklogs directly from
+your Emacs session.</li>
+<li><b>Tempo Integration</b>: Seamlessly display <a href="https://www.tempo.io/">Tempo</a> worklogs to keep track
+of time spent on tasks.</li>
+</ul>
+
+
+
+<figure id="orge073b34">
+<img src="https://unmonoqueteclea.github.io/static/jirael-list-issues.png" alt="jirael-list-issues.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>List issues in jira.el</figcaption>
+</figure>
+
+
+<figure id="orgcb15dc6">
+<img src="https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png" alt="jirael-list-worklogs.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 2: </span>List worklogs in jira.el</figcaption>
+</figure>
+
+
+<p>
+<code>jira.el</code> combines a <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html">Tabulated List Mode</a>-based UI, with <a href="https://magit.vc/">Magit</a>-like
+keyboard-driven menus, a combination loved by <code>Emacs</code> users.
+</p>
+
+<p>
+Check out the <code>jira.el</code> documentation on <code>Github</code> for further details and
+usage tips!
+</p>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> <a href="https://unmonoqueteclea.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status"><center>
   <div class="footer-networks">
     <ul>
