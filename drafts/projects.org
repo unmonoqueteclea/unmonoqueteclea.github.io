@@ -3,7 +3,51 @@
 #+description:
 #+filetags: projects
 
-* 🦇 valencia-now: real-time traffic information about Valencia
+* ✅ jira.el: Jira Integration for Emacs
+
+#+begin_quote
+If you have no choice but to use Jira, at least do it without leaving Emacs.
+#+end_quote
+
+[[https://github.com/unmonoqueteclea/jira.el][jira.el]] is an =Emacs= package that brings the "power" of Atlassian's
+=Jira= right into your editor. It lets you list, filter, and inspect
+issues, modify properties, and even add worklogs—all without leaving
+Emacs.
+
+#+begin_example
+Update <2025-02-28 Fri>: Jira will join soon MELPA, one of the main Emacs repositories 🎉
+#+end_example
+
+Key Features:
+
+ - *List & Filter Issues*: Quickly view the issues assigned to you (or
+   your team) and apply custom JQL filters.
+ - *Issue Details*: Open and inspect detailed information about any Jira
+   issue.
+ - *Modify Issues*: Update properties and add worklogs directly from
+   your Emacs session.
+ - *Tempo Integration*: Seamlessly display [[https://www.tempo.io/][Tempo]] worklogs to keep track
+   of time spent on tasks.
+
+
+#+CAPTION: List isues filter in jira.el
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/jirael-list-issues-filter.png]]
+
+#+CAPTION: List issues in jira.el
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/jirael-list-issues.png]]
+
+#+CAPTION: List worklogs in jira.el
+#+ATTR_HTML: :width 100%
+[[https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png]]
+
+
+Check out the =jira.el= documentation on =Github= for further details and
+usage tips.
+
+
+* 🦇 valencia-now: Real-time traffic information about Valencia
 [[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] provides *real-time* information about *car and bike traffic*
 in the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
@@ -27,7 +71,7 @@ More info: [[https://unmonoqueteclea.github.io/2024-03-21-introducing-valencia-n
 about Valencia]]
 
 
-* 🔈voilib.com: the open source search engine for audio content
+* 🔈voilib.com: The open source search engine for audio content
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
 search within podcast transcriptions. Some months later, in July 2023,
 I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
@@ -50,7 +94,7 @@ You can read this [[https://unmonoqueteclea.github.io/2023-08-03-the-technology-
 
 * 👁️ Retis: Diabetic Retinopathy and DMAE detection
 
-=retis= is a latin word and means *network*. This is because the retina is
+=Retis= is a latin word and means *network*. This is because the retina is
 a big network of blood vessels.
 
 Retis is a tool to detect *Diabetic Retinopathy (DR)* and *Age-Related
@@ -66,5 +110,5 @@ University of Valencia]]. You can download the thesis (in Spanish)
 [[https://unmonoqueteclea.github.io/static/retis.gif]]
 
 * ⚙ My public dotfiles and emacs configuration
-My =dotfiles= and my =emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
+My =dotfiles= and my =Emacs= configuration are public [[https://gitlab.com/unmonoqueteclea/dotfiles][on Gitlab]].  I always
 try to keep them updated. Some information in this [[https://unmonoqueteclea.github.io/2022-12-26-my-public-dotfiles.html][post]].
