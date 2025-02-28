@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea - projects]]></title>
 <description><![CDATA[@unmonoqueteclea - projects]]></description>
 <link>https://unmonoqueteclea.github.io/tag-projects.html</link>
-<lastBuildDate>Fri, 28 Feb 2025 19:29:21 +0100</lastBuildDate>
+<lastBuildDate>Fri, 28 Feb 2025 19:41:14 +0100</lastBuildDate>
 <item>
   <title><![CDATA[Introducing jira.el: Emacs integration for Jira]]></title>
   <description><![CDATA[
@@ -26,7 +26,7 @@ issues, modify properties, and even add worklogs—all without leaving
 Emacs.
 </p>
 
-<pre class="example" id="orgcc00dc8">
+<pre class="example" id="orgf2b1d78">
 ℹ️ Status &lt;2025-02-28 Fri&gt;: Jira will join soon MELPA, one of the main Emacs repositories 🎉
 </pre>
 
@@ -47,14 +47,14 @@ of time spent on tasks.</li>
 
 
 
-<figure id="org17d8fc3">
+<figure id="org3adc0ef">
 <img src="https://unmonoqueteclea.github.io/static/jirael-list-issues.png" alt="jirael-list-issues.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>List issues in jira.el</figcaption>
 </figure>
 
 
-<figure id="org02acf8c">
+<figure id="orge3b88e6">
 <img src="https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png" alt="jirael-list-worklogs.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 2: </span>List worklogs in jira.el</figcaption>
@@ -85,7 +85,7 @@ Voilib permanently shut down on December 14th, 2024.
 </p>
 
 
-<figure id="org4be5bde">
+<figure id="org20ee678">
 <img src="https://unmonoqueteclea.github.io/static/voilib-end.jpeg" alt="voilib-end.jpeg" width="80%">
 
 <figcaption><span class="figure-number">Figure 1: </span>End of Voilib</figcaption>
@@ -127,14 +127,14 @@ and <b>aggregated</b> data on <b>traffic</b> and <b>air quality</b> in Valencia.
 
 
 
-<figure id="orge190459">
+<figure id="org87263f4">
 <img src="https://unmonoqueteclea.github.io/static/valencianow.gif" alt="valencianow.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>valencia-now: real-time traffic information</figcaption>
 </figure>
-<div id="outline-container-orge9012c5" class="outline-2">
-<h2 id="orge9012c5">Real-time information</h2>
-<div class="outline-text-2" id="text-orge9012c5">
+<div id="outline-container-orge03b76c" class="outline-2">
+<h2 id="orge03b76c">Real-time information</h2>
+<div class="outline-text-2" id="text-orge03b76c">
 <p>
 The <a href="https://valencia.opendatasoft.com">open data portal</a> of the Spanish city of Valencia provides
 <b>real-time traffic data</b> for both <a href="https://valencia.opendatasoft.com/explore/dataset/punts-mesura-trafic-espires-electromagnetiques-puntos-medida-trafico-espiras-ele/">cars (and other motor vehicles)</a> and
@@ -147,7 +147,7 @@ current traffic intensity:
 </p>
 
 
-<figure id="orgee44cbf">
+<figure id="org378daa7">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-map.webp" alt="valencianow-map.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 2: </span>Traffic maps in valencia-now</figcaption>
@@ -165,16 +165,16 @@ representing the air quality index, a value that can range from <code>1</code>
 
 
 
-<figure id="orgcf56de4">
+<figure id="orgb614eee">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-ica.webp" alt="valencianow-ica.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 3: </span>Air quality map in valencia-now</figcaption>
 </figure>
 </div>
 </div>
-<div id="outline-container-orgb56ad12" class="outline-2">
-<h2 id="orgb56ad12">Historical and aggregated data</h2>
-<div class="outline-text-2" id="text-orgb56ad12">
+<div id="outline-container-orgb43ca62" class="outline-2">
+<h2 id="orgb43ca62">Historical and aggregated data</h2>
+<div class="outline-text-2" id="text-orgb43ca62">
 <p>
 If I were to stop at that point, I wouldn't be adding much additional
 value to this data, since the open data portal itself already provides
@@ -189,7 +189,7 @@ which allows me not only to see the current status but also the
 </p>
 
 
-<figure id="orgbe90548">
+<figure id="org83bf206">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-historical.webp" alt="valencianow-historical.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 4: </span>Traffic data from a sensor on a bridge crossing the City Of Arts</figcaption>
@@ -202,16 +202,16 @@ improved just a day after the <a href="https://en.wikipedia.org/wiki/Valencia_Fa
 </p>
 
 
-<figure id="org8090588">
+<figure id="org0fa87ef">
 <img src="https://unmonoqueteclea.github.io/static/valencianow-agg.webp" alt="valencianow-agg.webp" width="100%">
 
 <figcaption><span class="figure-number">Figure 5: </span>Air quality data by day from a sesnor located in the city centre</figcaption>
 </figure>
 </div>
 </div>
-<div id="outline-container-orga3bfaac" class="outline-2">
-<h2 id="orga3bfaac">Next steps</h2>
-<div class="outline-text-2" id="text-orga3bfaac">
+<div id="outline-container-org40f45e6" class="outline-2">
+<h2 id="org40f45e6">Next steps</h2>
+<div class="outline-text-2" id="text-org40f45e6">
 <p>
 In the following days, I would like to create some additional
 blogposts.  I want to explain technical details about the <b>data
@@ -261,7 +261,7 @@ captivating technology behind it.
 
 
 
-<figure id="orgbe72c56">
+<figure id="orgcdf9532">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -273,9 +273,9 @@ Essentially, <a href="https://voilib.com">Voilib</a>'s work can be divided into 
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-org23c07c5" class="outline-2">
-<h2 id="org23c07c5">🌐  Collect (new episodes)</h2>
-<div class="outline-text-2" id="text-org23c07c5">
+<div id="outline-container-org7995f26" class="outline-2">
+<h2 id="org7995f26">🌐  Collect (new episodes)</h2>
+<div class="outline-text-2" id="text-org7995f26">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -306,9 +306,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-orgfc7e68d" class="outline-2">
-<h2 id="orgfc7e68d">🗨️ Transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-orgfc7e68d">
+<div id="outline-container-org65e2a45" class="outline-2">
+<h2 id="org65e2a45">🗨️ Transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-org65e2a45">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -343,9 +343,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-org563acbc" class="outline-2">
-<h2 id="org563acbc">📇 Index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-org563acbc">
+<div id="outline-container-org0c4be3e" class="outline-2">
+<h2 id="org0c4be3e">📇 Index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-org0c4be3e">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -401,9 +401,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-org0f2f14b" class="outline-2">
-<h2 id="org0f2f14b">🔍 Query (embeddings)</h2>
-<div class="outline-text-2" id="text-org0f2f14b">
+<div id="outline-container-org403b572" class="outline-2">
+<h2 id="org403b572">🔍 Query (embeddings)</h2>
+<div class="outline-text-2" id="text-org403b572">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -447,9 +447,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-org3fde60d" class="outline-2">
-<h2 id="org3fde60d">Happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-org3fde60d">
+<div id="outline-container-org467c93c" class="outline-2">
+<h2 id="org467c93c">Happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-org467c93c">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
@@ -500,7 +500,7 @@ some of them.
 </p>
 
 
-<figure id="org420e78b">
+<figure id="orgcf71af6">
 <img src="https://unmonoqueteclea.github.io/static/feedback-voilib.png" alt="feedback-voilib.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Feedback from a Voilib user</figcaption>
@@ -523,7 +523,7 @@ interface.
 </p>
 
 <p>
-<b>UPDATE</b> <span class="timestamp-wrapper"><span class="timestamp">[2023-08-04 vie] </span></span> Read <a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">here</a> about the technology behind <b>Voilib</b>.
+<b>UPDATE</b> <span class="timestamp-wrapper"><span class="timestamp">[2023-08-04 Fri] </span></span> Read <a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">here</a> about the technology behind <b>Voilib</b>.
 </p>
 <div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> </div>]]></description>
   <category><![CDATA[projects]]></category>
