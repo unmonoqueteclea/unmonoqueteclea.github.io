@@ -4,10 +4,15 @@
 <title><![CDATA[@unmonoqueteclea - projects]]></title>
 <description><![CDATA[@unmonoqueteclea - projects]]></description>
 <link>https://unmonoqueteclea.github.io/tag-projects.html</link>
-<lastBuildDate>Fri, 28 Feb 2025 19:26:25 +0100</lastBuildDate>
+<lastBuildDate>Fri, 28 Feb 2025 19:29:21 +0100</lastBuildDate>
 <item>
   <title><![CDATA[Introducing jira.el: Emacs integration for Jira]]></title>
   <description><![CDATA[
+<p>
+I've just publised my first <code>Emacs</code> package: <a href="https://github.com/unmonoqueteclea/jira.el">jira.el</a>: an Emacs
+integration for <code>Jira</code>.
+</p>
+
 <blockquote>
 <p>
 If you have no choice but to use Jira, at least do it without leaving Emacs.
@@ -21,7 +26,7 @@ issues, modify properties, and even add worklogs—all without leaving
 Emacs.
 </p>
 
-<pre class="example" id="org4ccf42a">
+<pre class="example" id="orgcc00dc8">
 ℹ️ Status &lt;2025-02-28 Fri&gt;: Jira will join soon MELPA, one of the main Emacs repositories 🎉
 </pre>
 
@@ -42,14 +47,14 @@ of time spent on tasks.</li>
 
 
 
-<figure id="orge073b34">
+<figure id="org17d8fc3">
 <img src="https://unmonoqueteclea.github.io/static/jirael-list-issues.png" alt="jirael-list-issues.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>List issues in jira.el</figcaption>
 </figure>
 
 
-<figure id="orgcb15dc6">
+<figure id="org02acf8c">
 <img src="https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png" alt="jirael-list-worklogs.png" width="100%">
 
 <figcaption><span class="figure-number">Figure 2: </span>List worklogs in jira.el</figcaption>

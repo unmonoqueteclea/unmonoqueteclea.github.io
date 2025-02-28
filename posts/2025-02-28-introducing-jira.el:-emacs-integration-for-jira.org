@@ -3,6 +3,9 @@
 #+description: If you have no choice but to use Jira, at least do it without leaving Emacs.
 #+filetags:projects emacs
 
+I've just publised my first =Emacs= package: [[https://github.com/unmonoqueteclea/jira.el][jira.el]]: an Emacs
+integration for =Jira=.
+
 #+begin_quote
 If you have no choice but to use Jira, at least do it without leaving Emacs.
 #+end_quote
