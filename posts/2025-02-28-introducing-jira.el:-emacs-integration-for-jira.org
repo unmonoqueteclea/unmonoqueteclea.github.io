@@ -41,8 +41,8 @@ Key Features:
 [[https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png]]
 
 
-=jira.el= combines a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List Mode]]-based UI, with [[https://magit.vc/][Magit]]-like
+[[https://github.com/unmonoqueteclea/jira.el][jira.el]] combines a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List Mode]]-based UI, with [[https://magit.vc/][Magit]]-like
 keyboard-driven menus, a combination loved by =Emacs= users.
 
-Check out the =jira.el= documentation on =Github= for further details and
+Check out the [[https://github.com/unmonoqueteclea/jira.el][jira.el]] documentation on [[https://github.com/unmonoqueteclea/jira.el][Github]] for further details and
 usage tips!
