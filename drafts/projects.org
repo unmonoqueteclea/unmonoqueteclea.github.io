@@ -15,7 +15,7 @@ issues, modify properties, and even add worklogs—all without leaving
 Emacs.
 
 #+begin_example
-Update <2025-02-28 Fri>: Jira will join soon MELPA, one of the main Emacs repositories 🎉
+Status <2025-02-28 Fri>: Jira will join soon MELPA, one of the main Emacs repositories 🎉
 #+end_example
 
 Key Features:
@@ -30,10 +30,6 @@ Key Features:
    of time spent on tasks.
 
 
-#+CAPTION: List isues filter in jira.el
-#+ATTR_HTML: :width 100%
-[[https://unmonoqueteclea.github.io/static/jirael-list-issues-filter.png]]
-
 #+CAPTION: List issues in jira.el
 #+ATTR_HTML: :width 100%
 [[https://unmonoqueteclea.github.io/static/jirael-list-issues.png]]
@@ -43,14 +39,22 @@ Key Features:
 [[https://unmonoqueteclea.github.io/static/jirael-list-worklogs.png]]
 
 
+=jira.el= combines a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List Mode]]-based UI, with [[https://magit.vc/][Magit]]-like
+keyboard-driven menus, a combination loved by =Emacs= users.
+
 Check out the =jira.el= documentation on =Github= for further details and
-usage tips.
+usage tips!
 
 
 * 🦇 valencia-now: Real-time traffic information about Valencia
 [[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] provides *real-time* information about *car and bike traffic*
 in the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
+
+#+begin_example
+Status <2025-02-28 Fri>: The source of real-time information of valencia-now
+stopped working, I am trying to find alternative data sources.
+#+end_example
 
 Induction loops installed in different parts of Valencia can measure
 the number of *cars* and *bikes* passing through them. However, the City
@@ -75,6 +79,11 @@ about Valencia]]
 I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
 search within podcast transcriptions. Some months later, in July 2023,
 I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
+
+#+begin_example
+Status: <2025-02-28 Fri>  Voilib permanently shut down on December 14th, 2024,
+but I still maintain the Open Source version
+#+end_example
 
 [[https://voilib.com][Voilib]] offers semantic search in thousands of minutes of high-quality
 transcriptions of podcasts. Just type your query in English 🇺🇸 or
