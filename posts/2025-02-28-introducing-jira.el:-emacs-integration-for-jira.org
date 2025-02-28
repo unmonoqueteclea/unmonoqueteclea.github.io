@@ -1,5 +1,6 @@
 #+title: Introducing jira.el: Emacs integration for Jira
 #+date: <2025-02-28 19:20>
+#+image: static/jirael-list-issues.png
 #+description: If you have no choice but to use Jira, at least do it without leaving Emacs.
 #+filetags:projects emacs
 
