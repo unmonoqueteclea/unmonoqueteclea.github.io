@@ -13,9 +13,9 @@ code public, I am morally obliged to do my bit.
 
 
 * Work
-My CV says I have a =MSc Degree in Telecommunications Engineering=. For
-the last few years, I have been working as a =Lead Software Engineer=,
-trying to *democratize Machine Learning* 🤖 at [[https://bigml.com][BigML]].
+My CV states that I have a =MSc Degree in Telecommunications
+Engineering=. Over the past few years, I have been working as a
+=Software Engineer= in startups.
 
 I consider myself an *end-to-end engineer*, the kind of person that can
 transform ideas into working prototypes in a few nights fueled with
