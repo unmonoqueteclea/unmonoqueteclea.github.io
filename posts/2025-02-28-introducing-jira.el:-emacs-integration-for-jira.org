@@ -7,6 +7,8 @@
 I've just publised my first =Emacs= package: [[https://github.com/unmonoqueteclea/jira.el][jira.el]]: an Emacs
 integration for =Jira=.
 
+[[https://stable.melpa.org/#/jira][file:https://stable.melpa.org/packages/jira-badge.svg]]
+
 #+begin_quote
 If you have no choice but to use Jira, at least do it without leaving Emacs.
 #+end_quote
