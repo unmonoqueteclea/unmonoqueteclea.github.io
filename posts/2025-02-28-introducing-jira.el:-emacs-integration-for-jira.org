@@ -17,7 +17,7 @@ issues, modify properties, and even add worklogs—all without leaving
 Emacs.
 
 #+begin_example
-ℹ️ Status <2025-02-28 Fri>: Jira will join soon MELPA, one of the main Emacs repositories 🎉
+ℹ️ Status <<2025-03-17 Mon>>: Jira is already part of MELPA! 🎉
 #+end_example
 
 Key Features:
