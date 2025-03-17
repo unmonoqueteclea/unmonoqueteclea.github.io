@@ -14,6 +14,8 @@ If you have no choice but to use Jira, at least do it without leaving Emacs.
 issues, modify properties, and even add worklogs—all without leaving
 Emacs.
 
+[[https://stable.melpa.org/#/jira][file:https://stable.melpa.org/packages/jira-badge.svg]]
+
 #+begin_example
 ℹ️ Status <2025-03-17 Mon>: Jira is already part of MELPA! 🎉
 #+end_example
