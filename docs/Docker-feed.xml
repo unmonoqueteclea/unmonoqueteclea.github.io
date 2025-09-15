@@ -4,7 +4,7 @@
 <title><![CDATA[@unmonoqueteclea - Docker]]></title>
 <description><![CDATA[@unmonoqueteclea - Docker]]></description>
 <link>https://unmonoqueteclea.github.io/tag-docker.html</link>
-<lastBuildDate>Mon, 17 Mar 2025 18:28:54 +0100</lastBuildDate>
+<lastBuildDate>Mon, 15 Sep 2025 20:11:34 +0200</lastBuildDate>
 <item>
   <title><![CDATA[Learning about Docker Contexts]]></title>
   <description><![CDATA[
@@ -14,7 +14,7 @@ example of how I manage different Docker nodes.
 </p>
 
 <p>
-My audio search engine, <a href="https://voilib.com">voilib.com</a>, is running on a remote machine,
+My audio search engine, <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a> is running on a remote machine,
 configured in my <code>.ssh/config</code> file with the name <b>voilib</b>. I used to do
 <code>ssh voilib</code> to open a new <b>SSH session</b> to execute commands such as
 <code>docker stats</code> or <code>docker logs</code>. But then I discovered <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Contexts</a>.

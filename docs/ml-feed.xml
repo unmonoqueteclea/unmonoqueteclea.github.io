@@ -4,13 +4,75 @@
 <title><![CDATA[@unmonoqueteclea - ml]]></title>
 <description><![CDATA[@unmonoqueteclea - ml]]></description>
 <link>https://unmonoqueteclea.github.io/tag-ml.html</link>
-<lastBuildDate>Mon, 17 Mar 2025 18:28:54 +0100</lastBuildDate>
+<lastBuildDate>Mon, 15 Sep 2025 20:11:33 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[Re: Status of Voilib and building AI tools]]></title>
+  <description><![CDATA[
+<p>
+Last week, a <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a> user reached out to me with two questions: how the project is
+currently progressing, and whether I could recommend other AI-based tools that might
+support his learning journey.
+</p>
+
+<p>
+I’d like to share part of my reply here, since I believe it could be useful for others as
+well:
+</p>
+
+<blockquote>
+<p>
+I’m glad to hear Voilib was useful for you. I have to admit that keeping it updated isn’t
+one of my main priorities these days. It’s a project that’s a bit too big to simply
+self-host on a Raspberry Pi and check in on every few weeks. It’s harder to maintain when
+the number of channels grows: the transcription process uses a lot of CPU, and the
+embeddings database grows really quickly.  Still, building it end-to-end was a lot of fun
+and a huge learning experience.
+</p>
+
+<p>
+If I had to rebuild it today, I would try to simplify every component much more. For
+example, using <code>sqlite-vec</code> could be a nice way to store embeddings without relying on an
+additional service. And without any doubt, I’d make heavy use of <a href="https://simonwillison.net/">Simon Willison</a>’s
+excellent llm library (<a href="https://github.com/simonw/llm">https://github.com/simonw/llm</a>) as it handles embeddings, tool
+calls, and supports any LLM provider. Both in a <code>CLI</code> and as a <code>Python</code> library.
+</p>
+
+<p>
+In fact, that’s what I recommend to everyone: explore everything Simon has built on top of
+that library. It’s impressive, and you can learn how agents really work without all the
+unnecessary complexity others often add.  Write a <code>for</code> loop using tool calls and that
+library and you will have built your own agent.
+</p>
+
+<p>
+Good luck on your learning journey!
+</p>
+
+<p>
+Best,
+Pablo
+</p>
+</blockquote>
+
+
+<p>
+And that's it. AI hype or AI winter, just start small (really small),
+build things, and you’ll see what’s signal and what’s just noise.
+</p>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> <a href="https://unmonoqueteclea.github.io/tag-llm.html">llm</a> <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div>]]></description>
+  <category><![CDATA[projects]]></category>
+  <category><![CDATA[llm]]></category>
+  <category><![CDATA[ml]]></category>
+  <link>https://unmonoqueteclea.github.io/2025-09-15-re:-status-of-voilib-and-building-ai-tools.html</link>
+  <guid>https://unmonoqueteclea.github.io/2025-09-15-re:-status-of-voilib-and-building-ai-tools.html</guid>
+  <pubDate>Mon, 15 Sep 2025 19:45:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[Large Language Models (LLMs) as noise generators]]></title>
   <description><![CDATA[
-<div id="outline-container-org99ac5bb" class="outline-2">
-<h2 id="org99ac5bb">Introducing Jane: from bullet points to cover letter</h2>
-<div class="outline-text-2" id="text-org99ac5bb">
+<div id="outline-container-org589eba6" class="outline-2">
+<h2 id="org589eba6">Introducing Jane: from bullet points to cover letter</h2>
+<div class="outline-text-2" id="text-org589eba6">
 <p>
 Allow me to introduce you to <b>Jane Doe</b>, a seasoned <b>Software Engineer</b>
 with 10 years of experience. Currently, Jane is exploring various job
@@ -44,7 +106,7 @@ below). <a href="https://chat.openai.com/">ChatGPT</a>, as it usually does, prod
 cover letter including all the points asked by Jane.
 </p>
 
-<details id="orgd24b62d">
+<details id="org590e9b9">
 <blockquote>
 <p>
 Dear [Recipient's Name],
@@ -81,9 +143,9 @@ Sincerely,
 </details>
 </div>
 </div>
-<div id="outline-container-orgb1464ba" class="outline-2">
-<h2 id="orgb1464ba">Introducing Joe: from cover letter to bullet points</h2>
-<div class="outline-text-2" id="text-orgb1464ba">
+<div id="outline-container-org9934b60" class="outline-2">
+<h2 id="org9934b60">Introducing Joe: from cover letter to bullet points</h2>
+<div class="outline-text-2" id="text-org9934b60">
 <p>
 Introducing now <b>Joe Shmoe</b>, the <b>HR leader</b> responsible for reviewing
 Jane's captivating cover letter. In the fast-paced world of talent
@@ -119,9 +181,9 @@ Does it sounds familiar to you too?
 </p>
 </div>
 </div>
-<div id="outline-container-orgb182fee" class="outline-2">
-<h2 id="orgb182fee">Is this the future?</h2>
-<div class="outline-text-2" id="text-orgb182fee">
+<div id="outline-container-org197d7bb" class="outline-2">
+<h2 id="org197d7bb">Is this the future?</h2>
+<div class="outline-text-2" id="text-org197d7bb">
 <p>
 LLMs are beginning to change the process of <b>content generation</b> but
 also <b>content consumption</b>, giving rise to some rather paradoxical
@@ -153,7 +215,8 @@ reliable information with a <b>high signal to noise ratio</b>.
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div>]]></description>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-llm.html">llm</a> <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div>]]></description>
+  <category><![CDATA[llm]]></category>
   <category><![CDATA[ml]]></category>
   <link>https://unmonoqueteclea.github.io/2023-07-30-large-language-models-(llms)-as-noise-generators.html</link>
   <guid>https://unmonoqueteclea.github.io/2023-07-30-large-language-models-(llms)-as-noise-generators.html</guid>

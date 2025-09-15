@@ -6,7 +6,7 @@
 A single *Docker CLI* to rule them all!  Let me show you a little
 example of how I manage different Docker nodes.
 
-My audio search engine, [[https://voilib.com][voilib.com]], is running on a remote machine,
+My audio search engine, [[https://github.com/unmonoqueteclea/voilib][Voilib]] is running on a remote machine,
 configured in my =.ssh/config= file with the name *voilib*. I used to do
 =ssh voilib= to open a new *SSH session* to execute commands such as
 =docker stats= or =docker logs=. But then I discovered [[https://docs.docker.com/engine/context/working-with-contexts/][Docker Contexts]].

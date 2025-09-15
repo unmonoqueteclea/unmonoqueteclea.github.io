@@ -1,0 +1,40 @@
+#+title: Re: Status of Voilib and building AI tools
+#+date: <2025-09-15 19:45>
+#+description:
+#+filetags: projects llm ml
+
+Last week, a [[https://github.com/unmonoqueteclea/voilib][Voilib]] user reached out to me with two questions: how the project is
+currently progressing, and whether I could recommend other AI-based tools that might
+support his learning journey.
+
+I’d like to share part of my reply here, since I believe it could be useful for others as
+well:
+
+#+begin_quote
+I’m glad to hear Voilib was useful for you. I have to admit that keeping it updated isn’t
+one of my main priorities these days. It’s a project that’s a bit too big to simply
+self-host on a Raspberry Pi and check in on every few weeks. It’s harder to maintain when
+the number of channels grows: the transcription process uses a lot of CPU, and the
+embeddings database grows really quickly.  Still, building it end-to-end was a lot of fun
+and a huge learning experience.
+
+If I had to rebuild it today, I would try to simplify every component much more. For
+example, using =sqlite-vec= could be a nice way to store embeddings without relying on an
+additional service. And without any doubt, I’d make heavy use of [[https://simonwillison.net/][Simon Willison]]’s
+excellent llm library (https://github.com/simonw/llm) as it handles embeddings, tool
+calls, and supports any LLM provider. Both in a =CLI= and as a =Python= library.
+
+In fact, that’s what I recommend to everyone: explore everything Simon has built on top of
+that library. It’s impressive, and you can learn how agents really work without all the
+unnecessary complexity others often add.  Write a =for= loop using tool calls and that
+library and you will have built your own agent.
+
+Good luck on your learning journey!
+
+Best,
+Pablo
+#+end_quote
+
+
+And that's it. AI hype or AI winter, just start small (really small),
+build things, and you’ll see what’s signal and what’s just noise.

@@ -4,7 +4,7 @@
 #+image: static/example-voilib.png
 #+filetags: projects
 
-Each week, [[https://voilib.com][Voilib]] diligently *collects and transcribes* hundreds of
+Each week, [[https://github.com/unmonoqueteclea/voilib][Voilib]] diligently *collects and transcribes* hundreds of
 podcast episodes. These valuable transcripts undergo a meticulous
 indexing process, enabling a sophisticated *semantic search*
 capability. As a result, our users can effortlessly execute
@@ -24,7 +24,7 @@ captivating technology behind it.
 [[https://unmonoqueteclea.github.io/static/voilib.gif]]
 
 
-Essentially, [[https://voilib.com][Voilib]]'s work can be divided into four main tasks:
+Essentially, [[https://github.com/unmonoqueteclea/voilib][Voilib]]'s work can be divided into four main tasks:
 *collecting* new episodes, *transcribing* them, *indexing* all the content,
 and *querying* the vector database to find relevant fragments.
 
@@ -155,7 +155,7 @@ Please feel free to reach out to me at =unmonoqueteclea@gmail.com= with
 your thoughts, suggestions, or any inquiries.
 
 I am eager to know which podcasts you would like to see available on
-[[https://voilib.com/][Voilib]]. Additionally, if there are any specific features that you
+[[https://github.com/unmonoqueteclea/voilib][Voilib]]. Additionally, if there are any specific features that you
 believe would enhance your user experience and make your life easier,
 please do not hesitate to share them with me. It's a fantastic
 opportunity to contribute to the open-source community.

@@ -4,14 +4,14 @@
 #+image: static/example-voilib.png
 #+filetags: projects
 
-Today, I decided to *open-source* [[https://voilib.com][Voilib]] 🎉, the podcast search engine I
+Today, I decided to *open-source* [[https://github.com/unmonoqueteclea/voilib][Voilib]] 🎉, the podcast search engine I
 launched in December 2022. You can now *run your own instance* of it and
 transcribe and index your favorite podcasts (or even your own
 content!).You can find it on [[https://github.com/unmonoqueteclea/voilib][Github]] or [[https://gitlab.com/unmonoqueteclea/voilib][Gitlab]].
 
 Appearing in [[https://news.ycombinator.com/item?id=34115618][Show
 HN]] was a big boost for the project. That post was the main source of
-traffic during the first days of life of [[https://voilib.com][Voilib]]. I am thrilled to see
+traffic during the first days of life of [[https://github.com/unmonoqueteclea/voilib][Voilib]]. I am thrilled to see
 that many of those initial users still use it today to discover
 relevant podcast episodes on topics they are interested in. Throughout
 these months, I have received valuable feedback and kind words from

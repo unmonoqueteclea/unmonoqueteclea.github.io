@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Connect to Docker engine running on a remote machine.">
 <link rel="alternate"
       type="application/rss+xml"
       href="https://unmonoqueteclea.github.io/feed.xml"
       title="RSS feed for https://unmonoqueteclea.github.io">
-<title>Learning about Docker Contexts</title>
-<meta property="og:title" content="Learning about Docker Contexts">
+<title>Re: Status of Voilib and building AI tools</title>
+<meta property="og:title" content="Re: Status of Voilib and building AI tools">
 <meta property="og:type" content="article" />
-<meta property="og:description" content="Connect to Docker engine running on a remote machine.">
-<meta property="og:url" content="https://unmonoqueteclea.github.io/2023-02-18-learning-about-docker-contexts.html">
+<meta property="og:url" content="https://unmonoqueteclea.github.io/2025-09-15-re:-status-of-voilib-and-building-ai-tools.html">
 <meta property="og:image" content="https://unmonoqueteclea.github.io/static/profile.png">
 <meta name="author" content="unmonoqueteclea">
 <meta name="referrer" content="no-referrer">
@@ -61,53 +59,59 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<div class="post-date">18 Feb 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-02-18-learning-about-docker-contexts.html">Learning about Docker Contexts</a></h1>
+<div class="post-date">15 Sep 2025</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2025-09-15-re:-status-of-voilib-and-building-ai-tools.html">Re: Status of Voilib and building AI tools</a></h1>
 <p>
-A single <b>Docker CLI</b> to rule them all!  Let me show you a little
-example of how I manage different Docker nodes.
+Last week, a <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a> user reached out to me with two questions: how the project is
+currently progressing, and whether I could recommend other AI-based tools that might
+support his learning journey.
 </p>
 
 <p>
-My audio search engine, <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a> is running on a remote machine,
-configured in my <code>.ssh/config</code> file with the name <b>voilib</b>. I used to do
-<code>ssh voilib</code> to open a new <b>SSH session</b> to execute commands such as
-<code>docker stats</code> or <code>docker logs</code>. But then I discovered <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Contexts</a>.
+I’d like to share part of my reply here, since I believe it could be useful for others as
+well:
+</p>
+
+<blockquote>
+<p>
+I’m glad to hear Voilib was useful for you. I have to admit that keeping it updated isn’t
+one of my main priorities these days. It’s a project that’s a bit too big to simply
+self-host on a Raspberry Pi and check in on every few weeks. It’s harder to maintain when
+the number of channels grows: the transcription process uses a lot of CPU, and the
+embeddings database grows really quickly.  Still, building it end-to-end was a lot of fun
+and a huge learning experience.
 </p>
 
 <p>
-I created a new context just by doing:
+If I had to rebuild it today, I would try to simplify every component much more. For
+example, using <code>sqlite-vec</code> could be a nice way to store embeddings without relying on an
+additional service. And without any doubt, I’d make heavy use of <a href="https://simonwillison.net/">Simon Willison</a>’s
+excellent llm library (<a href="https://github.com/simonw/llm">https://github.com/simonw/llm</a>) as it handles embeddings, tool
+calls, and supports any LLM provider. Both in a <code>CLI</code> and as a <code>Python</code> library.
 </p>
 
 <p>
-<code>docker context create voilib --docker "host=ssh://voilib"</code>
+In fact, that’s what I recommend to everyone: explore everything Simon has built on top of
+that library. It’s impressive, and you can learn how agents really work without all the
+unnecessary complexity others often add.  Write a <code>for</code> loop using tool calls and that
+library and you will have built your own agent.
 </p>
 
 <p>
-Now, every time I need to run any Docker command in the <b>voilib</b> machine
-I just do:
+Good luck on your learning journey!
 </p>
 
 <p>
-<code>docker context use voilib</code>.
+Best,
+Pablo
 </p>
-
-<p>
-From that moment, all the Docker commands such as <code>docker exec</code>, <code>docker
-logs</code> or <code>docker stats</code> will be running inside the remote server!  When I
-want to return to my local environment I do:
-</p>
-
-<p>
-<code>docker context use default</code>
-</p>
+</blockquote>
 
 
 <p>
-I even opened a new <a href="https://github.com/Silex/docker.el/pull/213">PR</a> in <a href="https://github.com/Silex/docker.el">docker.el</a> so that I can check available
-contexts and change the active one from <code>Emacs</code>. How I wish I had
-discovered it before!
+And that's it. AI hype or AI winter, just start small (really small),
+build things, and you’ll see what’s signal and what’s just noise.
 </p>
-<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-docker.html">Docker</a> </div></div>
+<div class="taglist"><a href="https://unmonoqueteclea.github.io/tags.html">Tags</a>: <a href="https://unmonoqueteclea.github.io/tag-projects.html">projects</a> <a href="https://unmonoqueteclea.github.io/tag-llm.html">llm</a> <a href="https://unmonoqueteclea.github.io/tag-ml.html">ml</a> </div></div>
 <div id="postamble" class="status"><center>
   <div class="footer-networks">
     <ul>

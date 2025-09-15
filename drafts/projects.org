@@ -78,7 +78,7 @@ about Valencia]]
 
 
 * 🔈voilib.com: The open source search engine for audio content
-I launched [[https://voilib.com][voilib.com]] in December 2022 to allow people to do semantic
+I launched [[https://github.com/unmonoqueteclea/voilib][Voilib]] in December 2022 to allow people to do semantic
 search within podcast transcriptions. Some months later, in July 2023,
 I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
 
@@ -87,10 +87,10 @@ I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
 but I still maintain the Open Source version
 #+end_example
 
-[[https://voilib.com][Voilib]] offers semantic search in thousands of minutes of high-quality
+[[https://github.com/unmonoqueteclea/voilib][Voilib]] offers semantic search in thousands of minutes of high-quality
 transcriptions of podcasts. Just type your query in English 🇺🇸 or
 Spanish 🇪🇸 and it will find related content in thousands of
-episodes. Every day, [[https://voilib.com][Voilib]] automatically collects, transcribe and
+episodes. Every day, [[https://github.com/unmonoqueteclea/voilib][Voilib]] automatically collects, transcribe and
 index new episodes from a [[https://voilib.com/content][list of podcasts]]. [[https://github.com/unmonoqueteclea/voilib][Self-hosted version of
 Voilib]] is also able to index local audio files. For example, you can
 feed it with recordings of all your online meetings and be able to
