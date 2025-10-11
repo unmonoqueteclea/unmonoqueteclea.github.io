@@ -83,8 +83,14 @@ search within podcast transcriptions. Some months later, in July 2023,
 I decided to [[https://github.com/unmonoqueteclea/voilib][open-source]] it.
 
 #+begin_example
-ℹ️ Status: <2025-02-28 Fri>  Voilib permanently shut down on December 14th, 2024,
-but I still maintain the Open Source version
+ℹ️ Status: <2025-10-11 Sat>  Voilib permanently shut down on December 14th, 2024,
+and its repository was archieved on October 11th 2025. As AI advances at a
+blistering pace and the Python ecosystem evolves constantly, this project may
+become outdated or less useful as a learning resource over time. Still, I believe
+it retains archeological interest: it was created in the early days of RAG-style
+systems, when the “best practices” for building on top of them were far from
+settled. Use at your own risk, and feel free to fork it for experimentation
+or study.
 #+end_example
 
 [[https://github.com/unmonoqueteclea/voilib][Voilib]] offers semantic search in thousands of minutes of high-quality
