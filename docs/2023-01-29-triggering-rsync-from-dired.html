@@ -61,7 +61,7 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<div class="post-date">29 Jan 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html">Emacs: Triggering rsync from dired</a></h1>
+<div class="post-date">29 ene 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-01-29-triggering-rsync-from-dired.html">Emacs: Triggering rsync from dired</a></h1>
 <p>
 If you are a heavy <code>Emacs</code> user as me, you will have tried to move files
 between different machines using <code>TRAMP</code>. But this approach is not nice
@@ -80,19 +80,19 @@ And it turned out that the solution was as easy as this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #6052cf; font-weight: bold;">defun</span> <span style="color: #cf25aa;">mono/dwim-rsync</span> (output)
-  <span style="color: #506fa0; font-style: italic;">"Use rsync to move selected files to OUTPUT."</span>
-  (<span style="color: #6052cf; font-weight: bold;">interactive</span> <span style="color: #4250ef;">"D"</span>)
+<pre class="src src-emacs-lisp">(defun mono/dwim-rsync (output)
+  "Use rsync to move selected files to OUTPUT."
+  (interactive "D")
   (dwim-shell-command-on-marked-files
-   (format <span style="color: #4250ef;">"Moving selected files to %s"</span> output)
-   <span style="color: #a65f6a; font-style: italic;">;; </span><span style="color: #a65f6a; font-style: italic;">we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)</span>
-   <span style="color: #a65f6a; font-style: italic;">;; </span><span style="color: #a65f6a; font-style: italic;">to rsync syntax (e.g. myserver:/home). For the output file</span>
-   <span style="color: #a65f6a; font-style: italic;">;; </span><span style="color: #a65f6a; font-style: italic;">it's easy, but for input files we need to do it in the command,</span>
-   <span style="color: #a65f6a; font-style: italic;">;; </span><span style="color: #a65f6a; font-style: italic;">that is where '</span><span style="color: #065fff; font-style: italic;">&lt;&lt;*&gt;&gt;</span><span style="color: #a65f6a; font-style: italic;">' is expanded.</span>
-   (<span style="color: #6052cf; font-weight: bold;">let</span> ((clean-output (replace-regexp-in-string <span style="color: #4250ef;">"</span><span style="color: #b6532f;">\</span><span style="color: #4250ef;">/ssh:"</span> <span style="color: #4250ef;">""</span> output))
-         (clean-files-cmd <span style="color: #4250ef;">"echo &lt;&lt;*&gt;&gt; | sed '</span><span style="color: #065fff;">s/\\/ssh://g</span><span style="color: #4250ef;">'"</span>))
-     (format <span style="color: #4250ef;">"%s | xargs -i rsync -aP {} %s"</span> clean-files-cmd clean-output))
-   <span style="color: #ba35af; font-weight: bold;">:utils</span> <span style="color: #4250ef;">"rsync"</span>))
+   (format "Moving selected files to %s" output)
+   ;; we need to convert TRAMP ssh syntax (e.g. /ssh:myserver:/home)
+   ;; to rsync syntax (e.g. myserver:/home). For the output file
+   ;; it's easy, but for input files we need to do it in the command,
+   ;; that is where '&lt;&lt;*&gt;&gt;' is expanded.
+   (let ((clean-output (replace-regexp-in-string "\/ssh:" "" output))
+         (clean-files-cmd "echo &lt;&lt;*&gt;&gt; | sed 's/\\/ssh://g'"))
+     (format "%s | xargs -i rsync -aP {} %s" clean-files-cmd clean-output))
+   :utils "rsync"))
 </pre>
 </div>
 

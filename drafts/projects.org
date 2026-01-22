@@ -17,7 +17,7 @@ Emacs.
 [[https://stable.melpa.org/#/jira][file:https://stable.melpa.org/packages/jira-badge.svg]]
 
 #+begin_example
-ℹ️ Status <2025-03-17 Mon>: Jira is already part of MELPA! 🎉
+ℹ️ Status <2026-01-22 Mon>: Jira is already part of MELPA! 🎉
 #+end_example
 
 Key Features:
@@ -54,8 +54,10 @@ in the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
 
 #+begin_example
-ℹ️ Status <2025-02-28 Fri>: The source of real-time information of valencia-now
-stopped working, I am trying to find alternative data sources.
+ℹ️ Status <2026-01-22 jue>: After some downtime due to issues with data publication
+from the city council, my real-time Valencia traffic visualization project is
+back online 🚦. And now it includes new data about the location of active
+V16 beacons 🚗✨
 #+end_example
 
 Induction loops installed in different parts of Valencia can measure

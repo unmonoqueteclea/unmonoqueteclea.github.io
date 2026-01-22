@@ -61,7 +61,7 @@
 <hr class="preamble-sep" />
 </div>
 <div id="content">
-<div class="post-date">03 Aug 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">The technology behind Voilib</a></h1>
+<div class="post-date">03 ago 2023</div><h1 class="post-title"><a href="https://unmonoqueteclea.github.io/2023-08-03-the-technology-behind-voilib.html">The technology behind Voilib</a></h1>
 <p>
 Each week, <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a> diligently <b>collects and transcribes</b> hundreds of
 podcast episodes. These valuable transcripts undergo a meticulous
@@ -82,7 +82,7 @@ captivating technology behind it.
 
 
 
-<figure id="orgc1f25bc">
+<figure id="orgb825d8d">
 <img src="https://unmonoqueteclea.github.io/static/voilib.gif" alt="voilib.gif" width="100%">
 
 <figcaption><span class="figure-number">Figure 1: </span>Searching content in voilib.com</figcaption>
@@ -94,9 +94,9 @@ Essentially, <a href="https://github.com/unmonoqueteclea/voilib">Voilib</a>'s wo
 <b>collecting</b> new episodes, <b>transcribing</b> them, <b>indexing</b> all the content,
 and <b>querying</b> the vector database to find relevant fragments.
 </p>
-<div id="outline-container-orgca24fff" class="outline-2">
-<h2 id="orgca24fff">🌐  Collect (new episodes)</h2>
-<div class="outline-text-2" id="text-orgca24fff">
+<div id="outline-container-orgae855a2" class="outline-2">
+<h2 id="orgae855a2">🌐  Collect (new episodes)</h2>
+<div class="outline-text-2" id="text-orgae855a2">
 <p>
 Almost all public podcasts have an associated <code>RSS feed</code> that contains
 metadata about every episode, including a link to the audio file. As
@@ -117,8 +117,8 @@ run it twice a day):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"><code>voilib-episodes --update
-</code></pre>
+<pre class="src src-bash">voilib-episodes --update
+</pre>
 </div>
 
 <p>
@@ -127,9 +127,9 @@ modules.
 </p>
 </div>
 </div>
-<div id="outline-container-org3e549f1" class="outline-2">
-<h2 id="org3e549f1">🗨️ Transcript (episodes audios)</h2>
-<div class="outline-text-2" id="text-org3e549f1">
+<div id="outline-container-org503845c" class="outline-2">
+<h2 id="org503845c">🗨️ Transcript (episodes audios)</h2>
+<div class="outline-text-2" id="text-org503845c">
 <p>
 The podcast episodes are transcribed using <a href="https://openai.com/research/whisper">Whisper, an Open Source
 Speech Recognition Model developed by OpenAI</a>. <b>Voilib</b> effectively
@@ -155,8 +155,8 @@ just need to run this (I also have a <b>cron job</b> configured to run it):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"><code>voilib-episodes --transcribe-days 3
-</code></pre>
+<pre class="src src-bash">voilib-episodes --transcribe-days 3
+</pre>
 </div>
 
 <p>
@@ -164,9 +164,9 @@ For curious minds, you can check <a href="https://github.com/unmonoqueteclea/voi
 </p>
 </div>
 </div>
-<div id="outline-container-orgb0c809c" class="outline-2">
-<h2 id="orgb0c809c">📇 Index (episodes trancriptions)</h2>
-<div class="outline-text-2" id="text-orgb0c809c">
+<div id="outline-container-org3d14921" class="outline-2">
+<h2 id="org3d14921">📇 Index (episodes trancriptions)</h2>
+<div class="outline-text-2" id="text-org3d14921">
 <p>
 The process of generating episode transcripts involves breaking them
 down into fragments, each comprising approximately 40 words. <b>Voilib</b>
@@ -222,9 +222,9 @@ the main components of the system. More on this in the next section.
 </p>
 </div>
 </div>
-<div id="outline-container-org34cccf3" class="outline-2">
-<h2 id="org34cccf3">🔍 Query (embeddings)</h2>
-<div class="outline-text-2" id="text-org34cccf3">
+<div id="outline-container-orge7b0a70" class="outline-2">
+<h2 id="orge7b0a70">🔍 Query (embeddings)</h2>
+<div class="outline-text-2" id="text-orge7b0a70">
 <p>
 Each episode's embeddings are meticulously preserved within a <b>vector
 database</b>. In recent months, we have witnessed a surge in new
@@ -259,8 +259,8 @@ from all pending episodes:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"><code>voilib-episodes --store
-</code></pre>
+<pre class="src src-bash">voilib-episodes --store
+</pre>
 </div>
 
 <p>
@@ -268,9 +268,9 @@ More, in the <a href="https://github.com/unmonoqueteclea/voilib/blob/main/backen
 </p>
 </div>
 </div>
-<div id="outline-container-org52cd360" class="outline-2">
-<h2 id="org52cd360">Happy to receive your feedback</h2>
-<div class="outline-text-2" id="text-org52cd360">
+<div id="outline-container-org57ac480" class="outline-2">
+<h2 id="org57ac480">Happy to receive your feedback</h2>
+<div class="outline-text-2" id="text-org57ac480">
 <p>
 Please feel free to reach out to me at <code>unmonoqueteclea@gmail.com</code> with
 your thoughts, suggestions, or any inquiries.
