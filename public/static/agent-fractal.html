@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Fractal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08080a;--bg2:#111116;--bg3:#1a1a20;
+  --border:#252530;--border-h:#35354a;
+  --t:#d4d4de;--t2:#9999b0;--t3:#606080;
+  --pink:#ff2d6f;--blue:#4d94ff;--green:#00e68a;
+  --yellow:#ffc233;--purple:#a78bfa;--cyan:#22d3ee;
+  --red:#ff4455;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(8,8,10,.92);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:100;backdrop-filter:blur(12px)}
+.topbar-title{font-family:'JetBrains Mono',monospace;font-size:.9rem;letter-spacing:3px;color:var(--t3);text-transform:uppercase}
+.topbar-right{display:flex;align-items:center;gap:1.5rem}
+.guard-switch{display:flex;align-items:center;gap:.6rem;cursor:pointer;user-select:none}
+.guard-switch-label{font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--t3);transition:color .3s}
+.guard-switch-label.active{color:var(--yellow)}
+.switch-track{width:42px;height:22px;border:1px solid var(--border);border-radius:11px;position:relative;transition:all .3s}
+.switch-knob{width:14px;height:14px;border-radius:50%;background:var(--t3);position:absolute;top:3px;left:3px;transition:all .3s}
+.guard-switch.on .switch-track{border-color:var(--yellow);background:rgba(255,194,51,.08)}
+.guard-switch.on .switch-knob{left:23px;background:var(--yellow);box-shadow:0 0 10px rgba(255,194,51,.4)}
+
+/* LAYOUT */
+.layout{display:flex;min-height:calc(100vh - 56px);padding-top:56px}
+.diagram-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 2.5rem;min-width:0}
+.log-col{width:580px;height:calc(100vh - 56px);border-left:1px solid var(--border);background:var(--bg2);display:flex;flex-direction:column;flex-shrink:0}
+.log-header{padding:.9rem 1.3rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.log-header-title{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+.log-header-toggle{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--t3)}
+.log-body{flex:1;overflow-y:auto;padding:1rem 1.3rem;font-family:'JetBrains Mono',monospace;font-size:.92rem;line-height:1.6;color:var(--t2)}
+.log-line:has(.log-role.guard){line-height:1.2}
+.log-body.collapsed{display:none}
+.log-line{margin-bottom:.05rem}
+.log-line:has(.log-role.guard){margin-bottom:.6rem;margin-top:.5rem}
+.log-line:has(.log-role.guard) .log-role.guard{font-size:.82rem}
+.log-role{font-weight:600}
+.log-role.system{color:var(--purple)}
+.log-role.user{color:var(--cyan)}
+.log-role.assistant{color:var(--t)}
+.log-role.tool{color:var(--green)}
+.log-role.guard{color:var(--yellow)}
+.log-comment{color:var(--t3);font-style:italic}
+.log-sep{color:var(--t3);margin:.4rem 0;border-bottom:1px solid var(--border)}
+
+/* NODES */
+.node{
+  min-width:200px;padding:1.1rem 1.6rem;
+  border:2px solid var(--border);border-radius:14px;
+  background:var(--bg2);text-align:center;position:relative;
+  transition:all .3s;
+}
+.node:hover{border-color:var(--border-h)}
+.node.user{border-color:var(--cyan);border-radius:24px}
+.node.llm{border-color:var(--purple)}
+.node.tool{border-color:var(--green)}
+.node.agent{border-color:var(--blue);cursor:pointer}
+.node.agent:hover{border-color:#6aabff;box-shadow:0 0 30px rgba(77,148,255,.1)}
+.node.output{border-color:var(--green);border-radius:24px}
+.node-label{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:600;letter-spacing:1px;margin-bottom:.25rem}
+.node.user .node-label{color:var(--cyan)}
+.node.llm .node-label{color:var(--purple)}
+.node.tool .node-label{color:var(--green)}
+.node.agent .node-label{color:var(--blue)}
+.node.output .node-label{color:var(--green)}
+.node-desc{font-family:'Inter',sans-serif;font-size:1rem;color:var(--t2);line-height:1.4;margin-top:.15rem}
+.node-hint{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--t3);margin-top:.4rem;letter-spacing:.5px}
+.node.agent .node-hint{color:var(--blue)}
+.node-badge{position:absolute;top:-9px;right:-9px;font-family:'JetBrains Mono',monospace;font-size:.75rem;background:var(--bg);border:1px solid var(--border);padding:2px 8px;border-radius:8px;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+
+/* CONNECTOR */
+.conn{display:flex;flex-direction:column;align-items:center;position:relative}
+.conn-line{width:2px;height:26px;background:var(--border)}
+.conn-arrow{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--border)}
+.conn-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:2px 10px;font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--t3);letter-spacing:.5px;white-space:nowrap}
+
+/* ITERATION */
+.iter-num{width:36px;height:36px;border-radius:50%;border:2px solid var(--t3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--t);flex-shrink:0}
+
+/* GUARD */
+.guard{display:none;border:2px solid rgba(255,194,51,.3);background:rgba(255,194,51,.03);border-radius:10px;padding:.7rem 1.2rem;font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--yellow);text-align:center}
+.guards-active .guard{display:block}
+
+/* BLACK BOX */
+.blackbox{min-width:260px;padding:1.5rem 2.5rem;border:2px solid var(--border);border-radius:16px;background:var(--bg2);text-align:center;cursor:pointer;transition:all .3s;position:relative}
+.blackbox:hover{border-color:var(--blue);box-shadow:0 0 30px rgba(77,148,255,.08)}
+.blackbox-label{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:600;color:var(--t3);letter-spacing:1px}
+.blackbox-hint{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--t3);margin-top:.5rem;letter-spacing:.5px;opacity:.6}
+.blackbox:hover .blackbox-hint{opacity:1;color:var(--blue)}
+
+/* EXPAND HINT */
+.expand-hint{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--t3);margin-top:1.5rem;cursor:pointer;padding:.7rem 1.5rem;border:1px dashed var(--border);border-radius:10px;transition:all .3s;text-align:center}
+.expand-hint:hover{border-color:var(--t3);color:var(--t)}
+
+/* STEP NAV */
+.step-nav{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1rem;background:rgba(8,8,10,.92);border:1px solid var(--border);border-radius:12px;padding:.65rem 1.3rem;backdrop-filter:blur(12px);z-index:100}
+.step-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--t3);cursor:pointer;transition:all .3s}
+.step-dot.active{background:var(--pink);border-color:var(--pink)}
+.step-dot:hover{border-color:var(--t)}
+.step-label{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+.step-btn{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--t);cursor:pointer;padding:.45rem 1rem;border:1px solid var(--border);border-radius:6px;background:transparent;transition:all .2s;letter-spacing:1px;text-transform:uppercase}
+.step-btn:hover{border-color:var(--t);background:var(--bg3)}
+.step-btn:disabled{opacity:.3;cursor:default;border-color:var(--border)}
+
+/* TITLES */
+.scene-title{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:700;color:var(--t);text-align:center;margin-bottom:.4rem}
+.scene-sub{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--t3);text-align:center;max-width:600px;line-height:1.6;margin-bottom:2rem}
+
+/* DIAGRAM */
+.diagram{display:flex;flex-direction:column;align-items:center;gap:0;width:100%}
+
+/* EXPANDED DETAIL */
+.agent-detail{border:2px solid rgba(77,148,255,.2);border-radius:14px;background:rgba(77,148,255,.02);padding:1.5rem 2rem;width:100%;max-width:800px;margin-top:.5rem}
+.agent-detail-title{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.agent-detail-title::before{content:'';width:18px;height:2px;background:var(--blue)}
+
+/* CODE BLOCK */
+.code-block{margin-top:1.5rem;padding:1.5rem 2rem;border:1px solid var(--border);border-radius:14px;background:var(--bg2);max-width:620px;width:100%}
+.code-block-title{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--t3);margin-bottom:.8rem;letter-spacing:1px;text-transform:uppercase}
+.code-block pre{font-family:'JetBrains Mono',monospace;font-size:1.05rem;color:var(--t2);line-height:2}
+
+/* GUARD LEGEND */
+.guard-legend{padding:0;border:none;background:none}
+.guard-legend-title{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--t3);margin-bottom:.7rem;letter-spacing:1px;text-transform:uppercase}
+.guard-type{display:flex;align-items:center;gap:.6rem;padding:.35rem 0;font-family:'JetBrains Mono',monospace;font-size:.88rem;color:var(--t2);line-height:1.4}
+.guard-type-icon{width:26px;height:26px;border-radius:6px;border:1.5px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--yellow);background:rgba(255,194,51,.05);flex-shrink:0}
+.guard-type-label{color:var(--yellow);font-weight:600}
+.guard-type-desc{color:var(--t3);font-size:.8rem;margin-left:.2rem}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.log-col{width:400px}}
+@media(max-width:900px){.layout{flex-direction:column}.log-col{width:100%;border-left:none;border-top:1px solid var(--border);max-height:40vh}.diagram-col{padding:1.5rem 1rem}}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .4s ease both}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-title">Agent Fractal</span>
+  <div class="topbar-right">
+    <div class="guard-switch" id="guardSwitch" onclick="toggleGuards()">
+      <span class="guard-switch-label" id="guardLabel">Guards OFF</span>
+      <div class="switch-track"><div class="switch-knob"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="layout" id="layout">
+  <div class="diagram-col"><div id="diagramInner"></div></div>
+  <div class="log-col">
+    <div class="log-header" onclick="toggleLog()">
+      <span class="log-header-title">Raw log</span>
+      <span class="log-header-toggle" id="logToggle">&#9660;</span>
+    </div>
+    <div class="log-body" id="logBody"></div>
+    <div id="guardLegend" style="border-top:1px solid var(--border);padding:1rem 1.3rem"></div>
+  </div>
+</div>
+
+<div class="step-nav">
+  <button class="step-btn" id="prevBtn" onclick="prevStep()">&larr;</button>
+  <div id="dots" style="display:flex;gap:.5rem"></div>
+  <span class="step-label" id="stepLabel">1 / 3</span>
+  <button class="step-btn" id="nextBtn" onclick="nextStep()">Next &rarr;</button>
+</div>
+
+<script>
+// ── LOG DATA ──
+const logs=[
+// 0: simple chat
+`<div class="log-line"><span class="log-role system">system:</span> You are a helpful loan assistant.</div>
+<div class="log-line"><span class="log-role user">user:</span> What's the monthly payment for $50k at 4.2% over 30 years?</div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: Compliant. ALLOW.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> The monthly payment is approximately $245.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: Compliant. ALLOW.</span></div>`,
+
+// 1: simple tool call
+`<div class="log-line"><span class="log-role system">system:</span> You are a loan assistant with a calculator tool.</div>
+<div class="log-line"><span class="log-role user">user:</span> Monthly payment for $50k at 4.2% over 30 years?</div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: Compliant. ALLOW.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> Let me calculate that.</div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: calculator allowed? YES.</span></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> <span style="color:var(--green)">tool_call:</span> calculator({expr: "50000*0.042/12/(1-(1+0.042/12)^-360)"})</div>
+<div class="log-line"><span class="log-role tool">tool_result:</span> {result: 244.49}</div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> The monthly payment is $244.49.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: Compliant. ALLOW.</span></div>`,
+
+// 2: multi-agent
+`<div class="log-line"><span class="log-role system">system:</span> You are a loan orchestrator...</div>
+<div class="log-line"><span class="log-role user">user:</span> Approve a 50k loan for Garcia</div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: PII → REDACT.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-comment">// orchestrator, iteration 1</span></div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: All 3 agents allowed? YES.</span></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> <span style="color:var(--green)">tool_call:</span> credit_agent({amount: 50000, applicant_id: "****"})</div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> <span style="color:var(--green)">tool_call:</span> compliance_agent({applicant_id: "****", loan_type: "personal"})</div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> <span style="color:var(--green)">tool_call:</span> risk_agent({amount: 50000, term: 360})</div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-comment">// ── credit_agent ──</span></div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: Credit check OK.</span></div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> <span style="color:var(--green)">tool_call:</span> credit_bureau</div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: Bureau allowed. Strip history.</span></div>
+<div class="log-line"><span class="log-role tool">  tool_result:</span> {score: 740}</div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> 740 is Good.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: Compliant. ALLOW.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-comment">// ── compliance_agent ──</span></div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: Compliance check required.</span></div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> <span style="color:var(--green)">tool_call:</span> sanctions_check({name: "****"})</div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> <span style="color:var(--green)">tool_call:</span> kyc_verify({applicant_id: "****"})</div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: Both tools allowed? YES.</span></div>
+<div class="log-line"><span class="log-role tool">  tool_result:</span> {sanctions: "clear", kyc: "verified"}</div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> Sanctions clear. KYC verified.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: Logged to audit trail.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-comment">// ── risk_agent ──</span></div>
+<div class="log-line"><span class="log-role guard">&#9670; INPUT GUARD: Risk model v3 OK.</span></div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> <span style="color:var(--green)">tool_call:</span> risk_model</div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: Strip internal features.</span></div>
+<div class="log-line"><span class="log-role tool">  tool_result:</span> {risk: 0.32}</div>
+<div class="log-line"><span class="log-role assistant">  assistant:</span> 0.32 is Low.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: Below threshold. OK.</span></div>
+<div class="log-sep"></div>
+<div class="log-line"><span class="log-comment">// orchestrator, iteration 2</span></div>
+<div class="log-line"><span class="log-role guard">&#9670; TOOL GUARD: All results consistent? YES.</span></div>
+<div class="log-line"><span class="log-role assistant">assistant:</span> All 3 passed. Pre-approve.</div>
+<div class="log-line"><span class="log-role guard">&#9670; OUTPUT GUARD: ADD DISCLAIMER.</span></div>`
+];
+
+const scenes=[
+  {title:"A user talks to an LLM",sub:"This is the basic unit. Everything that follows is this, repeated and composed.",render:renderScene0},
+  {title:"The LLM can call tools",sub:"The LLM decides to call a tool. The result is injected back into the conversation.",render:renderScene1},
+  {title:"This is an agent: a loop of tool calls",sub:"Put the tool call in a loop: that's an agent. When tools are themselves agents, the same pattern repeats. Click to expand.",render:renderScene2}
+];
+
+let current=0;
+let expanded={}; // track what's expanded per scene
+
+function nav(){
+  document.getElementById('dots').innerHTML=scenes.map((_,i)=>`<div class="step-dot ${i===current?'active':''}" onclick="goTo(${i})"></div>`).join('');
+  document.getElementById('stepLabel').textContent=`${current+1} / ${scenes.length}`;
+  document.getElementById('prevBtn').disabled=current===0;
+  document.getElementById('nextBtn').disabled=current===scenes.length-1;
+}
+function goTo(i){current=i;expanded={};render();}
+function nextStep(){if(current<scenes.length-1){current++;expanded={};render();}}
+function prevStep(){if(current>0){current--;expanded={};render();}}
+
+function toggleLog(){
+  const b=document.getElementById('logBody');
+  b.classList.toggle('collapsed');
+  document.getElementById('logToggle').textContent=b.classList.contains('collapsed')?'\u25B6':'\u25BC';
+}
+
+function render(){
+  const el=document.getElementById('diagramInner');
+  el.innerHTML='';
+  scenes[current].render(el);
+  document.getElementById('logBody').innerHTML=logs[current];
+  const legend=document.getElementById('guardLegend');
+  const sw=document.getElementById('guardSwitch');
+  legend.innerHTML=sw.classList.contains('on')?renderLegend():'';
+  nav();
+}
+
+function toggleGuards(){
+  const sw=document.getElementById('guardSwitch'),label=document.getElementById('guardLabel');
+  sw.classList.toggle('on');
+  const on=sw.classList.contains('on');
+  label.textContent=on?'Guards ON':'Guards OFF';
+  label.classList.toggle('active',on);
+  document.getElementById('layout').classList.toggle('guards-active',on);
+  document.getElementById('guardLegend').innerHTML=on?renderLegend():'';
+}
+
+function tog(key){expanded[key]=!expanded[key];render();}
+
+// HELPERS
+function nd(label,cls,desc,hint,badge){
+  let h=`<div class="node ${cls}">`;
+  if(badge)h+=`<span class="node-badge">${badge}</span>`;
+  h+=`<div class="node-label">${label}</div>`;
+  if(desc)h+=`<div class="node-desc">${desc}</div>`;
+  if(hint)h+=`<div class="node-hint">${hint}</div>`;
+  return h+'</div>';
+}
+function cn(label){return `<div class="conn"><div class="conn-line"></div><div class="conn-arrow"></div>${label?`<span class="conn-label">${label}</span>`:''}</div>`;}
+function bb(label,hint,key){return `<div class="blackbox" onclick="tog('${key}')"><div class="blackbox-label">${label}</div><div class="blackbox-hint">${hint}</div></div>`;}
+function gd(text){return `<div class="guard" style="width:100%;max-width:440px">${text}</div>`;}
+
+// ── SCENE 0: simple chat ──
+function renderScene0(el){
+  el.innerHTML=`
+    <div class="scene-title fade-in">${scenes[0].title}</div>
+    <div class="scene-sub fade-in">${scenes[0].sub}</div>
+    <div class="diagram fade-in">
+      ${nd('User','user','"Monthly payment for $50k at 4.2% over 30yr?"')}
+      ${cn()}
+      ${gd('&#9670; Input Guard: Compliant. ALLOW.')}
+      ${cn()}
+      ${nd('LLM','llm','"The monthly payment is approximately $245."')}
+      ${cn()}
+      ${gd('&#9670; Output Guard: Compliant. ALLOW.')}
+    </div>
+    <div class="expand-hint fade-in" style="animation-delay:.3s" onclick="nextStep()">But the LLM can do more than just reply &rarr;</div>`;
+}
+
+// ── SCENE 1: single tool call ──
+function renderScene1(el){
+  const open=expanded.box;
+  el.innerHTML=`
+    <div class="scene-title fade-in">${scenes[1].title}</div>
+    <div class="scene-sub fade-in">${scenes[1].sub}</div>
+    <div class="diagram fade-in">
+      ${nd('User','user','"Monthly payment for $50k at 4.2% over 30 years?"')}
+      ${cn()}
+      ${gd('&#9670; Input Guard: Compliant. ALLOW.')}
+      ${cn()}
+      ${open?`
+        <div class="agent-detail" style="border-color:rgba(167,139,250,.2);background:rgba(167,139,250,.02)">
+          <div style="position:relative">
+            <div style="position:absolute;left:-14px;top:0;bottom:0;width:28px;border-left:2px dashed var(--purple);border-bottom:2px dashed var(--purple);border-radius:0 0 0 14px"></div>
+            <div style="position:absolute;right:-14px;top:0;bottom:0;width:28px;border-right:2px dashed var(--purple);border-bottom:2px dashed var(--purple);border-radius:0 0 14px 0"></div>
+            <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--purple);padding:.4rem 0;letter-spacing:1px">LLM response</div>
+            <div style="display:flex;flex-direction:column;gap:0;align-items:center">
+              ${nd('LLM','llm','"I need to compute the monthly payment. Let me use the calculator."')}
+              ${cn('tool_call')}
+              ${gd('&#9670; Tool Guard: calculator allowed? YES')}
+              ${cn()}
+              ${nd('calculator','tool','payment(50k, 4.2%, 30yr)')}
+              ${cn('{result: 244.49}')}
+            </div>
+          </div>
+        </div>
+      `:bb('LLM','click to see the tool call inside','box')}
+      ${cn()}
+      ${nd('LLM','output','"The monthly payment is $244.49."')}
+      ${cn()}
+      ${gd('&#9670; Output Guard: Compliant. ALLOW.')}
+    </div>
+    ${open?`<div class="expand-hint fade-in" style="animation-delay:.2s" onclick="nextStep()">Now loop the tool calls &rarr;</div>`:''}`;
+}
+
+// ── SCENE 2: multi-agent ──
+function renderScene2(el){
+  const orch=expanded.orch;
+  const cr=expanded.cr;
+  const ri=expanded.ri;
+  const co=expanded.co;
+
+  el.innerHTML=`
+    <div class="scene-title fade-in">${scenes[2].title}</div>
+    <div class="scene-sub fade-in">${scenes[2].sub}</div>
+    <div class="diagram fade-in">
+      ${nd('User','user','"Approve a 50k loan"')}
+      ${cn()}
+      ${gd('&#9670; Input Guard: PII → REDACT.')}
+      ${cn()}
+
+      ${orch?`
+        <div class="agent-detail" style="border-color:rgba(255,45,111,.2);background:rgba(255,45,111,.02)">
+          <div style="position:relative">
+            <div style="position:absolute;left:-14px;top:0;bottom:0;width:28px;border-left:2px dashed var(--pink);border-bottom:2px dashed var(--pink);border-radius:0 0 0 14px"></div>
+            <div style="position:absolute;right:-14px;top:0;bottom:0;width:28px;border-right:2px dashed var(--pink);border-bottom:2px dashed var(--pink);border-radius:0 0 14px 0"></div>
+            <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--pink);padding:.4rem 0;letter-spacing:1px;cursor:pointer" onclick="tog('orch')">orchestrator loop &#9650; collapse</div>
+
+            <div style="display:flex;align-items:center;gap:1rem;margin:.8rem 0">
+              <div class="iter-num">1</div>
+              <div style="flex:1">${nd('LLM','llm','"I need to verify credit, compliance, and risk before approving. Let me run all three checks in parallel."')}</div>
+            </div>
+            <div style="display:flex;justify-content:center">${gd('&#9670; Tool Guard: All 3 agents allowed? YES.')}</div>
+            ${cn('tool_calls')}
+            <div style="display:flex;gap:1rem;justify-content:center;margin:.8rem 0;flex-wrap:wrap">
+              ${cr?`<div onclick="tog('cr')">${nd('credit','agent','(expanded below)','click to collapse','TOOL CALL (AGENT)')}</div>`:`<div onclick="tog('cr')">${nd('credit','agent','Check score','click to expand','TOOL CALL (AGENT)')}</div>`}
+              ${co?`<div onclick="tog('co')">${nd('compliance','agent','(expanded below)','click to collapse','TOOL CALL (AGENT)')}</div>`:`<div onclick="tog('co')">${nd('compliance','agent','KYC / AML','click to expand','TOOL CALL (AGENT)')}</div>`}
+              ${ri?`<div onclick="tog('ri')">${nd('risk','agent','(expanded below)','click to collapse','TOOL CALL (AGENT)')}</div>`:`<div onclick="tog('ri')">${nd('risk','agent','Assess risk','click to expand','TOOL CALL (AGENT)')}</div>`}
+            </div>
+            <div style="display:flex;justify-content:center">${gd('&#9670; Tool Guard: All results consistent? YES.')}</div>
+            ${cn('results')}
+            <div style="display:flex;align-items:center;gap:1rem;margin:.8rem 0">
+              <div class="iter-num">2</div>
+              <div style="flex:1">${nd('LLM','llm','"All checks passed. I can recommend pre-approval."')}</div>
+            </div>
+            <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:1.05rem;color:var(--green);padding:.3rem 0">&#10003; return</div>
+          </div>
+
+          ${cr?renderSub('cr','Credit Agent','credit_bureau','GET /score?id=4821','{score: 740}','"740 is Good"','Credit check OK.','Bureau allowed. Strip history.','Compliant. ALLOW.'):''}
+          ${ri?renderSub('ri','Risk Agent','risk_model','score(amount=50k)','{risk: 0.32}','"0.32 is Low"','Risk model v3 OK.','Strip internal features.','Below threshold. OK.'):''}
+          ${co?renderComp():''}
+        </div>
+      `:bb('LLM (Orchestrator Agent)','click to see the loop inside','orch')}
+
+      ${cn()}
+      ${nd('LLM','output','"Pre-approved. Rate: 4.2%."')}
+      ${cn()}
+      ${gd('&#9670; Output Guard: ADD DISCLAIMER.')}
+    </div>`;
+}
+
+function renderSub(key,title,tool,toolDesc,result,conclusion,inputGuard,toolGuard,outputGuard){
+  return `
+  <div class="agent-detail fade-in" style="margin-top:1.5rem">
+    <div class="agent-detail-title">${title} &mdash; same loop, different tools <span style="cursor:pointer;color:var(--t3);font-size:.8rem" onclick="tog('${key}')">&#9650; collapse</span></div>
+    <div style="position:relative">
+      <div style="position:absolute;left:-10px;top:0;bottom:0;width:20px;border-left:2px dashed var(--blue);border-bottom:2px dashed var(--blue);border-radius:0 0 0 10px"></div>
+      <div style="position:absolute;right:-10px;top:0;bottom:0;width:20px;border-right:2px dashed var(--blue);border-bottom:2px dashed var(--blue);border-radius:0 0 10px 0"></div>
+      <div style="display:flex;justify-content:center">${gd('&#9670; Input Guard: '+inputGuard)}</div>
+      ${cn()}
+      <div style="display:flex;align-items:center;gap:1rem;margin:.8rem 0">
+        <div class="iter-num">1</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:0">
+          ${nd('LLM','llm','"I need to check the credit score. Let me query the bureau."')}
+          ${cn('tool_call')}
+          <div style="display:flex;justify-content:center">${gd('&#9670; Tool Guard: '+toolGuard)}</div>
+          ${cn()}
+          ${nd(tool,'tool',toolDesc)}
+          ${cn(result)}
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;justify-content:center;margin:.5rem 0">
+        <span style="color:var(--blue);font-size:1.1rem">&#8635;</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--t3)">loop</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;margin:.5rem 0">
+        <div class="iter-num">2</div>
+        <div style="flex:1">
+          ${nd('LLM','llm',conclusion)}
+          <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--green);padding:.4rem 0">&#10003; return</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">${gd('&#9670; Output Guard: '+outputGuard)}</div>
+    </div>
+  </div>`;
+}
+
+function renderComp(){
+  return `
+  <div class="agent-detail fade-in" style="margin-top:1.5rem">
+    <div class="agent-detail-title">Compliance Agent &mdash; same loop, different tools <span style="cursor:pointer;color:var(--t3);font-size:.8rem" onclick="tog('co')">&#9650; collapse</span></div>
+    <div style="position:relative">
+      <div style="position:absolute;left:-10px;top:0;bottom:0;width:20px;border-left:2px dashed var(--blue);border-bottom:2px dashed var(--blue);border-radius:0 0 0 10px"></div>
+      <div style="position:absolute;right:-10px;top:0;bottom:0;width:20px;border-right:2px dashed var(--blue);border-bottom:2px dashed var(--blue);border-radius:0 0 10px 0"></div>
+      <div style="display:flex;justify-content:center">${gd('&#9670; Input Guard: compliance check required')}</div>
+      ${cn()}
+      <div style="display:flex;align-items:center;gap:1rem;margin:.8rem 0">
+        <div class="iter-num">1</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:0">
+          ${nd('LLM','llm','"I need to verify sanctions clearance and complete KYC checks."')}
+          ${cn('tool_calls')}
+          <div style="display:flex;justify-content:center">${gd('&#9670; Tool Guard: both tools allowed? YES')}</div>
+          ${cn()}
+          <div style="display:flex;gap:1rem;justify-content:center">
+            ${nd('sanctions','tool','check(name)')}
+            ${nd('kyc','tool','verify(id)')}
+          </div>
+          ${cn('{clear, verified}')}
+          <div style="display:flex;justify-content:center">${gd('&#9670; Tool Guard: results clean? YES')}</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;justify-content:center;margin:.5rem 0">
+        <span style="color:var(--blue);font-size:1.1rem">&#8635;</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--t3)">loop</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;margin:.5rem 0">
+        <div class="iter-num">2</div>
+        <div style="flex:1">
+          ${nd('LLM','llm','"Sanctions clear. KYC verified."')}
+          <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--green);padding:.4rem 0">&#10003; return</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">${gd('&#9670; Output Guard: logged to audit trail')}</div>
+    </div>
+  </div>`;
+}
+
+function renderLegend(){
+  return `
+  <div class="guard-legend fade-in">
+    <div class="guard-legend-title">Only 3 guardrail types</div>
+    <div class="guard-type">
+      <div class="guard-type-icon">&#8594;</div>
+      <div><span class="guard-type-label">Input Guard</span><span class="guard-type-desc">- checks what goes IN</span></div>
+    </div>
+    <div class="guard-type">
+      <div class="guard-type-icon">&#8644;</div>
+      <div><span class="guard-type-label">Tool Guard</span><span class="guard-type-desc">- checks tool calls AND results</span></div>
+    </div>
+    <div class="guard-type">
+      <div class="guard-type-icon">&#8592;</div>
+      <div><span class="guard-type-label">Output Guard</span><span class="guard-type-desc">- checks what comes OUT</span></div>
+    </div>
+  </div>`;
+}
+
+render();
+</script>
+</body>
+</html>
