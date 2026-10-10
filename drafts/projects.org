@@ -49,7 +49,7 @@ usage tips!
 
 
 * 🦇 valencia-now: Real-time traffic information about Valencia
-[[https://valencianow.unmonoqueteclea.freemyip.com/][valencia-now]] provides *real-time* information about *car and bike traffic*
+[[https://valencianow.tamarin-avior.ts.net/][valencia-now]] provides *real-time* information about *car and bike traffic*
 in the city of *Valencia* (Spain). Additionally, it also provides *air
 quality data*.
 
